@@ -29,57 +29,57 @@ f_3=0.2x_2^3+50x_3+4(x_1+x_2-40-60)
 $$
 由题目所给数据可建立如下非线性规划模型：
 $$
-\\min  f=0.2x_1^2+50x_1+0.2x_2^2+50x_2+4(x_1-40)+0.2x_2^3+50x_3+4(x_1+x_2-40-60) \\\\
+\min  f=0.2x_1^2+50x_1+0.2x_2^2+50x_2+4(x_1-40)+0.2x_2^3+50x_3+4(x_1+x_2-40-60) \\
 
-\\text { s. t. }\\left\\{
+\text { s. t. }\left\{
 
-\\begin{array}{l}
-x_{1} \\geqslant 40 \\\\
-x_{1}+x_{2} \\geqslant 100 \\\\
-x_{1}+x_{2}+x_{3} \\geqslant 180 \\\\
+\begin{array}{l}
+x_{1} \geqslant 40 \\
+x_{1}+x_{2} \geqslant 100 \\
+x_{1}+x_{2}+x_{3} \geqslant 180 \\
 
-x_{i} \\geqslant 0, i=1,2,3
+x_{i} \geqslant 0, i=1,2,3
 
-\\end{array}\\right. \\\\
+\end{array}\right. \\
 $$
 
 化成MATLAB标准型，即：
 $$
-\\min  f= \\frac{1}{2}
-\\begin{bmatrix} x_1 & x_2 & x_3  \\end{bmatrix}
-\\begin{bmatrix}
-0.4 & 0 & 0 \\\\
-0 & 0.4 & 0 \\\\
-0 & 0 & 0.4 \\\\
-\\end{bmatrix}
-\\begin{bmatrix} x_1 \\\\ x_2 \\\\ x_3  \\end{bmatrix}
+\min  f= \frac{1}{2}
+\begin{bmatrix} x_1 & x_2 & x_3  \end{bmatrix}
+\begin{bmatrix}
+0.4 & 0 & 0 \\
+0 & 0.4 & 0 \\
+0 & 0 & 0.4 \\
+\end{bmatrix}
+\begin{bmatrix} x_1 \\ x_2 \\ x_3  \end{bmatrix}
 +
-\\begin{bmatrix}
+\begin{bmatrix}
 58 & 54 & 50 
-\\end{bmatrix}
-\\begin{bmatrix} x_1 \\\\ x_2 \\\\ x_3  \\end{bmatrix}
+\end{bmatrix}
+\begin{bmatrix} x_1 \\ x_2 \\ x_3  \end{bmatrix}
 -560
-\\\\
+\\
 
-\\text { s. t. }\\left\\{
+\text { s. t. }\left\{
 
-\\begin{array}{l}
+\begin{array}{l}
 
-\\begin{bmatrix}
-1 & 0 & 0 \\\\
-1 & 1 & 0 \\\\
-1 & 1 & 1 \\\\
+\begin{bmatrix}
+1 & 0 & 0 \\
+1 & 1 & 0 \\
+1 & 1 & 1 \\
 
-\\end{bmatrix}
-\\begin{bmatrix} x_1 \\\\ x_2 \\\\ x_3  \\end{bmatrix}
-\\geqslant 
-\\begin{bmatrix} 40 \\\\ 100 \\\\ 180  \\end{bmatrix}
-\\\\
+\end{bmatrix}
+\begin{bmatrix} x_1 \\ x_2 \\ x_3  \end{bmatrix}
+\geqslant 
+\begin{bmatrix} 40 \\ 100 \\ 180  \end{bmatrix}
+\\
 
 
-x_{i} \\geqslant 0, i=1,2,3
+x_{i} \geqslant 0, i=1,2,3
 
-\\end{array}\\right. \\\\
+\end{array}\right. \\
 $$
 
 ### 3.程序
@@ -135,22 +135,22 @@ value - 560
 
 模型二中，建立如下非线性规划模型：
 $$
-\\min
-\\sum_{i=1}^{6}\\left(\\Delta \\theta_{i}\\right)^{2}, \\\\
+\min
+\sum_{i=1}^{6}\left(\Delta \theta_{i}\right)^{2}, \\
 
-\\text { s. t. }\\left\\{\\begin{array}{l}
-\\Delta_{i j}<0,1 \\leqslant i \\leqslant 5, i+1 \\leqslant j \\leqslant 6, \\\\
-\\left|\\Delta \\theta_{i}\\right| \\leqslant \\frac{\\pi}{6}, i=1,2, \\cdots, 6 \\text { 。 }
-\\end{array}\\right.
+\text { s. t. }\left\{\begin{array}{l}
+\Delta_{i j}<0,1 \leqslant i \leqslant 5, i+1 \leqslant j \leqslant 6, \\
+\left|\Delta \theta_{i}\right| \leqslant \frac{\pi}{6}, i=1,2, \cdots, 6 \text { 。 }
+\end{array}\right.
 $$
 其中：
 $$
-\\begin{array}{l}
-\\Delta_{i j}=\\tilde{b}_{i j}^{2}-4 \\tilde{a}_{i j} \\tilde{c}_{i j}<0 \\text { 。 } \\\\
-\\tilde{a}_{i j}=4  \\sin ^{2} \\frac{\\theta_{i}-\\theta_{j}}{2}, \\\\
-\\tilde{b}_{i j}=2 \\left\\{\\left[x_{i}(0)-x_{j}(0)\\right]\\left(\\cos \\theta_{i}-\\cos \\theta_{j}\\right)+\\left[y_{i}(0)-y_{j}(0)\\right]\\left(\\sin \\theta_{i}-\\sin \\theta_{j}\\right)\\right\\}, \\\\
-\\tilde{c}_{i j}=\\left[x_{i}(0)-x_{j}(0)\\right]^{2}+\\left[y_{i}(0)-y_{j}(0)\\right]^{2}-64 。
-\\end{array}
+\begin{array}{l}
+\Delta_{i j}=\tilde{b}_{i j}^{2}-4 \tilde{a}_{i j} \tilde{c}_{i j}<0 \text { 。 } \\
+\tilde{a}_{i j}=4  \sin ^{2} \frac{\theta_{i}-\theta_{j}}{2}, \\
+\tilde{b}_{i j}=2 \left\{\left[x_{i}(0)-x_{j}(0)\right]\left(\cos \theta_{i}-\cos \theta_{j}\right)+\left[y_{i}(0)-y_{j}(0)\right]\left(\sin \theta_{i}-\sin \theta_{j}\right)\right\}, \\
+\tilde{c}_{i j}=\left[x_{i}(0)-x_{j}(0)\right]^{2}+\left[y_{i}(0)-y_{j}(0)\right]^{2}-64 。
+\end{array}
 $$
 ### 3.程序
 
@@ -212,12 +212,12 @@ w
 求得的最优解是：
 
 $$
-\\Delta\\theta_1= -6.6683,
-  \\Delta\\theta_2=  0.3315,
- \\Delta\\theta_3=   2.0589,
- \\Delta\\theta_4=  -0.5004,
-  \\Delta\\theta_5=  6.3313,
-  \\Delta\\theta_6=  1.5709
+\Delta\theta_1= -6.6683,
+  \Delta\theta_2=  0.3315,
+ \Delta\theta_3=   2.0589,
+ \Delta\theta_4=  -0.5004,
+  \Delta\theta_5=  6.3313,
+  \Delta\theta_6=  1.5709
 $$
 
 
@@ -237,26 +237,26 @@ $$
 
 模型二中，建立如下非线性规划模型：
 $$
-\\min
-\\sum_{i=1}^{6}\\left(\\Delta \\theta_{i}\\right)^{2}, \\\\
+\min
+\sum_{i=1}^{6}\left(\Delta \theta_{i}\right)^{2}, \\
 
-\\text { s. t. }\\left\\{\\begin{array}{l}
-\\Delta_{i j}<0,1 \\leqslant i \\leqslant 5, i+1 \\leqslant j \\leqslant 6, \\\\
-\\left|\\Delta \\theta_{i}\\right| \\leqslant \\frac{\\pi}{6}, i=1,2, \\cdots, 6 \\text { 。 }
-\\end{array}\\right.
+\text { s. t. }\left\{\begin{array}{l}
+\Delta_{i j}<0,1 \leqslant i \leqslant 5, i+1 \leqslant j \leqslant 6, \\
+\left|\Delta \theta_{i}\right| \leqslant \frac{\pi}{6}, i=1,2, \cdots, 6 \text { 。 }
+\end{array}\right.
 $$
 其中：
 $$
-\\begin{array}{l}
-\\Delta_{i j}=\\tilde{b}_{i j}^{2}-4 \\tilde{a}_{i j} \\tilde{c}_{i j}<0 \\text { 。 } \\\\
-\\tilde{a}_{i j}=4  \\sin ^{2} \\frac{\\theta_{i}-\\theta_{j}}{2}, \\\\
-\\tilde{b}_{i j}=2 \\left\\{\\left[x_{i}(0)-x_{j}(0)\\right]\\left(\\cos \\theta_{i}-\\cos \\theta_{j}\\right)+\\left[y_{i}(0)-y_{j}(0)\\right]\\left(\\sin \\theta_{i}-\\sin \\theta_{j}\\right)\\right\\}, \\\\
-\\tilde{c}_{i j}=\\left[x_{i}(0)-x_{j}(0)\\right]^{2}+\\left[y_{i}(0)-y_{j}(0)\\right]^{2}-64 。
-\\end{array}
+\begin{array}{l}
+\Delta_{i j}=\tilde{b}_{i j}^{2}-4 \tilde{a}_{i j} \tilde{c}_{i j}<0 \text { 。 } \\
+\tilde{a}_{i j}=4  \sin ^{2} \frac{\theta_{i}-\theta_{j}}{2}, \\
+\tilde{b}_{i j}=2 \left\{\left[x_{i}(0)-x_{j}(0)\right]\left(\cos \theta_{i}-\cos \theta_{j}\right)+\left[y_{i}(0)-y_{j}(0)\right]\left(\sin \theta_{i}-\sin \theta_{j}\right)\right\}, \\
+\tilde{c}_{i j}=\left[x_{i}(0)-x_{j}(0)\right]^{2}+\left[y_{i}(0)-y_{j}(0)\right]^{2}-64 。
+\end{array}
 $$
 罚函数为：
 $$
-P(\\boldsymbol{\\theta}, M)=\\sum_{i=1}^{6}\\left(\\Delta \\theta_{i}\\right)^{2}+M \\sum_{i=1}^{r} \\max \\left(\\Delta_{i j}, 0\\right)
+P(\boldsymbol{\theta}, M)=\sum_{i=1}^{6}\left(\Delta \theta_{i}\right)^{2}+M \sum_{i=1}^{r} \max \left(\Delta_{i j}, 0\right)
 $$
 
 ### 3.程序
@@ -314,12 +314,12 @@ w
 求得的最优解是：
 
 $$
-\\Delta\\theta_1=    -6.2039,
-  \\Delta\\theta_2=    0.4905,
- \\Delta\\theta_3=     0.9688,
-   \\Delta\\theta_4=  -2.3849,
-   \\Delta\\theta_5=   6.7960,
-   \\Delta\\theta_6=   3.4565
+\Delta\theta_1=    -6.2039,
+  \Delta\theta_2=    0.4905,
+ \Delta\theta_3=     0.9688,
+   \Delta\theta_4=  -2.3849,
+   \Delta\theta_5=   6.7960,
+   \Delta\theta_6=   3.4565
 $$
 
 
@@ -339,82 +339,82 @@ $$
 
 化成MATLAB标准型，即：
 $$
-\\min w=(-1)*[
-\\begin{bmatrix}3 & 1 & 0 \\end{bmatrix}
-\\begin{bmatrix} x_1^2 \\\\ x_2^2 \\\\ x_3^2  \\end{bmatrix}
+\min w=(-1)*[
+\begin{bmatrix}3 & 1 & 0 \end{bmatrix}
+\begin{bmatrix} x_1^2 \\ x_2^2 \\ x_3^2  \end{bmatrix}
 +
-\\begin{bmatrix}
+\begin{bmatrix}
 2 & 3 & 1 
-\\end{bmatrix}
-\\begin{bmatrix} x_1 \\\\ x_2 \\\\ x_3  \\end{bmatrix}
-]\\\\
+\end{bmatrix}
+\begin{bmatrix} x_1 \\ x_2 \\ x_3  \end{bmatrix}
+]\\
 
 
-\\text { s. t. }\\left\\{
+\text { s. t. }\left\{
 
-\\begin{array}{l}
+\begin{array}{l}
 
-\\begin{bmatrix}2 & 2 & 0 \\end{bmatrix}
-\\begin{bmatrix} x_1^2 \\\\ x_2^2 \\\\ x_3^2  \\end{bmatrix}
+\begin{bmatrix}2 & 2 & 0 \end{bmatrix}
+\begin{bmatrix} x_1^2 \\ x_2^2 \\ x_3^2  \end{bmatrix}
 +
-\\begin{bmatrix}
+\begin{bmatrix}
 1 & 1 & 1 
-\\end{bmatrix}
-\\begin{bmatrix} x_1 \\\\ x_2 \\\\ x_3  \\end{bmatrix}
+\end{bmatrix}
+\begin{bmatrix} x_1 \\ x_2 \\ x_3  \end{bmatrix}
 -10
-\\leqslant
+\leqslant
 0
-\\\\
+\\
 
-\\begin{bmatrix}1 & 1 & 0 \\end{bmatrix}
-\\begin{bmatrix} x_1^2 \\\\ x_2^2 \\\\ x_3^2  \\end{bmatrix}
+\begin{bmatrix}1 & 1 & 0 \end{bmatrix}
+\begin{bmatrix} x_1^2 \\ x_2^2 \\ x_3^2  \end{bmatrix}
 +
-\\begin{bmatrix}
+\begin{bmatrix}
 1 & 1 & -1 
-\\end{bmatrix}
-\\begin{bmatrix} x_1 \\\\ x_2 \\\\ x_3  \\end{bmatrix}
+\end{bmatrix}
+\begin{bmatrix} x_1 \\ x_2 \\ x_3  \end{bmatrix}
 -50
-\\leqslant
+\leqslant
 0
-\\\\
+\\
 
-\\begin{bmatrix}1 & 0 & 0 \\end{bmatrix}
-\\begin{bmatrix} x_1^2 \\\\ x_2^2 \\\\ x_3^2  \\end{bmatrix}
+\begin{bmatrix}1 & 0 & 0 \end{bmatrix}
+\begin{bmatrix} x_1^2 \\ x_2^2 \\ x_3^2  \end{bmatrix}
 +
-\\begin{bmatrix}
+\begin{bmatrix}
 2 & 2 & 1 
-\\end{bmatrix}
-\\begin{bmatrix} x_1 \\\\ x_2 \\\\ x_3  \\end{bmatrix}
+\end{bmatrix}
+\begin{bmatrix} x_1 \\ x_2 \\ x_3  \end{bmatrix}
 -40
-\\leqslant
+\leqslant
 0
-\\\\
+\\
 
-\\begin{bmatrix}1 & 0 & 0 \\end{bmatrix}
-\\begin{bmatrix} x_1^2 \\\\ x_2^2 \\\\ x_3^2  \\end{bmatrix}
+\begin{bmatrix}1 & 0 & 0 \end{bmatrix}
+\begin{bmatrix} x_1^2 \\ x_2^2 \\ x_3^2  \end{bmatrix}
 +
-\\begin{bmatrix}
+\begin{bmatrix}
 0 & 0 & 1 
-\\end{bmatrix}
-\\begin{bmatrix} x_1 \\\\ x_2 \\\\ x_3  \\end{bmatrix}
+\end{bmatrix}
+\begin{bmatrix} x_1 \\ x_2 \\ x_3  \end{bmatrix}
 -2
 =
 0
-\\\\
+\\
 
-\\begin{bmatrix}
--1 & -2  & 0 \\\\
--1 & 1 & 0 \\\\
-\\end{bmatrix}
-\\begin{bmatrix} x_1 \\\\ x_2 \\end{bmatrix}
-\\geqslant 
-\\begin{bmatrix} -1 \\\\ 0  \\end{bmatrix}
-\\\\
+\begin{bmatrix}
+-1 & -2  & 0 \\
+-1 & 1 & 0 \\
+\end{bmatrix}
+\begin{bmatrix} x_1 \\ x_2 \end{bmatrix}
+\geqslant 
+\begin{bmatrix} -1 \\ 0  \end{bmatrix}
+\\
 
-\\\\
-x_{1} \\geqslant 0
+\\
+x_{1} \geqslant 0
 
-\\end{array}\\right. \\\\
+\end{array}\right. \\
 $$
 
 ### 3.程序
@@ -467,6 +467,6 @@ $$
 x_1=2.3333,
 x_2=0.1667,
 x_3=-3.4444
-\\\\
-\\max f(x)=18.0833
+\\
+\max f(x)=18.0833
 $$
