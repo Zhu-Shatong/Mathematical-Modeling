@@ -1,0 +1,117 @@
+site_name: 数学建模基础知识配套习题与详解
+site_url: https://github.com/Zhu-Shatong/Mathematical-Modeling
+
+site_author: Zhu Shatong
+site_description: >-
+  数学建模算法与应用（第2版） (2015, 国防工业出版社) 
+
+repo_name: Mathematical-Modeling
+repo_url: https://github.com/Zhu-Shatong/Mathematical-Modeling
+
+theme:
+  name: material
+  language: zh  
+  features:
+    #- navigation.tabs
+    #- navigation.sections
+    - navigation.top
+    - navigation.tracking
+    - navigation.path
+
+    - search.suggest
+    - search.highlight
+    - search.share
+
+    - content.tabs.link
+    - content.code.annotation
+    - content.code.copy
+
+
+  palette:
+      - media: "(prefers-color-scheme: light)"
+        scheme: default
+        primary: indigo
+        accent: deep purple
+        toggle:
+          icon: material/brightness-7
+          name: Switch to dark mode
+      - media: "(prefers-color-scheme: dark)"
+        scheme: slate
+        primary: indigo
+        accent: deep purple
+        toggle:
+          icon: material/brightness-4
+          name: Switch to light mode
+
+  font:
+    text: Roboto
+    code: Roboto Mono
+  icon:
+    repo: fontawesome/brands/github
+
+
+
+markdown_extensions:
+  - pymdownx.highlight:
+      anchor_linenums: true
+  - pymdownx.inlinehilite
+  - pymdownx.snippets
+  - admonition
+  - pymdownx.arithmatex:
+      generic: true
+  - footnotes
+  - pymdownx.details
+  - pymdownx.superfences
+  - pymdownx.mark
+  - attr_list
+  - pymdownx.emoji:
+      emoji_index: !!python/name:materialx.emoji.twemoji
+      emoji_generator: !!python/name:materialx.emoji.to_svg
+  - md_in_html
+  - footnotes
+
+
+copyright: Copyright &copy; 2023-present <a href="https://github.com/Zhu-Shatong" target="_blank" rel="noopener noreferrer">Zhu-Shatong</a>
+
+extra:
+  social:
+    - icon: fontawesome/brands/github
+      link: https://github.com/Zhu-Shatong
+
+extra_javascript:
+  - javascripts/katex.js 
+  - https://cdnjs.cloudflare.com/ajax/libs/KaTeX/0.16.7/katex.min.js  
+  - https://cdnjs.cloudflare.com/ajax/libs/KaTeX/0.16.7/contrib/auto-render.min.js
+
+extra_css:
+  - https://cdnjs.cloudflare.com/ajax/libs/KaTeX/0.16.7/katex.min.css
+
+nav:
+  - 绪论: "index.md"
+
+  - 线性规划: "第2讲-线性规划.md"
+  
+  - 非线性规划: "第3讲-非线性规划.md"
+
+  - 插值与拟合: "第4讲-插值与拟合.md"
+
+  - 微分方程建模: "第5讲-微分方程建模.md"
+
+  - 假设检验: "第6讲-假设检验.md"
+
+  - Bootstrap方法: "第7讲-Bootstrap方法.md"
+
+  - 回归分析: "第8讲-回归分析.md"
+
+  - 时间序列分析: "第9讲-时间序列分析.md"
+
+  - 时间序列预测: "第10讲-时间序列预测.md"
+
+  - 因子分析（聚类与主成分）: "第11讲-因子分析（聚类与主成分）.md"
+
+  - 因子分析判别分析: "第12讲-因子分析判别分析.md"  
+
+  - 相关分析: "第13讲-相关分析.md" 
+
+  - 现代优化算法: "第14讲-现代优化算法.md"
+
