@@ -1,0 +1,1795 @@
+
+<!doctype html>
+<html lang="zh" class="no-js">
+  <head>
+    
+      <meta charset="utf-8">
+      <meta name="viewport" content="width=device-width,initial-scale=1">
+      
+        <meta name="description" content="数学建模算法与应用（第2版） (2015, 国防工业出版社) ">
+      
+      
+        <meta name="author" content="Zhu Shatong">
+      
+      
+        <link rel="canonical" href="https://github.com/Zhu-Shatong/Mathematical-Modeling/%E7%AC%AC12%E8%AE%B2-%E5%9B%A0%E5%AD%90%E5%88%86%E6%9E%90%E5%88%A4%E5%88%AB%E5%88%86%E6%9E%90/">
+      
+      
+        <link rel="prev" href="../%E7%AC%AC11%E8%AE%B2-%E5%9B%A0%E5%AD%90%E5%88%86%E6%9E%90%EF%BC%88%E8%81%9A%E7%B1%BB%E4%B8%8E%E4%B8%BB%E6%88%90%E5%88%86%EF%BC%89/">
+      
+      
+        <link rel="next" href="../%E7%AC%AC13%E8%AE%B2-%E7%9B%B8%E5%85%B3%E5%88%86%E6%9E%90/">
+      
+      
+      <link rel="icon" href="../assets/images/favicon.png">
+      <meta name="generator" content="mkdocs-1.5.3, mkdocs-material-9.5.15">
+    
+    
+      
+        <title>因子分析判别分析 - 数学建模基础知识配套习题与详解</title>
+      
+    
+    
+      <link rel="stylesheet" href="../assets/stylesheets/main.7e359304.min.css">
+      
+        
+        <link rel="stylesheet" href="../assets/stylesheets/palette.06af60db.min.css">
+      
+      
+
+
+    
+    
+      
+    
+    
+      
+        
+        
+        <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+        <link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Roboto:300,300i,400,400i,700,700i%7CRoboto+Mono:400,400i,700,700i&display=fallback">
+        <style>:root{--md-text-font:"Roboto";--md-code-font:"Roboto Mono"}</style>
+      
+    
+    
+      <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/KaTeX/0.16.7/katex.min.css">
+    
+    <script>__md_scope=new URL("..",location),__md_hash=e=>[...e].reduce((e,_)=>(e<<5)-e+_.charCodeAt(0),0),__md_get=(e,_=localStorage,t=__md_scope)=>JSON.parse(_.getItem(t.pathname+"."+e)),__md_set=(e,_,t=localStorage,a=__md_scope)=>{try{t.setItem(a.pathname+"."+e,JSON.stringify(_))}catch(e){}}</script>
+    
+      
+
+    
+    
+    
+  </head>
+  
+  
+    
+    
+      
+    
+    
+    
+    
+    <body dir="ltr" data-md-color-scheme="default" data-md-color-primary="indigo" data-md-color-accent="deep-purple">
+  
+    
+    <input class="md-toggle" data-md-toggle="drawer" type="checkbox" id="__drawer" autocomplete="off">
+    <input class="md-toggle" data-md-toggle="search" type="checkbox" id="__search" autocomplete="off">
+    <label class="md-overlay" for="__drawer"></label>
+    <div data-md-component="skip">
+      
+        
+        <a href="#-" class="md-skip">
+          跳转至
+        </a>
+      
+    </div>
+    <div data-md-component="announce">
+      
+    </div>
+    
+    
+      
+
+  
+
+<header class="md-header md-header--shadow" data-md-component="header">
+  <nav class="md-header__inner md-grid" aria-label="页眉">
+    <a href=".." title="数学建模基础知识配套习题与详解" class="md-header__button md-logo" aria-label="数学建模基础知识配套习题与详解" data-md-component="logo">
+      
+  
+  <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M12 8a3 3 0 0 0 3-3 3 3 0 0 0-3-3 3 3 0 0 0-3 3 3 3 0 0 0 3 3m0 3.54C9.64 9.35 6.5 8 3 8v11c3.5 0 6.64 1.35 9 3.54 2.36-2.19 5.5-3.54 9-3.54V8c-3.5 0-6.64 1.35-9 3.54Z"/></svg>
+
+    </a>
+    <label class="md-header__button md-icon" for="__drawer">
+      
+      <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M3 6h18v2H3V6m0 5h18v2H3v-2m0 5h18v2H3v-2Z"/></svg>
+    </label>
+    <div class="md-header__title" data-md-component="header-title">
+      <div class="md-header__ellipsis">
+        <div class="md-header__topic">
+          <span class="md-ellipsis">
+            数学建模基础知识配套习题与详解
+          </span>
+        </div>
+        <div class="md-header__topic" data-md-component="header-topic">
+          <span class="md-ellipsis">
+            
+              因子分析判别分析
+            
+          </span>
+        </div>
+      </div>
+    </div>
+    
+      
+        <form class="md-header__option" data-md-component="palette">
+  
+    
+    
+    
+    <input class="md-option" data-md-color-media="(prefers-color-scheme: light)" data-md-color-scheme="default" data-md-color-primary="indigo" data-md-color-accent="deep-purple"  aria-label="Switch to dark mode"  type="radio" name="__palette" id="__palette_0">
+    
+      <label class="md-header__button md-icon" title="Switch to dark mode" for="__palette_1" hidden>
+        <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M12 8a4 4 0 0 0-4 4 4 4 0 0 0 4 4 4 4 0 0 0 4-4 4 4 0 0 0-4-4m0 10a6 6 0 0 1-6-6 6 6 0 0 1 6-6 6 6 0 0 1 6 6 6 6 0 0 1-6 6m8-9.31V4h-4.69L12 .69 8.69 4H4v4.69L.69 12 4 15.31V20h4.69L12 23.31 15.31 20H20v-4.69L23.31 12 20 8.69Z"/></svg>
+      </label>
+    
+  
+    
+    
+    
+    <input class="md-option" data-md-color-media="(prefers-color-scheme: dark)" data-md-color-scheme="slate" data-md-color-primary="indigo" data-md-color-accent="deep-purple"  aria-label="Switch to light mode"  type="radio" name="__palette" id="__palette_1">
+    
+      <label class="md-header__button md-icon" title="Switch to light mode" for="__palette_0" hidden>
+        <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M12 18c-.89 0-1.74-.2-2.5-.55C11.56 16.5 13 14.42 13 12c0-2.42-1.44-4.5-3.5-5.45C10.26 6.2 11.11 6 12 6a6 6 0 0 1 6 6 6 6 0 0 1-6 6m8-9.31V4h-4.69L12 .69 8.69 4H4v4.69L.69 12 4 15.31V20h4.69L12 23.31 15.31 20H20v-4.69L23.31 12 20 8.69Z"/></svg>
+      </label>
+    
+  
+</form>
+      
+    
+    
+      <script>var media,input,key,value,palette=__md_get("__palette");if(palette&&palette.color){"(prefers-color-scheme)"===palette.color.media&&(media=matchMedia("(prefers-color-scheme: light)"),input=document.querySelector(media.matches?"[data-md-color-media='(prefers-color-scheme: light)']":"[data-md-color-media='(prefers-color-scheme: dark)']"),palette.color.media=input.getAttribute("data-md-color-media"),palette.color.scheme=input.getAttribute("data-md-color-scheme"),palette.color.primary=input.getAttribute("data-md-color-primary"),palette.color.accent=input.getAttribute("data-md-color-accent"));for([key,value]of Object.entries(palette.color))document.body.setAttribute("data-md-color-"+key,value)}</script>
+    
+    
+    
+      <label class="md-header__button md-icon" for="__search">
+        
+        <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M9.5 3A6.5 6.5 0 0 1 16 9.5c0 1.61-.59 3.09-1.56 4.23l.27.27h.79l5 5-1.5 1.5-5-5v-.79l-.27-.27A6.516 6.516 0 0 1 9.5 16 6.5 6.5 0 0 1 3 9.5 6.5 6.5 0 0 1 9.5 3m0 2C7 5 5 7 5 9.5S7 14 9.5 14 14 12 14 9.5 12 5 9.5 5Z"/></svg>
+      </label>
+      <div class="md-search" data-md-component="search" role="dialog">
+  <label class="md-search__overlay" for="__search"></label>
+  <div class="md-search__inner" role="search">
+    <form class="md-search__form" name="search">
+      <input type="text" class="md-search__input" name="query" aria-label="搜索" placeholder="搜索" autocapitalize="off" autocorrect="off" autocomplete="off" spellcheck="false" data-md-component="search-query" required>
+      <label class="md-search__icon md-icon" for="__search">
+        
+        <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M9.5 3A6.5 6.5 0 0 1 16 9.5c0 1.61-.59 3.09-1.56 4.23l.27.27h.79l5 5-1.5 1.5-5-5v-.79l-.27-.27A6.516 6.516 0 0 1 9.5 16 6.5 6.5 0 0 1 3 9.5 6.5 6.5 0 0 1 9.5 3m0 2C7 5 5 7 5 9.5S7 14 9.5 14 14 12 14 9.5 12 5 9.5 5Z"/></svg>
+        
+        <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M20 11v2H8l5.5 5.5-1.42 1.42L4.16 12l7.92-7.92L13.5 5.5 8 11h12Z"/></svg>
+      </label>
+      <nav class="md-search__options" aria-label="查找">
+        
+          <a href="javascript:void(0)" class="md-search__icon md-icon" title="分享" aria-label="分享" data-clipboard data-clipboard-text="" data-md-component="search-share" tabindex="-1">
+            
+            <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M18 16.08c-.76 0-1.44.3-1.96.77L8.91 12.7c.05-.23.09-.46.09-.7 0-.24-.04-.47-.09-.7l7.05-4.11c.54.5 1.25.81 2.04.81a3 3 0 0 0 3-3 3 3 0 0 0-3-3 3 3 0 0 0-3 3c0 .24.04.47.09.7L8.04 9.81C7.5 9.31 6.79 9 6 9a3 3 0 0 0-3 3 3 3 0 0 0 3 3c.79 0 1.5-.31 2.04-.81l7.12 4.15c-.05.21-.08.43-.08.66 0 1.61 1.31 2.91 2.92 2.91 1.61 0 2.92-1.3 2.92-2.91A2.92 2.92 0 0 0 18 16.08Z"/></svg>
+          </a>
+        
+        <button type="reset" class="md-search__icon md-icon" title="清空当前内容" aria-label="清空当前内容" tabindex="-1">
+          
+          <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M19 6.41 17.59 5 12 10.59 6.41 5 5 6.41 10.59 12 5 17.59 6.41 19 12 13.41 17.59 19 19 17.59 13.41 12 19 6.41Z"/></svg>
+        </button>
+      </nav>
+      
+        <div class="md-search__suggest" data-md-component="search-suggest"></div>
+      
+    </form>
+    <div class="md-search__output">
+      <div class="md-search__scrollwrap" data-md-scrollfix>
+        <div class="md-search-result" data-md-component="search-result">
+          <div class="md-search-result__meta">
+            正在初始化搜索引擎
+          </div>
+          <ol class="md-search-result__list" role="presentation"></ol>
+        </div>
+      </div>
+    </div>
+  </div>
+</div>
+    
+    
+      <div class="md-header__source">
+        <a href="https://github.com/Zhu-Shatong/Mathematical-Modeling" title="前往仓库" class="md-source" data-md-component="source">
+  <div class="md-source__icon md-icon">
+    
+    <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 496 512"><!--! Font Awesome Free 6.5.1 by @fontawesome - https://fontawesome.com License - https://fontawesome.com/license/free (Icons: CC BY 4.0, Fonts: SIL OFL 1.1, Code: MIT License) Copyright 2023 Fonticons, Inc.--><path d="M165.9 397.4c0 2-2.3 3.6-5.2 3.6-3.3.3-5.6-1.3-5.6-3.6 0-2 2.3-3.6 5.2-3.6 3-.3 5.6 1.3 5.6 3.6zm-31.1-4.5c-.7 2 1.3 4.3 4.3 4.9 2.6 1 5.6 0 6.2-2s-1.3-4.3-4.3-5.2c-2.6-.7-5.5.3-6.2 2.3zm44.2-1.7c-2.9.7-4.9 2.6-4.6 4.9.3 2 2.9 3.3 5.9 2.6 2.9-.7 4.9-2.6 4.6-4.6-.3-1.9-3-3.2-5.9-2.9zM244.8 8C106.1 8 0 113.3 0 252c0 110.9 69.8 205.8 169.5 239.2 12.8 2.3 17.3-5.6 17.3-12.1 0-6.2-.3-40.4-.3-61.4 0 0-70 15-84.7-29.8 0 0-11.4-29.1-27.8-36.6 0 0-22.9-15.7 1.6-15.4 0 0 24.9 2 38.6 25.8 21.9 38.6 58.6 27.5 72.9 20.9 2.3-16 8.8-27.1 16-33.7-55.9-6.2-112.3-14.3-112.3-110.5 0-27.5 7.6-41.3 23.6-58.9-2.6-6.5-11.1-33.3 2.6-67.9 20.9-6.5 69 27 69 27 20-5.6 41.5-8.5 62.8-8.5s42.8 2.9 62.8 8.5c0 0 48.1-33.6 69-27 13.7 34.7 5.2 61.4 2.6 67.9 16 17.7 25.8 31.5 25.8 58.9 0 96.5-58.9 104.2-114.8 110.5 9.2 7.9 17 22.9 17 46.4 0 33.7-.3 75.4-.3 83.6 0 6.5 4.6 14.4 17.3 12.1C428.2 457.8 496 362.9 496 252 496 113.3 383.5 8 244.8 8zM97.2 352.9c-1.3 1-1 3.3.7 5.2 1.6 1.6 3.9 2.3 5.2 1 1.3-1 1-3.3-.7-5.2-1.6-1.6-3.9-2.3-5.2-1zm-10.8-8.1c-.7 1.3.3 2.9 2.3 3.9 1.6 1 3.6.7 4.3-.7.7-1.3-.3-2.9-2.3-3.9-2-.6-3.6-.3-4.3.7zm32.4 35.6c-1.6 1.3-1 4.3 1.3 6.2 2.3 2.3 5.2 2.6 6.5 1 1.3-1.3.7-4.3-1.3-6.2-2.2-2.3-5.2-2.6-6.5-1zm-11.4-14.7c-1.6 1-1.6 3.6 0 5.9 1.6 2.3 4.3 3.3 5.6 2.3 1.6-1.3 1.6-3.9 0-6.2-1.4-2.3-4-3.3-5.6-2z"/></svg>
+  </div>
+  <div class="md-source__repository">
+    Mathematical-Modeling
+  </div>
+</a>
+      </div>
+    
+  </nav>
+  
+</header>
+    
+    <div class="md-container" data-md-component="container">
+      
+      
+        
+          
+        
+      
+      <main class="md-main" data-md-component="main">
+        <div class="md-main__inner md-grid">
+          
+            
+              
+              <div class="md-sidebar md-sidebar--primary" data-md-component="sidebar" data-md-type="navigation" >
+                <div class="md-sidebar__scrollwrap">
+                  <div class="md-sidebar__inner">
+                    
+
+
+
+<nav class="md-nav md-nav--primary" aria-label="导航栏" data-md-level="0">
+  <label class="md-nav__title" for="__drawer">
+    <a href=".." title="数学建模基础知识配套习题与详解" class="md-nav__button md-logo" aria-label="数学建模基础知识配套习题与详解" data-md-component="logo">
+      
+  
+  <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M12 8a3 3 0 0 0 3-3 3 3 0 0 0-3-3 3 3 0 0 0-3 3 3 3 0 0 0 3 3m0 3.54C9.64 9.35 6.5 8 3 8v11c3.5 0 6.64 1.35 9 3.54 2.36-2.19 5.5-3.54 9-3.54V8c-3.5 0-6.64 1.35-9 3.54Z"/></svg>
+
+    </a>
+    数学建模基础知识配套习题与详解
+  </label>
+  
+    <div class="md-nav__source">
+      <a href="https://github.com/Zhu-Shatong/Mathematical-Modeling" title="前往仓库" class="md-source" data-md-component="source">
+  <div class="md-source__icon md-icon">
+    
+    <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 496 512"><!--! Font Awesome Free 6.5.1 by @fontawesome - https://fontawesome.com License - https://fontawesome.com/license/free (Icons: CC BY 4.0, Fonts: SIL OFL 1.1, Code: MIT License) Copyright 2023 Fonticons, Inc.--><path d="M165.9 397.4c0 2-2.3 3.6-5.2 3.6-3.3.3-5.6-1.3-5.6-3.6 0-2 2.3-3.6 5.2-3.6 3-.3 5.6 1.3 5.6 3.6zm-31.1-4.5c-.7 2 1.3 4.3 4.3 4.9 2.6 1 5.6 0 6.2-2s-1.3-4.3-4.3-5.2c-2.6-.7-5.5.3-6.2 2.3zm44.2-1.7c-2.9.7-4.9 2.6-4.6 4.9.3 2 2.9 3.3 5.9 2.6 2.9-.7 4.9-2.6 4.6-4.6-.3-1.9-3-3.2-5.9-2.9zM244.8 8C106.1 8 0 113.3 0 252c0 110.9 69.8 205.8 169.5 239.2 12.8 2.3 17.3-5.6 17.3-12.1 0-6.2-.3-40.4-.3-61.4 0 0-70 15-84.7-29.8 0 0-11.4-29.1-27.8-36.6 0 0-22.9-15.7 1.6-15.4 0 0 24.9 2 38.6 25.8 21.9 38.6 58.6 27.5 72.9 20.9 2.3-16 8.8-27.1 16-33.7-55.9-6.2-112.3-14.3-112.3-110.5 0-27.5 7.6-41.3 23.6-58.9-2.6-6.5-11.1-33.3 2.6-67.9 20.9-6.5 69 27 69 27 20-5.6 41.5-8.5 62.8-8.5s42.8 2.9 62.8 8.5c0 0 48.1-33.6 69-27 13.7 34.7 5.2 61.4 2.6 67.9 16 17.7 25.8 31.5 25.8 58.9 0 96.5-58.9 104.2-114.8 110.5 9.2 7.9 17 22.9 17 46.4 0 33.7-.3 75.4-.3 83.6 0 6.5 4.6 14.4 17.3 12.1C428.2 457.8 496 362.9 496 252 496 113.3 383.5 8 244.8 8zM97.2 352.9c-1.3 1-1 3.3.7 5.2 1.6 1.6 3.9 2.3 5.2 1 1.3-1 1-3.3-.7-5.2-1.6-1.6-3.9-2.3-5.2-1zm-10.8-8.1c-.7 1.3.3 2.9 2.3 3.9 1.6 1 3.6.7 4.3-.7.7-1.3-.3-2.9-2.3-3.9-2-.6-3.6-.3-4.3.7zm32.4 35.6c-1.6 1.3-1 4.3 1.3 6.2 2.3 2.3 5.2 2.6 6.5 1 1.3-1.3.7-4.3-1.3-6.2-2.2-2.3-5.2-2.6-6.5-1zm-11.4-14.7c-1.6 1-1.6 3.6 0 5.9 1.6 2.3 4.3 3.3 5.6 2.3 1.6-1.3 1.6-3.9 0-6.2-1.4-2.3-4-3.3-5.6-2z"/></svg>
+  </div>
+  <div class="md-source__repository">
+    Mathematical-Modeling
+  </div>
+</a>
+    </div>
+  
+  <ul class="md-nav__list" data-md-scrollfix>
+    
+      
+      
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href=".." class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    绪论
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+    
+      
+      
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../%E7%AC%AC2%E8%AE%B2-%E7%BA%BF%E6%80%A7%E8%A7%84%E5%88%92/" class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    线性规划
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+    
+      
+      
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../%E7%AC%AC3%E8%AE%B2-%E9%9D%9E%E7%BA%BF%E6%80%A7%E8%A7%84%E5%88%92/" class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    非线性规划
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+    
+      
+      
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../%E7%AC%AC4%E8%AE%B2-%E6%8F%92%E5%80%BC%E4%B8%8E%E6%8B%9F%E5%90%88/" class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    插值与拟合
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+    
+      
+      
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../%E7%AC%AC5%E8%AE%B2-%E5%BE%AE%E5%88%86%E6%96%B9%E7%A8%8B%E5%BB%BA%E6%A8%A1/" class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    微分方程建模
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+    
+      
+      
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../%E7%AC%AC6%E8%AE%B2-%E5%81%87%E8%AE%BE%E6%A3%80%E9%AA%8C/" class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    假设检验
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+    
+      
+      
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../%E7%AC%AC7%E8%AE%B2-Bootstrap%E6%96%B9%E6%B3%95/" class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    Bootstrap方法
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+    
+      
+      
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../%E7%AC%AC8%E8%AE%B2-%E5%9B%9E%E5%BD%92%E5%88%86%E6%9E%90/" class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    回归分析
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+    
+      
+      
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../%E7%AC%AC9%E8%AE%B2-%E6%97%B6%E9%97%B4%E5%BA%8F%E5%88%97%E5%88%86%E6%9E%90/" class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    时间序列分析
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+    
+      
+      
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../%E7%AC%AC10%E8%AE%B2-%E6%97%B6%E9%97%B4%E5%BA%8F%E5%88%97%E9%A2%84%E6%B5%8B/" class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    时间序列预测
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+    
+      
+      
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../%E7%AC%AC11%E8%AE%B2-%E5%9B%A0%E5%AD%90%E5%88%86%E6%9E%90%EF%BC%88%E8%81%9A%E7%B1%BB%E4%B8%8E%E4%B8%BB%E6%88%90%E5%88%86%EF%BC%89/" class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    因子分析（聚类与主成分）
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+    
+      
+      
+  
+  
+    
+  
+  
+  
+    <li class="md-nav__item md-nav__item--active">
+      
+      <input class="md-nav__toggle md-toggle" type="checkbox" id="__toc">
+      
+      
+        
+      
+      
+        <label class="md-nav__link md-nav__link--active" for="__toc">
+          
+  
+  <span class="md-ellipsis">
+    因子分析判别分析
+  </span>
+  
+
+          <span class="md-nav__icon md-icon"></span>
+        </label>
+      
+      <a href="./" class="md-nav__link md-nav__link--active">
+        
+  
+  <span class="md-ellipsis">
+    因子分析判别分析
+  </span>
+  
+
+      </a>
+      
+        
+
+<nav class="md-nav md-nav--secondary" aria-label="目录">
+  
+  
+  
+    
+  
+  
+    <label class="md-nav__title" for="__toc">
+      <span class="md-nav__icon md-icon"></span>
+      目录
+    </label>
+    <ul class="md-nav__list" data-md-component="toc" data-md-scrollfix>
+      
+        <li class="md-nav__item">
+  <a href="#103" class="md-nav__link">
+    <span class="md-ellipsis">
+      习题10.3
+    </span>
+  </a>
+  
+    <nav class="md-nav" aria-label="习题10.3">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#1" class="md-nav__link">
+    <span class="md-ellipsis">
+      1. 题目要求
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#2" class="md-nav__link">
+    <span class="md-ellipsis">
+      2.解题过程
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#3" class="md-nav__link">
+    <span class="md-ellipsis">
+      3.程序
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#4" class="md-nav__link">
+    <span class="md-ellipsis">
+      4.结果
+    </span>
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#1061" class="md-nav__link">
+    <span class="md-ellipsis">
+      习题10.6（1）
+    </span>
+  </a>
+  
+    <nav class="md-nav" aria-label="习题10.6（1）">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#1_1" class="md-nav__link">
+    <span class="md-ellipsis">
+      1. 题目要求
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#2_1" class="md-nav__link">
+    <span class="md-ellipsis">
+      2.解题过程——对应分析
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#3_1" class="md-nav__link">
+    <span class="md-ellipsis">
+      3.程序
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#4_1" class="md-nav__link">
+    <span class="md-ellipsis">
+      4.结果
+    </span>
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#1062" class="md-nav__link">
+    <span class="md-ellipsis">
+      习题10.6（2）
+    </span>
+  </a>
+  
+    <nav class="md-nav" aria-label="习题10.6（2）">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#1_2" class="md-nav__link">
+    <span class="md-ellipsis">
+      1. 题目要求
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#2r" class="md-nav__link">
+    <span class="md-ellipsis">
+      2.解题过程——R型因子分析
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#3_2" class="md-nav__link">
+    <span class="md-ellipsis">
+      3.程序
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#4_2" class="md-nav__link">
+    <span class="md-ellipsis">
+      4.结果
+    </span>
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#1063" class="md-nav__link">
+    <span class="md-ellipsis">
+      习题10.6（3）
+    </span>
+  </a>
+  
+    <nav class="md-nav" aria-label="习题10.6（3）">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#1_3" class="md-nav__link">
+    <span class="md-ellipsis">
+      1. 题目要求
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#2_2" class="md-nav__link">
+    <span class="md-ellipsis">
+      2.解题过程——聚类分析
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#3_3" class="md-nav__link">
+    <span class="md-ellipsis">
+      3.程序
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#4_3" class="md-nav__link">
+    <span class="md-ellipsis">
+      4.结果
+    </span>
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
+    </ul>
+  
+</nav>
+      
+    </li>
+  
+
+    
+      
+      
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../%E7%AC%AC13%E8%AE%B2-%E7%9B%B8%E5%85%B3%E5%88%86%E6%9E%90/" class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    相关分析
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+    
+      
+      
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../%E7%AC%AC14%E8%AE%B2-%E7%8E%B0%E4%BB%A3%E4%BC%98%E5%8C%96%E7%AE%97%E6%B3%95/" class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    现代优化算法
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+    
+  </ul>
+</nav>
+                  </div>
+                </div>
+              </div>
+            
+            
+              
+              <div class="md-sidebar md-sidebar--secondary" data-md-component="sidebar" data-md-type="toc" >
+                <div class="md-sidebar__scrollwrap">
+                  <div class="md-sidebar__inner">
+                    
+
+<nav class="md-nav md-nav--secondary" aria-label="目录">
+  
+  
+  
+    
+  
+  
+    <label class="md-nav__title" for="__toc">
+      <span class="md-nav__icon md-icon"></span>
+      目录
+    </label>
+    <ul class="md-nav__list" data-md-component="toc" data-md-scrollfix>
+      
+        <li class="md-nav__item">
+  <a href="#103" class="md-nav__link">
+    <span class="md-ellipsis">
+      习题10.3
+    </span>
+  </a>
+  
+    <nav class="md-nav" aria-label="习题10.3">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#1" class="md-nav__link">
+    <span class="md-ellipsis">
+      1. 题目要求
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#2" class="md-nav__link">
+    <span class="md-ellipsis">
+      2.解题过程
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#3" class="md-nav__link">
+    <span class="md-ellipsis">
+      3.程序
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#4" class="md-nav__link">
+    <span class="md-ellipsis">
+      4.结果
+    </span>
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#1061" class="md-nav__link">
+    <span class="md-ellipsis">
+      习题10.6（1）
+    </span>
+  </a>
+  
+    <nav class="md-nav" aria-label="习题10.6（1）">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#1_1" class="md-nav__link">
+    <span class="md-ellipsis">
+      1. 题目要求
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#2_1" class="md-nav__link">
+    <span class="md-ellipsis">
+      2.解题过程——对应分析
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#3_1" class="md-nav__link">
+    <span class="md-ellipsis">
+      3.程序
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#4_1" class="md-nav__link">
+    <span class="md-ellipsis">
+      4.结果
+    </span>
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#1062" class="md-nav__link">
+    <span class="md-ellipsis">
+      习题10.6（2）
+    </span>
+  </a>
+  
+    <nav class="md-nav" aria-label="习题10.6（2）">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#1_2" class="md-nav__link">
+    <span class="md-ellipsis">
+      1. 题目要求
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#2r" class="md-nav__link">
+    <span class="md-ellipsis">
+      2.解题过程——R型因子分析
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#3_2" class="md-nav__link">
+    <span class="md-ellipsis">
+      3.程序
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#4_2" class="md-nav__link">
+    <span class="md-ellipsis">
+      4.结果
+    </span>
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#1063" class="md-nav__link">
+    <span class="md-ellipsis">
+      习题10.6（3）
+    </span>
+  </a>
+  
+    <nav class="md-nav" aria-label="习题10.6（3）">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#1_3" class="md-nav__link">
+    <span class="md-ellipsis">
+      1. 题目要求
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#2_2" class="md-nav__link">
+    <span class="md-ellipsis">
+      2.解题过程——聚类分析
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#3_3" class="md-nav__link">
+    <span class="md-ellipsis">
+      3.程序
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#4_3" class="md-nav__link">
+    <span class="md-ellipsis">
+      4.结果
+    </span>
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
+    </ul>
+  
+</nav>
+                  </div>
+                </div>
+              </div>
+            
+          
+          
+            <div class="md-content" data-md-component="content">
+              <article class="md-content__inner md-typeset">
+                
+                  
+
+  
+  
+
+
+<h1 id="-"><strong>第十二讲-因子分析判别分析</strong></h1>
+<h2 id="103">习题10.3</h2>
+<h3 id="1">1. 题目要求</h3>
+<p><img alt="image-20230531202409425" src="https://raw.githubusercontent.com/Zhu-Shatong/cloudimg/master/img/image-20230531202409425.png" /></p>
+<p><img alt="image-20230531202422992" src="https://raw.githubusercontent.com/Zhu-Shatong/cloudimg/master/img/image-20230531202422992.png" /></p>
+<h3 id="2">2.解题过程</h3>
+<p><strong>解：</strong></p>
+<p>先将数据标准化，记第 <span class="arithmatex">\(i\)</span> 个评价对象的第 <span class="arithmatex">\(j\)</span> 个评价指标值为 <span class="arithmatex">\(a_{ij},i=1,2,...25;j=1,2,...7\)</span> ，将 <span class="arithmatex">\(a_{ij}\)</span> 标准化为 <span class="arithmatex">\(\widetilde{a}_{ij}\)</span> ：
+$$
+\widetilde{a}<em>{ij}=\frac{a</em>{ij}-\mu_j}{s_j}
+$$
+式中:
+$$
+\mu_j=\frac{1}{25}\sum_{i=1}^{25}a_{ij}
+$$</p>
+<div class="arithmatex">\[
+s_j=\sqrt{\frac{1}{25-1}\sum_{i=1}^{25}(a_{ij}-\mu_j)^2}
+\]</div>
+<p>接下来计算相关系数矩阵 <span class="arithmatex">\(\mathbf{R}\)</span> :
+$$
+\mathbf{R}=(r_{ij})_{7\times7}
+$$</p>
+<div class="arithmatex">\[
+r_{ij}=\frac{\sum_{k=1}^{25}}{\widetilde{a}_{ki}\cdot\widetilde{a}_{kj}},i,j=1,2,...,7
+\]</div>
+<p>式中 <span class="arithmatex">\(r_{ii}=1,r_{ji}=r{ij},r_{ij}\)</span> 是第 <span class="arithmatex">\(i\)</span> 指标和第 <span class="arithmatex">\(j\)</span> 指标的相关系数。</p>
+<p>计算初等载荷矩阵，首先算出相关矩阵 <span class="arithmatex">\(\mathbf{R}\)</span> 的特征值 <span class="arithmatex">\(\lambda_1\geq\lambda_2\geq...\geq\lambda_7\)</span>，以及应的特征向量<span class="arithmatex">\(\mathbf{u}_1,\mathbf{u}_2,...,\mathbf{u}_7\)</span>，则初等载荷矩阵为：
+$$
+\mathbf{\Lambda}_1=[\sqrt{\lambda_1}\mathbf{u}_1,\sqrt{\lambda_1}\mathbf{u}_2,...,\sqrt{\lambda_1}\mathbf{u}_7]
+$$
+计算得出前三个特征值的贡献率达到了 <span class="arithmatex">\(98\%\)</span> ，选择三个主因子，对提取的因子载荷矩阵进行旋转，得到矩阵 <span class="arithmatex">\(\mathbf{\Lambda}_2=\mathbf{\Lambda}^{(3)}_1\mathbf{T}\)</span> ,</p>
+<p>取<span class="arithmatex">\(\mathbf{\Lambda}_1\)</span>的前三列，<span class="arithmatex">\(\mathbf{T}\)</span>为正交矩阵，构造因子模型：
+$$
+\begin{align<em>}
+    \begin{cases}
+        \widetilde{x}<em>1=\alpha</em>{11}\widetilde{F}<em>1+\alpha</em>{12}\widetilde{F}<em>2+\alpha</em>{13}\widetilde{F}<em>3 \
+        \vdots\
+        \widetilde{x}_7=\alpha</em>{71}\widetilde{F}<em>1+\alpha</em>{72}\widetilde{F}<em>2+\alpha</em>{73}\widetilde{F}_3 
+    \end{cases}
+\end{align</em>}
+$$
+最终，得到了三个因子，第一个因子是 <span class="arithmatex">\(x_1\)</span> ，第二个因子是 <span class="arithmatex">\(x_5\)</span> ，第三个因子是 <span class="arithmatex">\(x_2\)</span> 。</p>
+<h3 id="3">3.程序</h3>
+<p>求解的MATLAB程序如下：</p>
+<pre><code class="language-matlab">clc, clear
+
+% 给定的原始数据矩阵
+dd = [3.76, 3.66, 0.54, 5.28, 9.77, 13.74, 4.78; ...
+    8.59, 4.99, 1.34, 10.02, 7.5, 10.16, 2.13; ...
+    6.22, 6.14, 4.52, 9.84, 2.17, 2.73, 1.09; ...
+    7.57, 7.28, 7.07, 12.66, 1.79, 2.1, 0.82; ...
+    9.03, 7.08, 2.59, 11.76, 4.54, 6.22, 1.28; ...
+    5.51, 3.98, 1.3, 6.92, 5.33, 7.3, 2.4; ...
+    3.27, 0.62, 0.44, 3.36, 7.63, 8.84, 8.39; ...
+    8.74, 7, 3.31, 11.68, 3.53, 4.76, 1.12; ...
+    9.64, 9.49, 1.03, 13.57, 13.13, 18.52, 2.35; ...
+    9.73, 1.33, 1, 9.87, 9.87, 11.06, 3.7; ...
+    8.59, 2.98, 1.17, 9.17, 7.85, 9.91, 2.62; ...
+    7.12, 5.49, 3.68, 9.72, 2.64, 3.43, 1.19; ...
+    4.69, 3.01, 2.17, 5.98, 2.76, 3.55, 2.01; ...
+    5.51, 1.34, 1.27, 5.81, 4.57, 5.38, 3.43; ...
+    1.66, 1.61, 1.57, 2.8, 1.78, 2.09, 3.72; ...
+    5.9, 5.76, 1.55, 8.84, 5.4, 7.5, 1.97; ...
+    9.84, 9.27, 1.51, 13.6, 9.02, 12.67, 1.75; ...
+    8.39, 4.92, 2.54, 10.05, 3.96, 5.24, 1.43; ...
+    4.94, 4.38, 1.03, 6.68, 6.49, 9.06, 2.81; ...
+    7.23, 2.3, 1.77, 7.79, 4.39, 5.37, 2.27; ...
+    9.46, 7.31, 1.04, 12, 11.58, 16.18, 2.42; ...
+    9.55, 5.35, 4.25, 11.74, 2.77, 3.51, 1.05; ...
+    4.94, 4.52, 4.5, 8.07, 1.79, 2.1, 1.29; ...
+    8.21, 3.08, 2.42, 9.1, 3.75, 4.66, 1.72; ...
+    9.41, 6.44, 5.11, 12.5, 2.45, 3.1, 0.91];
+
+% 标准化数据（Z-score标准化）
+stdd = zscore(dd);
+
+% 计算标准化数据的相关系数矩阵
+r = corrcoef(stdd);
+
+% 使用PCA对相关系数矩阵进行主成分分析，获取特征向量（vec1）、特征值（val）和贡献率（con）
+[vec1, val, con] = pcacov(r);
+
+% 计算符号矩阵f1，其大小与vec1一致，元素值均为vec1所有元素的和的符号
+f1 = repmat(sign(sum(vec1)), size(vec1, 1), 1);
+
+% 将特征向量（vec1）与符号矩阵（f1）相乘，得到新的特征向量矩阵（vec2）
+vec2 = vec1 .* f1;
+
+% 计算矩阵f2，其大小与vec2一致，元素值均为val中的特征值的平方根
+f2 = repmat(sqrt(val)', size(vec2, 1), 1);
+
+% 将vec2与f2相乘，得到最终的载荷矩阵（a）
+a = vec2 .* f2;
+
+% 设定保留的主成分数目
+num = 3;
+
+% 保留前num个主成分
+am = a(:, [1:num]);
+
+% 使用varimax方法对主成分进行旋转，获得旋转后的载荷矩阵（b）以及得分矩阵（t）
+[b, t] = rotatefactors(am, 'Method', 'varimax');
+
+% 将未保留的主成分载荷也加入旋转后的载荷矩阵，得到旋转后的完整载荷矩阵（bt）
+bt = [b, a(:, [num + 1:end])];
+
+% 计算每个变量在各个主成分上的载荷的平方和，得到公共度（degree）
+degree = sum(b.^2, 2);
+
+% 计算每个主成分的总的贡献率（contr）
+contr = sum(bt.^2);
+
+% 计算被保留的主成分的累计贡献率（rate）
+rate = contr(1:num) / sum(contr);
+
+% 计算因子分析的系数矩阵（coef）
+coef = inv(r) * b;
+</code></pre>
+<h3 id="4">4.结果</h3>
+<p><img alt="image-20230601000137991" src="https://raw.githubusercontent.com/Zhu-Shatong/cloudimg/master/img/image-20230601000137991.png" /></p>
+<p>得到的因子分析表如下：</p>
+<p><img src="https://raw.githubusercontent.com/Zhu-Shatong/cloudimg/master/img/image-20230531203257585.png" alt="image-20230531203257585" style="zoom: 50%;" /></p>
+<p>得到了三个因子，第一个因子是 <span class="arithmatex">\(x_1\)</span> ，第二个因子是 <span class="arithmatex">\(x_5\)</span> ，第三个因子是 <span class="arithmatex">\(x_2\)</span> 。</p>
+<h2 id="1061">习题10.6（1）</h2>
+<h3 id="1_1">1. 题目要求</h3>
+<p><img alt="image-20230531204044096" src="C:\Users\admin\AppData\Roaming\Typora\typora-user-images\image-20230531204044096.png" /></p>
+<h3 id="2_1">2.解题过程——对应分析</h3>
+<p><strong>解：</strong></p>
+<p>分别用 <span class="arithmatex">\(i=1,\dots,16\)</span> 表示，以 <span class="arithmatex">\(a_{ij}\)</span> 表示第  i 个地区第 j 个指标变量 <span class="arithmatex">\(x_j\)</span> 的取值。</p>
+<p>记：
+$$
+\mathbf{A}=(a_{ij})<em>{16\times6}
+$$
+记：
+$$
+a</em>{i\cdot}=\sum_{j=1}^{6}a_{ij},a_{\cdot j}=\sum_{i=1}^{16}a_{ij}
+$$
+首先把 <span class="arithmatex">\(\mathbf{A}\)</span> 化为规格化的“概率”矩阵 <span class="arithmatex">\(\mathbf{P}\)</span> ， 记 <span class="arithmatex">\(\mathbf{P}=(p_{ij})_{16\times6}\)</span> ，其中 <span class="arithmatex">\(p_{ij}=a_{ij}/\mathbf{T}\)</span> ，<span class="arithmatex">\(\mathbf{T}=\sum_{i=1}^{16}\sum_{j=1}^{6}a_{ij}\)</span>。再对数据进行对应变换，令 <span class="arithmatex">\(\mathbf{B}=(b_{ij})_{16\times6}\)</span> ，其中：
+$$
+b_{ij}=\frac{p_{ij}-p_{i\cdot}p_{\cdot j}}{\sqrt{p_{i\cdot}p_{\cdot j}}} </p>
+<p>= \frac{a_{ij}-a_{i\cdot}a_{\cdot j}/\mathbf{T}}{\sqrt{a_{i\cdot}a_{\cdot j}}},</p>
+<p>i=1,2,\dots, 16,j=1,2,\dots,6. 
+$$
+对 <span class="arithmatex">\(\mathbf{B}\)</span> 进行奇异值分解，<span class="arithmatex">\(\mathbf{B}=\mathbf{U}\varLambda \mathbf{V}^{\mathbf{T}} <span class="arithmatex">(，其中 <span class="arithmatex">\(\mathbf{U}\)</span> 为 <span class="arithmatex">\(16\times 16\)</span> 正交矩阵，\)</span>\mathbf{V}\)</span>为 <span class="arithmatex">\(6\times6\)</span> 正交矩阵，<span class="arithmatex">\(\varLambda =\begin{bmatrix} \varLambda_m &amp;0\\ 0&amp;0 \end{bmatrix}\)</span>，这里 $ \varLambda_m=diag(d_1,\dots,d_m) $ ，其中 <span class="arithmatex">\(d_i(i=1,2,\dots,m)\)</span> 为 <span class="arithmatex">\(\mathbf{B}\)</span> 的奇异值。</p>
+<p>记 <span class="arithmatex">\(\mathbf{U}=[\mathbf{U_1} \vdots \mathbf{U_2}],\mathbf{V}=[\mathbf{V_1} \vdots \mathbf{V_2}]\)</span> ，其中 <span class="arithmatex">\(\mathbf{U_1}\)</span> 为<span class="arithmatex">\(16\times m\)</span> 的列正交矩阵，<span class="arithmatex">\(\mathbf{V_1}\)</span> 为 <span class="arithmatex">\(6\times m\)</span> 的列正交矩阵，则 <span class="arithmatex">\(\mathbf{B}\)</span> 的奇异值分解式等价于<span class="arithmatex">\(\mathbf{B}=\mathbf{U_1}\varLambda\mathbf{V_1}^T\)</span>。</p>
+<p>记 <span class="arithmatex">\(\mathbf{D_r}=diag(p_{1\cdot},p_{2\cdot},\dots,p_{16\cdot}),\mathbf{D_c}=diag(p_{\cdot1},p_{\cdot2},\dots,p_{\cdot6})\)</span> ，其中 <span class="arithmatex">\(p_{i\cdot}=\sum_{j=1}^{6}p_{ij}\)</span> ，<span class="arithmatex">\(p_{\cdot j}=\sum_{i=1}^{16}p_{ij}\)</span>。则列轮廓的坐标为  <span class="arithmatex">\(\mathbf{F}=\mathbf{D}_{c}^{-1/2}\mathbf{V_1}\varLambda_m\)</span> ，行轮廓的坐标为  <span class="arithmatex">\(\mathbf{G}=\mathbf{D}_{r}^{-1/2}\mathbf{V_1}\varLambda_m\)</span> 。最后通过贡献率的比较确定需要截取的维数，形成对应分析图。</p>
+<p>计算 <span class="arithmatex">\(\mathbf{B^T}\mathbf{B}\)</span> 的特征值，惯量，表示相应维数对各类别的解释量，最大维数 <span class="arithmatex">\(m=\min{16-1,6-1}\)</span> ，本例最多可以产生5个维数。从下表可看出，第一维数的解释量达 77.4% ，前两个维数的解释度已达92.1%。</p>
+<table>
+<thead>
+<tr>
+<th>维数</th>
+<th>奇异值</th>
+<th>惯量</th>
+<th>贡献率</th>
+<th>累积贡献率</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>1</td>
+<td>0.189893</td>
+<td>0.036059</td>
+<td>0.773764</td>
+<td>0.773764</td>
+</tr>
+<tr>
+<td>2</td>
+<td>0.082831</td>
+<td>0.006861</td>
+<td>0.147224</td>
+<td>0.920988</td>
+</tr>
+<tr>
+<td>3</td>
+<td>0.047138</td>
+<td>0.002222</td>
+<td>0.047618</td>
+<td>0.968669</td>
+</tr>
+<tr>
+<td>4</td>
+<td>0.03113</td>
+<td>0.000969</td>
+<td>0.020795</td>
+<td>0.989464</td>
+</tr>
+<tr>
+<td>5</td>
+<td>0.022159</td>
+<td>0.000491</td>
+<td>0.010536</td>
+<td>1</td>
+</tr>
+</tbody>
+</table>
+<p>行坐标</p>
+<table>
+<thead>
+<tr>
+<th></th>
+<th>北京</th>
+<th>天津</th>
+<th>河北</th>
+<th>山西</th>
+<th>内蒙古</th>
+<th>辽宁</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>第一维</td>
+<td>-0.07905</td>
+<td>-0.06783</td>
+<td>-0.26354</td>
+<td>0.457766</td>
+<td>0.07715</td>
+<td>-0.13567</td>
+</tr>
+<tr>
+<td>第二维</td>
+<td>-0.0354</td>
+<td>0.138818</td>
+<td>-0.10045</td>
+<td>-0.05715</td>
+<td>0.156316</td>
+<td>-0.08455</td>
+</tr>
+</tbody>
+</table>
+<table>
+<thead>
+<tr>
+<th></th>
+<th>吉林</th>
+<th>黑龙江</th>
+<th>上海</th>
+<th>江苏</th>
+<th>浙江</th>
+<th>安徽</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>第一维</td>
+<td>-0.27126</td>
+<td>-0.19757</td>
+<td>0.386809</td>
+<td>0.086955</td>
+<td>0.079122</td>
+<td>-0.14212</td>
+</tr>
+<tr>
+<td>第二维</td>
+<td>-0.00074</td>
+<td>0.045985</td>
+<td>-0.07833</td>
+<td>-0.04222</td>
+<td>-0.01969</td>
+<td>-0.14225</td>
+</tr>
+</tbody>
+</table>
+<table>
+<thead>
+<tr>
+<th></th>
+<th>福建</th>
+<th>江西</th>
+<th>山东</th>
+<th>河南</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>第一维</td>
+<td>-0.17469</td>
+<td>-0.18859</td>
+<td>0.069823</td>
+<td>-0.1462</td>
+</tr>
+<tr>
+<td>第二维</td>
+<td>-0.11317</td>
+<td>-0.1527</td>
+<td>0.100318</td>
+<td>0.032858</td>
+</tr>
+</tbody>
+</table>
+<p>列坐标</p>
+<table>
+<thead>
+<tr>
+<th></th>
+<th>x1</th>
+<th>x2</th>
+<th>x3</th>
+<th>x4</th>
+<th>x5</th>
+<th>x6</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>第一维</td>
+<td>-0.07905</td>
+<td>-0.06783</td>
+<td>-0.26354</td>
+<td>0.457766</td>
+<td>0.07715</td>
+<td>-0.13567</td>
+</tr>
+<tr>
+<td>第二维</td>
+<td>-0.0354</td>
+<td>0.138818</td>
+<td>-0.10045</td>
+<td>-0.05715</td>
+<td>0.156316</td>
+<td>-0.08455</td>
+</tr>
+</tbody>
+</table>
+<p>在下图中，给出16个地区和6个指标在相同坐标系上绘制的散布图。</p>
+<p><img src="C:\Users\admin\AppData\Roaming\Typora\typora-user-images\image-20230601004111514.png" alt="image-20230601004111514" style="zoom: 33%;" /></p>
+<p>从图中可以看出，地区和指标点可以分为两类，</p>
+<p>第一类包括指标点 <span class="arithmatex">\(x_4,x_5\)</span> ，地区点为北京、天津、河北、上海、江苏、浙江、山东；</p>
+<p>第二类包括指标点 <span class="arithmatex">\(x_1,x_2,x_3,x_6\)</span> ，地区点为其余地区。</p>
+<h3 id="3_1">3.程序</h3>
+<p>求解的MATLAB程序如下：</p>
+<pre><code class="language-matlab">clc, clear
+
+% 原始数据，其中包含了16个地区的6项指标
+originalData = [190.33, 43.77, 9.73, 60.54, 49.01, 9.04; ...
+    135.20, 36.40, 10.47, 44.16, 36.49, 3.94; ...
+    95.21, 22.83, 9.30, 22.44, 22.81, 2.80; ...
+    104.78, 25.11, 6.40, 9.89, 18.17, 3.25; ...
+    128.41, 27.63, 8.94, 12.58, 23.99, 3.27; ...
+    145.68, 32.83, 17.79, 27.29, 39.09, 3.47; ...
+    159.37, 33.38, 18.37, 11.81, 25.29, 5.22; ...
+    116.22, 29.57, 13.24, 13.76, 21.75, 6.04; ...
+    221.11, 38.64, 12.53, 115.65, 50.82, 5.89; ...
+    144.98, 29.12, 11.67, 42.60, 27.30, 5.74; ...
+    169.92, 32.75, 12.72, 47.12, 34.35, 5.00; ...
+    153.11, 23.09, 15.62, 23.54, 18.18, 6.39; ...
+    144.92, 21.26, 16.96, 19.52, 21.75, 6.73; ...
+    140.54, 21.50, 17.64, 19.19, 15.97, 4.94; ...
+    115.84, 30.26, 12.20, 33.61, 33.77, 3.85; ...
+    101.18, 23.26, 8.46, 20.20, 20.50, 4.30];
+
+% 计算原始数据的总和
+totalSum = sum(sum(originalData));
+
+% 计算原始数据的比例
+ratioData = originalData / totalSum;
+
+% 计算行和列的比例
+rowRatio = sum(ratioData, 2);
+columnRatio = sum(ratioData);
+
+% 计算行剖面数据
+Row_prifile = originalData ./ repmat(sum(originalData, 2), 1, size(originalData, 2));
+
+% 计算B（B为对应分析的基础矩阵）
+B = (ratioData - rowRatio * columnRatio) ./ sqrt(rowRatio*columnRatio);
+
+% 对B矩阵进行奇异值分解，得到U，S，V矩阵
+[U, S, V] = svd(B, 'econ');
+
+% 对V矩阵列求和并根据其符号调整权重
+W1 = sign(repmat(sum(V), size(V, 1), 1));
+
+% 对U矩阵列求和并根据其符号调整权重
+W2 = sign(repmat(sum(V), size(U, 1), 1));
+
+% 应用权重调整V和U矩阵
+V_adjusted = V .* W1;
+U_adjusted = U .* W2;
+
+% 计算lambda（特征值的平方）
+lambda = diag(S).^2;
+
+% 计算卡方统计量
+chi2Square = totalSum * (lambda);
+
+% 计算总的卡方统计量
+totalChi2Square = sum(chi2Square);
+
+% 计算贡献率
+contributionRate = lambda / sum(lambda);
+
+% 计算累计贡献率
+cumulativeRate = cumsum(contributionRate);
+
+% 计算行轮廓坐标
+beta = diag(rowRatio.^(-1 / 2)) * U_adjusted;
+G = beta * S
+
+% 计算列轮廓坐标
+alpha = diag(columnRatio.^(-1 / 2)) * V_adjusted;
+F = alpha * S
+
+% 计算样本点的个数
+numOfSample = size(G, 1);
+
+% 计算坐标的取值范围
+range = minmax(G(:, [1, 2])');
+
+% 画图略
+</code></pre>
+<h3 id="4_1">4.结果</h3>
+<p><img alt="image-20230601003301320" src="C:\Users\admin\AppData\Roaming\Typora\typora-user-images\image-20230601003301320.png" /></p>
+<p>详见上文分析过程，地区和指标点可以分为两类，</p>
+<p>第一类包括指标点 <span class="arithmatex">\(x_4,x_5\)</span> ，地区点为北京、天津、河北、上海、江苏、浙江、山东；</p>
+<p>第二类包括指标点 <span class="arithmatex">\(x_1,x_2,x_3,x_6\)</span> ，地区点为其余地区。</p>
+<h2 id="1062">习题10.6（2）</h2>
+<h3 id="1_2">1. 题目要求</h3>
+<p>同上。</p>
+<h3 id="2r">2.解题过程——R型因子分析</h3>
+<p><strong>解：</strong></p>
+<p>对数据进行标准化处理。</p>
+<p>计算变量间的相关系数得出相关矩阵 <span class="arithmatex">\(\mathbf{R}\)</span> ，然后计算初等载荷矩阵 <span class="arithmatex">\(\mathbf{\Lambda_1}\)</span> 。</p>
+<p>计算得到特征根与各因子的贡献如下表所示。</p>
+<table>
+<thead>
+<tr>
+<th>value</th>
+<th>x1</th>
+<th>x2</th>
+<th>x3</th>
+<th>x4</th>
+<th>x5</th>
+<th>x6</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>特征值</td>
+<td>3.55842</td>
+<td>1.316252</td>
+<td>0.608239</td>
+<td>0.373383</td>
+<td>0.107178</td>
+<td>0.036527</td>
+</tr>
+<tr>
+<td>贡献率</td>
+<td>59.30701</td>
+<td>21.93754</td>
+<td>10.13732</td>
+<td>6.223052</td>
+<td>1.786295</td>
+<td>0.608786</td>
+</tr>
+<tr>
+<td>累积贡献率</td>
+<td>59.30701</td>
+<td>81.24454</td>
+<td>91.38187</td>
+<td>97.60492</td>
+<td>99.39121</td>
+<td>100</td>
+</tr>
+</tbody>
+</table>
+<p>选择 <span class="arithmatex">\(m(m\leq6)\)</span> 个主因子，构造因子模型：
+$$
+\begin{align<em>}    \begin{cases}        \widetilde{x}<em>1=\alpha</em>{11}\widetilde{F}<em>1+\alpha</em>{12}\widetilde{F}<em>2+\alpha</em>{13}\widetilde{F}<em>3 \        \vdots\        \widetilde{x}_7=\alpha</em>{71}\widetilde{F}<em>1+\alpha</em>{72}\widetilde{F}<em>2+\alpha</em>{73}\widetilde{F}_3     \end{cases}\end{align</em>}
+$$
+求得因子载荷等估计。</p>
+<p>最终，通过表格，可以看出，得到了3个因子，第一个因子是穿住用因子，第二个因子是燃料因子，第3个因子是文化因子。</p>
+<p>第(1)问中得到 <span class="arithmatex">\(x_4,x_5\)</span> 是一类变量，这里得到 <span class="arithmatex">\(x_2,x_4,x_5\)</span> 是一类变量，略有差异。</p>
+<h3 id="3_2">3.程序</h3>
+<p>求解的MATLAB程序如下：</p>
+<pre><code class="language-matlab">clc, clear 
+
+% 原始数据，包含了16个地区的6项指标
+originalData = [190.33, 43.77, 9.73, 60.54, 49.01, 9.04; ...
+    135.20, 36.40, 10.47, 44.16, 36.49, 3.94; ...
+    95.21, 22.83, 9.30, 22.44, 22.81, 2.80; ...
+    104.78, 25.11, 6.40, 9.89, 18.17, 3.25; ...
+    128.41, 27.63, 8.94, 12.58, 23.99, 3.27; ...
+    145.68, 32.83, 17.79, 27.29, 39.09, 3.47; ...
+    159.37, 33.38, 18.37, 11.81, 25.29, 5.22; ...
+    116.22, 29.57, 13.24, 13.76, 21.75, 6.04; ...
+    221.11, 38.64, 12.53, 115.65, 50.82, 5.89; ...
+    144.98, 29.12, 11.67, 42.60, 27.30, 5.74; ...
+    169.92, 32.75, 12.72, 47.12, 34.35, 5.00; ...
+    153.11, 23.09, 15.62, 23.54, 18.18, 6.39; ...
+    144.92, 21.26, 16.96, 19.52, 21.75, 6.73; ...
+    140.54, 21.50, 17.64, 19.19, 15.97, 4.94; ...
+    115.84, 30.26, 12.20, 33.61, 33.77, 3.85; ...
+    101.18, 23.26, 8.46, 20.20, 20.50, 4.30];
+
+% 数据标准化
+standardizedData = zscore(originalData);
+
+% 计算相关性矩阵
+correlationMatrix = corrcoef(standardizedData);
+
+% 使用主成分分析方法对相关性矩阵进行处理，得到特征向量、特征值和贡献率
+[eigenvectors, eigenvalues, contribution] = pcacov(correlationMatrix);
+
+% 计算累积贡献率
+cumulativeContribution = cumsum(contribution);
+
+% 根据特征向量的符号进行调整
+adjustedSigns = repmat(sign(sum(eigenvectors)), size(eigenvectors, 1), 1);
+adjustedEigenvectors = eigenvectors .* adjustedSigns;
+
+% 根据特征值进行缩放
+scaledFactors = repmat(sqrt(eigenvalues)', size(adjustedEigenvectors, 1), 1);
+scaledEigenvectors = adjustedEigenvectors .* scaledFactors;
+
+% 计算贡献率
+contribution1 = sum(scaledEigenvectors.^2);
+
+% 选择的因子数量
+factorNum = 3;
+
+% 根据选择的因子数量得到对应的因子
+selectedFactors = scaledEigenvectors(:, [1:factorNum]);
+
+% 使用方差最大法进行因子旋转
+[rotatedFactors, factorMatrix] = rotatefactors(selectedFactors, 'method', 'varimax')
+
+% 合并旋转后的因子和其他因子
+mergedFactors = [rotatedFactors, scaledEigenvectors(:, [factorNum + 1:end])];
+
+% 计算因子载荷量
+factorLoads = sum(rotatedFactors.^2, 2)
+
+% 计算贡献率
+contribution2 = sum(mergedFactors.^2)
+
+% 计算每个因子的贡献率
+contributionRate = contribution2(1:factorNum) / sum(contribution2);
+
+% 计算因子得分系数矩阵
+factorScoreCoefficients = inv(correlationMatrix) * rotatedFactors;
+</code></pre>
+<h3 id="4_2">4.结果</h3>
+<p><img alt="image-20230601010950325" src="C:\Users\admin\AppData\Roaming\Typora\typora-user-images\image-20230601010950325.png" /></p>
+<p>求得因子载荷等估计如下表所示。</p>
+<p><img src="C:\Users\admin\AppData\Roaming\Typora\typora-user-images\image-20230531234337263.png" alt="image-20230531234337263" style="zoom: 50%;" /></p>
+<p>可以看出，得到了3个因子，第一个因子是穿住用因子，第二个因子是燃料因子，第3个因子是文化因子。</p>
+<p>第(1)问中得到 <span class="arithmatex">\(x_4,x_5\)</span> 是一类变量，这里得到 <span class="arithmatex">\(x_2,x_4,x_5\)</span> 是一类变量，略有差异。</p>
+<h2 id="1063">习题10.6（3）</h2>
+<h3 id="1_3">1. 题目要求</h3>
+<p>同上。</p>
+<h3 id="2_2">2.解题过程——聚类分析</h3>
+<p><strong>解：</strong></p>
+<p>首先计算变量间的相关系数。用两变量<span class="arithmatex">\(x_j\)</span>与<span class="arithmatex">\(x_k\)</span>的相关系数作为它们的相似性度量,即<span class="arithmatex">\(x_j\)</span>与<span class="arithmatex">\(x_k\)</span>的相似系数为
+$$
+r_{jk} = \frac{\sum_{i=1}^{16}(a_{ij}-\mu_{j})(a_{ik}-\mu_k)}</p>
+<p>{[\sum_{i=1}^{16}(a_{ij}-\mu_{j})^2\sum_{i=1}^{16}(a_{ik}-\mu_k)^2]^{1/2}},j,k=1,\dots,6.
+$$
+然后计算6个变量两两之间的距离，构造距离矩阵。</p>
+<p>接着使用最短距离法来测量类与类之间的距离,记类<span class="arithmatex">\(G_{p}\)</span>和<span class="arithmatex">\(G_{q}\)</span>之间的距离:
+$$
+D(G_p,G_q) = \min_{i\in G_p,k\in G_q }{d_{ik}}.
+$$
+变量聚类的结果是变量<span class="arithmatex">\(x_3\)</span>自成一类，其他变量为一类。画出的变量聚类图如下图所示。</p>
+<p><img src="C:\Users\admin\AppData\Roaming\Typora\typora-user-images\image-20230601011949010.png" alt="image-20230601011949010" style="zoom: 67%;" /></p>
+<p>最后进行样本点聚类的<span class="arithmatex">\(\mathbf{Q}\)</span>型聚类分析。</p>
+<p>计算16个样本点之间的两两马氏距离。</p>
+<p>类与类间相似性度量。</p>
+<p>画聚类图，并对样本点进行分类。</p>
+<p>样本点的聚类结果如下图所示。通过聚类图，可以把地区分成4类，北京自成一类，吉林自成一类，上海自成一类，其他地区为一类。</p>
+<p><img src="C:\Users\admin\AppData\Roaming\Typora\typora-user-images\image-20230601012106567.png" alt="image-20230601012106567" style="zoom:67%;" /></p>
+<h3 id="3_3">3.程序</h3>
+<p>求解的MATLAB程序如下：R型聚类</p>
+<pre><code class="language-matlab">clc, clear 
+
+% 原始数据，包含了16个地区的6项指标
+originalData = [190.33, 43.77, 9.73, 60.54, 49.01, 9.04; ...
+    135.20, 36.40, 10.47, 44.16, 36.49, 3.94; ...
+    95.21, 22.83, 9.30, 22.44, 22.81, 2.80; ...
+    104.78, 25.11, 6.40, 9.89, 18.17, 3.25; ...
+    128.41, 27.63, 8.94, 12.58, 23.99, 3.27; ...
+    145.68, 32.83, 17.79, 27.29, 39.09, 3.47; ...
+    159.37, 33.38, 18.37, 11.81, 25.29, 5.22; ...
+    116.22, 29.57, 13.24, 13.76, 21.75, 6.04; ...
+    221.11, 38.64, 12.53, 115.65, 50.82, 5.89; ...
+    144.98, 29.12, 11.67, 42.60, 27.30, 5.74; ...
+    169.92, 32.75, 12.72, 47.12, 34.35, 5.00; ...
+    153.11, 23.09, 15.62, 23.54, 18.18, 6.39; ...
+    144.92, 21.26, 16.96, 19.52, 21.75, 6.73; ...
+    140.54, 21.50, 17.64, 19.19, 15.97, 4.94; ...
+    115.84, 30.26, 12.20, 33.61, 33.77, 3.85; ...
+    101.18, 23.26, 8.46, 20.20, 20.50, 4.30];
+
+% 计算相关性矩阵
+correlationMatrix = corrcoef(originalData);
+
+% 计算距离矩阵
+distanceMatrix = 1 - abs(correlationMatrix);
+distanceMatrix = tril(distanceMatrix);
+
+% 将距离矩阵转为一维向量
+distanceVector = nonzeros(distanceMatrix);
+distanceVector = distanceVector';
+
+% 使用层次聚类算法进行聚类
+linkageCluster = linkage(distanceVector);
+
+% 选择最大聚类数量为2，得到每个样本的类别
+clusterLabels = cluster(linkageCluster, 'maxclust', 2);
+
+% 找到属于第一类的样本
+index1 = find(clusterLabels == 1); 
+index1 = index1'
+
+% 找到属于第二类的样本
+index2 = find(clusterLabels == 2); 
+index2 = index2'
+
+% 生成树状图
+h = dendrogram(linkageCluster);
+
+% 设置树状图的颜色和线条宽度
+set(h, 'Color', 'k', 'LineWidth', 1.3)
+</code></pre>
+<p>求解的MATLAB程序如下：Q型聚类</p>
+<pre><code class="language-matlab">clc, clear 
+
+% 原始数据，包含了16个地区的6项指标
+originalData = [190.33, 43.77, 9.73, 60.54, 49.01, 9.04; ...
+    135.20, 36.40, 10.47, 44.16, 36.49, 3.94; ...
+    95.21, 22.83, 9.30, 22.44, 22.81, 2.80; ...
+    104.78, 25.11, 6.40, 9.89, 18.17, 3.25; ...
+    128.41, 27.63, 8.94, 12.58, 23.99, 3.27; ...
+    145.68, 32.83, 17.79, 27.29, 39.09, 3.47; ...
+    159.37, 33.38, 18.37, 11.81, 25.29, 5.22; ...
+    116.22, 29.57, 13.24, 13.76, 21.75, 6.04; ...
+    221.11, 38.64, 12.53, 115.65, 50.82, 5.89; ...
+    144.98, 29.12, 11.67, 42.60, 27.30, 5.74; ...
+    169.92, 32.75, 12.72, 47.12, 34.35, 5.00; ...
+    153.11, 23.09, 15.62, 23.54, 18.18, 6.39; ...
+    144.92, 21.26, 16.96, 19.52, 21.75, 6.73; ...
+    140.54, 21.50, 17.64, 19.19, 15.97, 4.94; ...
+    115.84, 30.26, 12.20, 33.61, 33.77, 3.85; ...
+    101.18, 23.26, 8.46, 20.20, 20.50, 4.30];
+
+% 计算原始数据的协方差
+covarianceMatrix = cov(originalData);
+
+% 初始化距离矩阵
+distanceMatrix = zeros(size(originalData, 1));
+
+% 计算Q型距离
+for j = 1:15
+    for i = j+1:16
+        distanceMatrix(i,j) = sqrt((originalData(i,:) - originalData(j,:)) * inv(covarianceMatrix) * (originalData(i,:) - originalData(j,:))');
+    end
+end
+
+% 将距离矩阵转为一维向量
+distanceVector = nonzeros(distanceMatrix);
+distanceVector = distanceVector';
+
+% 使用层次聚类算法进行聚类
+linkageCluster = linkage(distanceVector);
+
+% 生成树状图
+dendro = dendrogram(linkageCluster);
+
+% 设置树状图的颜色和线条宽度
+set(dendro,'Color','k','LineWidth',1.3)
+</code></pre>
+<h3 id="4_3">4.结果</h3>
+<p><img alt="image-20230601012351955" src="C:\Users\admin\AppData\Roaming\Typora\typora-user-images\image-20230601012351955.png" /></p>
+<p><img alt="image-20230601012407174" src="C:\Users\admin\AppData\Roaming\Typora\typora-user-images\image-20230601012407174.png" /></p>
+<p>变量<span class="arithmatex">\(x_3\)</span>自成一类，其他变量为一类。</p>
+<p>北京自成一类，吉林自成一类，上海自成一类，其他地区为一类。</p>
+
+
+
+
+
+
+
+
+
+
+
+
+                
+              </article>
+            </div>
+          
+          
+  <script>var tabs=__md_get("__tabs");if(Array.isArray(tabs))e:for(var set of document.querySelectorAll(".tabbed-set")){var tab,labels=set.querySelector(".tabbed-labels");for(tab of tabs)for(var label of labels.getElementsByTagName("label"))if(label.innerText.trim()===tab){var input=document.getElementById(label.htmlFor);input.checked=!0;continue e}}</script>
+
+<script>var target=document.getElementById(location.hash.slice(1));target&&target.name&&(target.checked=target.name.startsWith("__tabbed_"))</script>
+        </div>
+        
+          <button type="button" class="md-top md-icon" data-md-component="top" hidden>
+  
+  <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M13 20h-2V8l-5.5 5.5-1.42-1.42L12 4.16l7.92 7.92-1.42 1.42L13 8v12Z"/></svg>
+  回到页面顶部
+</button>
+        
+      </main>
+      
+        <footer class="md-footer">
+  
+  <div class="md-footer-meta md-typeset">
+    <div class="md-footer-meta__inner md-grid">
+      <div class="md-copyright">
+  
+    <div class="md-copyright__highlight">
+      Copyright &copy; 2023-present <a href="https://github.com/Zhu-Shatong" target="_blank" rel="noopener noreferrer">Zhu-Shatong</a>
+    </div>
+  
+  
+    Made with
+    <a href="https://squidfunk.github.io/mkdocs-material/" target="_blank" rel="noopener">
+      Material for MkDocs
+    </a>
+  
+</div>
+      
+        <div class="md-social">
+  
+    
+    
+    
+    
+      
+      
+    
+    <a href="https://github.com/Zhu-Shatong" target="_blank" rel="noopener" title="github.com" class="md-social__link">
+      <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 496 512"><!--! Font Awesome Free 6.5.1 by @fontawesome - https://fontawesome.com License - https://fontawesome.com/license/free (Icons: CC BY 4.0, Fonts: SIL OFL 1.1, Code: MIT License) Copyright 2023 Fonticons, Inc.--><path d="M165.9 397.4c0 2-2.3 3.6-5.2 3.6-3.3.3-5.6-1.3-5.6-3.6 0-2 2.3-3.6 5.2-3.6 3-.3 5.6 1.3 5.6 3.6zm-31.1-4.5c-.7 2 1.3 4.3 4.3 4.9 2.6 1 5.6 0 6.2-2s-1.3-4.3-4.3-5.2c-2.6-.7-5.5.3-6.2 2.3zm44.2-1.7c-2.9.7-4.9 2.6-4.6 4.9.3 2 2.9 3.3 5.9 2.6 2.9-.7 4.9-2.6 4.6-4.6-.3-1.9-3-3.2-5.9-2.9zM244.8 8C106.1 8 0 113.3 0 252c0 110.9 69.8 205.8 169.5 239.2 12.8 2.3 17.3-5.6 17.3-12.1 0-6.2-.3-40.4-.3-61.4 0 0-70 15-84.7-29.8 0 0-11.4-29.1-27.8-36.6 0 0-22.9-15.7 1.6-15.4 0 0 24.9 2 38.6 25.8 21.9 38.6 58.6 27.5 72.9 20.9 2.3-16 8.8-27.1 16-33.7-55.9-6.2-112.3-14.3-112.3-110.5 0-27.5 7.6-41.3 23.6-58.9-2.6-6.5-11.1-33.3 2.6-67.9 20.9-6.5 69 27 69 27 20-5.6 41.5-8.5 62.8-8.5s42.8 2.9 62.8 8.5c0 0 48.1-33.6 69-27 13.7 34.7 5.2 61.4 2.6 67.9 16 17.7 25.8 31.5 25.8 58.9 0 96.5-58.9 104.2-114.8 110.5 9.2 7.9 17 22.9 17 46.4 0 33.7-.3 75.4-.3 83.6 0 6.5 4.6 14.4 17.3 12.1C428.2 457.8 496 362.9 496 252 496 113.3 383.5 8 244.8 8zM97.2 352.9c-1.3 1-1 3.3.7 5.2 1.6 1.6 3.9 2.3 5.2 1 1.3-1 1-3.3-.7-5.2-1.6-1.6-3.9-2.3-5.2-1zm-10.8-8.1c-.7 1.3.3 2.9 2.3 3.9 1.6 1 3.6.7 4.3-.7.7-1.3-.3-2.9-2.3-3.9-2-.6-3.6-.3-4.3.7zm32.4 35.6c-1.6 1.3-1 4.3 1.3 6.2 2.3 2.3 5.2 2.6 6.5 1 1.3-1.3.7-4.3-1.3-6.2-2.2-2.3-5.2-2.6-6.5-1zm-11.4-14.7c-1.6 1-1.6 3.6 0 5.9 1.6 2.3 4.3 3.3 5.6 2.3 1.6-1.3 1.6-3.9 0-6.2-1.4-2.3-4-3.3-5.6-2z"/></svg>
+    </a>
+  
+</div>
+      
+    </div>
+  </div>
+</footer>
+      
+    </div>
+    <div class="md-dialog" data-md-component="dialog">
+      <div class="md-dialog__inner md-typeset"></div>
+    </div>
+    
+    
+    <script id="__config" type="application/json">{"base": "..", "features": ["navigation.top", "navigation.tracking", "navigation.path", "search.suggest", "search.highlight", "search.share", "content.tabs.link", "content.code.annotation", "content.code.copy"], "search": "../assets/javascripts/workers/search.b8dbb3d2.min.js", "translations": {"clipboard.copied": "\u5df2\u590d\u5236", "clipboard.copy": "\u590d\u5236", "search.result.more.one": "\u5728\u8be5\u9875\u4e0a\u8fd8\u6709 1 \u4e2a\u7b26\u5408\u6761\u4ef6\u7684\u7ed3\u679c", "search.result.more.other": "\u5728\u8be5\u9875\u4e0a\u8fd8\u6709 # \u4e2a\u7b26\u5408\u6761\u4ef6\u7684\u7ed3\u679c", "search.result.none": "\u6ca1\u6709\u627e\u5230\u7b26\u5408\u6761\u4ef6\u7684\u7ed3\u679c", "search.result.one": "\u627e\u5230 1 \u4e2a\u7b26\u5408\u6761\u4ef6\u7684\u7ed3\u679c", "search.result.other": "# \u4e2a\u7b26\u5408\u6761\u4ef6\u7684\u7ed3\u679c", "search.result.placeholder": "\u952e\u5165\u4ee5\u5f00\u59cb\u641c\u7d22", "search.result.term.missing": "\u7f3a\u5c11", "select.version": "\u9009\u62e9\u5f53\u524d\u7248\u672c"}}</script>
+    
+    
+      <script src="../assets/javascripts/bundle.bd41221c.min.js"></script>
+      
+        <script src="../javascripts/katex.js"></script>
+      
+        <script src="https://cdnjs.cloudflare.com/ajax/libs/KaTeX/0.16.7/katex.min.js"></script>
+      
+        <script src="https://cdnjs.cloudflare.com/ajax/libs/KaTeX/0.16.7/contrib/auto-render.min.js"></script>
+      
+    
+  </body>
+</html>

@@ -1,0 +1,1337 @@
+
+<!doctype html>
+<html lang="zh" class="no-js">
+  <head>
+    
+      <meta charset="utf-8">
+      <meta name="viewport" content="width=device-width,initial-scale=1">
+      
+        <meta name="description" content="数学建模算法与应用（第2版） (2015, 国防工业出版社) ">
+      
+      
+        <meta name="author" content="Zhu Shatong">
+      
+      
+        <link rel="canonical" href="https://github.com/Zhu-Shatong/Mathematical-Modeling/%E7%AC%AC5%E8%AE%B2-%E5%BE%AE%E5%88%86%E6%96%B9%E7%A8%8B%E5%BB%BA%E6%A8%A1/">
+      
+      
+        <link rel="prev" href="../%E7%AC%AC4%E8%AE%B2-%E6%8F%92%E5%80%BC%E4%B8%8E%E6%8B%9F%E5%90%88/">
+      
+      
+        <link rel="next" href="../%E7%AC%AC6%E8%AE%B2-%E5%81%87%E8%AE%BE%E6%A3%80%E9%AA%8C/">
+      
+      
+      <link rel="icon" href="../assets/images/favicon.png">
+      <meta name="generator" content="mkdocs-1.5.3, mkdocs-material-9.5.15">
+    
+    
+      
+        <title>微分方程建模 - 数学建模基础知识配套习题与详解</title>
+      
+    
+    
+      <link rel="stylesheet" href="../assets/stylesheets/main.7e359304.min.css">
+      
+        
+        <link rel="stylesheet" href="../assets/stylesheets/palette.06af60db.min.css">
+      
+      
+
+
+    
+    
+      
+    
+    
+      
+        
+        
+        <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+        <link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Roboto:300,300i,400,400i,700,700i%7CRoboto+Mono:400,400i,700,700i&display=fallback">
+        <style>:root{--md-text-font:"Roboto";--md-code-font:"Roboto Mono"}</style>
+      
+    
+    
+      <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/KaTeX/0.16.7/katex.min.css">
+    
+    <script>__md_scope=new URL("..",location),__md_hash=e=>[...e].reduce((e,_)=>(e<<5)-e+_.charCodeAt(0),0),__md_get=(e,_=localStorage,t=__md_scope)=>JSON.parse(_.getItem(t.pathname+"."+e)),__md_set=(e,_,t=localStorage,a=__md_scope)=>{try{t.setItem(a.pathname+"."+e,JSON.stringify(_))}catch(e){}}</script>
+    
+      
+
+    
+    
+    
+  </head>
+  
+  
+    
+    
+      
+    
+    
+    
+    
+    <body dir="ltr" data-md-color-scheme="default" data-md-color-primary="indigo" data-md-color-accent="deep-purple">
+  
+    
+    <input class="md-toggle" data-md-toggle="drawer" type="checkbox" id="__drawer" autocomplete="off">
+    <input class="md-toggle" data-md-toggle="search" type="checkbox" id="__search" autocomplete="off">
+    <label class="md-overlay" for="__drawer"></label>
+    <div data-md-component="skip">
+      
+        
+        <a href="#-" class="md-skip">
+          跳转至
+        </a>
+      
+    </div>
+    <div data-md-component="announce">
+      
+    </div>
+    
+    
+      
+
+  
+
+<header class="md-header md-header--shadow" data-md-component="header">
+  <nav class="md-header__inner md-grid" aria-label="页眉">
+    <a href=".." title="数学建模基础知识配套习题与详解" class="md-header__button md-logo" aria-label="数学建模基础知识配套习题与详解" data-md-component="logo">
+      
+  
+  <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M12 8a3 3 0 0 0 3-3 3 3 0 0 0-3-3 3 3 0 0 0-3 3 3 3 0 0 0 3 3m0 3.54C9.64 9.35 6.5 8 3 8v11c3.5 0 6.64 1.35 9 3.54 2.36-2.19 5.5-3.54 9-3.54V8c-3.5 0-6.64 1.35-9 3.54Z"/></svg>
+
+    </a>
+    <label class="md-header__button md-icon" for="__drawer">
+      
+      <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M3 6h18v2H3V6m0 5h18v2H3v-2m0 5h18v2H3v-2Z"/></svg>
+    </label>
+    <div class="md-header__title" data-md-component="header-title">
+      <div class="md-header__ellipsis">
+        <div class="md-header__topic">
+          <span class="md-ellipsis">
+            数学建模基础知识配套习题与详解
+          </span>
+        </div>
+        <div class="md-header__topic" data-md-component="header-topic">
+          <span class="md-ellipsis">
+            
+              微分方程建模
+            
+          </span>
+        </div>
+      </div>
+    </div>
+    
+      
+        <form class="md-header__option" data-md-component="palette">
+  
+    
+    
+    
+    <input class="md-option" data-md-color-media="(prefers-color-scheme: light)" data-md-color-scheme="default" data-md-color-primary="indigo" data-md-color-accent="deep-purple"  aria-label="Switch to dark mode"  type="radio" name="__palette" id="__palette_0">
+    
+      <label class="md-header__button md-icon" title="Switch to dark mode" for="__palette_1" hidden>
+        <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M12 8a4 4 0 0 0-4 4 4 4 0 0 0 4 4 4 4 0 0 0 4-4 4 4 0 0 0-4-4m0 10a6 6 0 0 1-6-6 6 6 0 0 1 6-6 6 6 0 0 1 6 6 6 6 0 0 1-6 6m8-9.31V4h-4.69L12 .69 8.69 4H4v4.69L.69 12 4 15.31V20h4.69L12 23.31 15.31 20H20v-4.69L23.31 12 20 8.69Z"/></svg>
+      </label>
+    
+  
+    
+    
+    
+    <input class="md-option" data-md-color-media="(prefers-color-scheme: dark)" data-md-color-scheme="slate" data-md-color-primary="indigo" data-md-color-accent="deep-purple"  aria-label="Switch to light mode"  type="radio" name="__palette" id="__palette_1">
+    
+      <label class="md-header__button md-icon" title="Switch to light mode" for="__palette_0" hidden>
+        <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M12 18c-.89 0-1.74-.2-2.5-.55C11.56 16.5 13 14.42 13 12c0-2.42-1.44-4.5-3.5-5.45C10.26 6.2 11.11 6 12 6a6 6 0 0 1 6 6 6 6 0 0 1-6 6m8-9.31V4h-4.69L12 .69 8.69 4H4v4.69L.69 12 4 15.31V20h4.69L12 23.31 15.31 20H20v-4.69L23.31 12 20 8.69Z"/></svg>
+      </label>
+    
+  
+</form>
+      
+    
+    
+      <script>var media,input,key,value,palette=__md_get("__palette");if(palette&&palette.color){"(prefers-color-scheme)"===palette.color.media&&(media=matchMedia("(prefers-color-scheme: light)"),input=document.querySelector(media.matches?"[data-md-color-media='(prefers-color-scheme: light)']":"[data-md-color-media='(prefers-color-scheme: dark)']"),palette.color.media=input.getAttribute("data-md-color-media"),palette.color.scheme=input.getAttribute("data-md-color-scheme"),palette.color.primary=input.getAttribute("data-md-color-primary"),palette.color.accent=input.getAttribute("data-md-color-accent"));for([key,value]of Object.entries(palette.color))document.body.setAttribute("data-md-color-"+key,value)}</script>
+    
+    
+    
+      <label class="md-header__button md-icon" for="__search">
+        
+        <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M9.5 3A6.5 6.5 0 0 1 16 9.5c0 1.61-.59 3.09-1.56 4.23l.27.27h.79l5 5-1.5 1.5-5-5v-.79l-.27-.27A6.516 6.516 0 0 1 9.5 16 6.5 6.5 0 0 1 3 9.5 6.5 6.5 0 0 1 9.5 3m0 2C7 5 5 7 5 9.5S7 14 9.5 14 14 12 14 9.5 12 5 9.5 5Z"/></svg>
+      </label>
+      <div class="md-search" data-md-component="search" role="dialog">
+  <label class="md-search__overlay" for="__search"></label>
+  <div class="md-search__inner" role="search">
+    <form class="md-search__form" name="search">
+      <input type="text" class="md-search__input" name="query" aria-label="搜索" placeholder="搜索" autocapitalize="off" autocorrect="off" autocomplete="off" spellcheck="false" data-md-component="search-query" required>
+      <label class="md-search__icon md-icon" for="__search">
+        
+        <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M9.5 3A6.5 6.5 0 0 1 16 9.5c0 1.61-.59 3.09-1.56 4.23l.27.27h.79l5 5-1.5 1.5-5-5v-.79l-.27-.27A6.516 6.516 0 0 1 9.5 16 6.5 6.5 0 0 1 3 9.5 6.5 6.5 0 0 1 9.5 3m0 2C7 5 5 7 5 9.5S7 14 9.5 14 14 12 14 9.5 12 5 9.5 5Z"/></svg>
+        
+        <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M20 11v2H8l5.5 5.5-1.42 1.42L4.16 12l7.92-7.92L13.5 5.5 8 11h12Z"/></svg>
+      </label>
+      <nav class="md-search__options" aria-label="查找">
+        
+          <a href="javascript:void(0)" class="md-search__icon md-icon" title="分享" aria-label="分享" data-clipboard data-clipboard-text="" data-md-component="search-share" tabindex="-1">
+            
+            <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M18 16.08c-.76 0-1.44.3-1.96.77L8.91 12.7c.05-.23.09-.46.09-.7 0-.24-.04-.47-.09-.7l7.05-4.11c.54.5 1.25.81 2.04.81a3 3 0 0 0 3-3 3 3 0 0 0-3-3 3 3 0 0 0-3 3c0 .24.04.47.09.7L8.04 9.81C7.5 9.31 6.79 9 6 9a3 3 0 0 0-3 3 3 3 0 0 0 3 3c.79 0 1.5-.31 2.04-.81l7.12 4.15c-.05.21-.08.43-.08.66 0 1.61 1.31 2.91 2.92 2.91 1.61 0 2.92-1.3 2.92-2.91A2.92 2.92 0 0 0 18 16.08Z"/></svg>
+          </a>
+        
+        <button type="reset" class="md-search__icon md-icon" title="清空当前内容" aria-label="清空当前内容" tabindex="-1">
+          
+          <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M19 6.41 17.59 5 12 10.59 6.41 5 5 6.41 10.59 12 5 17.59 6.41 19 12 13.41 17.59 19 19 17.59 13.41 12 19 6.41Z"/></svg>
+        </button>
+      </nav>
+      
+        <div class="md-search__suggest" data-md-component="search-suggest"></div>
+      
+    </form>
+    <div class="md-search__output">
+      <div class="md-search__scrollwrap" data-md-scrollfix>
+        <div class="md-search-result" data-md-component="search-result">
+          <div class="md-search-result__meta">
+            正在初始化搜索引擎
+          </div>
+          <ol class="md-search-result__list" role="presentation"></ol>
+        </div>
+      </div>
+    </div>
+  </div>
+</div>
+    
+    
+      <div class="md-header__source">
+        <a href="https://github.com/Zhu-Shatong/Mathematical-Modeling" title="前往仓库" class="md-source" data-md-component="source">
+  <div class="md-source__icon md-icon">
+    
+    <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 496 512"><!--! Font Awesome Free 6.5.1 by @fontawesome - https://fontawesome.com License - https://fontawesome.com/license/free (Icons: CC BY 4.0, Fonts: SIL OFL 1.1, Code: MIT License) Copyright 2023 Fonticons, Inc.--><path d="M165.9 397.4c0 2-2.3 3.6-5.2 3.6-3.3.3-5.6-1.3-5.6-3.6 0-2 2.3-3.6 5.2-3.6 3-.3 5.6 1.3 5.6 3.6zm-31.1-4.5c-.7 2 1.3 4.3 4.3 4.9 2.6 1 5.6 0 6.2-2s-1.3-4.3-4.3-5.2c-2.6-.7-5.5.3-6.2 2.3zm44.2-1.7c-2.9.7-4.9 2.6-4.6 4.9.3 2 2.9 3.3 5.9 2.6 2.9-.7 4.9-2.6 4.6-4.6-.3-1.9-3-3.2-5.9-2.9zM244.8 8C106.1 8 0 113.3 0 252c0 110.9 69.8 205.8 169.5 239.2 12.8 2.3 17.3-5.6 17.3-12.1 0-6.2-.3-40.4-.3-61.4 0 0-70 15-84.7-29.8 0 0-11.4-29.1-27.8-36.6 0 0-22.9-15.7 1.6-15.4 0 0 24.9 2 38.6 25.8 21.9 38.6 58.6 27.5 72.9 20.9 2.3-16 8.8-27.1 16-33.7-55.9-6.2-112.3-14.3-112.3-110.5 0-27.5 7.6-41.3 23.6-58.9-2.6-6.5-11.1-33.3 2.6-67.9 20.9-6.5 69 27 69 27 20-5.6 41.5-8.5 62.8-8.5s42.8 2.9 62.8 8.5c0 0 48.1-33.6 69-27 13.7 34.7 5.2 61.4 2.6 67.9 16 17.7 25.8 31.5 25.8 58.9 0 96.5-58.9 104.2-114.8 110.5 9.2 7.9 17 22.9 17 46.4 0 33.7-.3 75.4-.3 83.6 0 6.5 4.6 14.4 17.3 12.1C428.2 457.8 496 362.9 496 252 496 113.3 383.5 8 244.8 8zM97.2 352.9c-1.3 1-1 3.3.7 5.2 1.6 1.6 3.9 2.3 5.2 1 1.3-1 1-3.3-.7-5.2-1.6-1.6-3.9-2.3-5.2-1zm-10.8-8.1c-.7 1.3.3 2.9 2.3 3.9 1.6 1 3.6.7 4.3-.7.7-1.3-.3-2.9-2.3-3.9-2-.6-3.6-.3-4.3.7zm32.4 35.6c-1.6 1.3-1 4.3 1.3 6.2 2.3 2.3 5.2 2.6 6.5 1 1.3-1.3.7-4.3-1.3-6.2-2.2-2.3-5.2-2.6-6.5-1zm-11.4-14.7c-1.6 1-1.6 3.6 0 5.9 1.6 2.3 4.3 3.3 5.6 2.3 1.6-1.3 1.6-3.9 0-6.2-1.4-2.3-4-3.3-5.6-2z"/></svg>
+  </div>
+  <div class="md-source__repository">
+    Mathematical-Modeling
+  </div>
+</a>
+      </div>
+    
+  </nav>
+  
+</header>
+    
+    <div class="md-container" data-md-component="container">
+      
+      
+        
+          
+        
+      
+      <main class="md-main" data-md-component="main">
+        <div class="md-main__inner md-grid">
+          
+            
+              
+              <div class="md-sidebar md-sidebar--primary" data-md-component="sidebar" data-md-type="navigation" >
+                <div class="md-sidebar__scrollwrap">
+                  <div class="md-sidebar__inner">
+                    
+
+
+
+<nav class="md-nav md-nav--primary" aria-label="导航栏" data-md-level="0">
+  <label class="md-nav__title" for="__drawer">
+    <a href=".." title="数学建模基础知识配套习题与详解" class="md-nav__button md-logo" aria-label="数学建模基础知识配套习题与详解" data-md-component="logo">
+      
+  
+  <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M12 8a3 3 0 0 0 3-3 3 3 0 0 0-3-3 3 3 0 0 0-3 3 3 3 0 0 0 3 3m0 3.54C9.64 9.35 6.5 8 3 8v11c3.5 0 6.64 1.35 9 3.54 2.36-2.19 5.5-3.54 9-3.54V8c-3.5 0-6.64 1.35-9 3.54Z"/></svg>
+
+    </a>
+    数学建模基础知识配套习题与详解
+  </label>
+  
+    <div class="md-nav__source">
+      <a href="https://github.com/Zhu-Shatong/Mathematical-Modeling" title="前往仓库" class="md-source" data-md-component="source">
+  <div class="md-source__icon md-icon">
+    
+    <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 496 512"><!--! Font Awesome Free 6.5.1 by @fontawesome - https://fontawesome.com License - https://fontawesome.com/license/free (Icons: CC BY 4.0, Fonts: SIL OFL 1.1, Code: MIT License) Copyright 2023 Fonticons, Inc.--><path d="M165.9 397.4c0 2-2.3 3.6-5.2 3.6-3.3.3-5.6-1.3-5.6-3.6 0-2 2.3-3.6 5.2-3.6 3-.3 5.6 1.3 5.6 3.6zm-31.1-4.5c-.7 2 1.3 4.3 4.3 4.9 2.6 1 5.6 0 6.2-2s-1.3-4.3-4.3-5.2c-2.6-.7-5.5.3-6.2 2.3zm44.2-1.7c-2.9.7-4.9 2.6-4.6 4.9.3 2 2.9 3.3 5.9 2.6 2.9-.7 4.9-2.6 4.6-4.6-.3-1.9-3-3.2-5.9-2.9zM244.8 8C106.1 8 0 113.3 0 252c0 110.9 69.8 205.8 169.5 239.2 12.8 2.3 17.3-5.6 17.3-12.1 0-6.2-.3-40.4-.3-61.4 0 0-70 15-84.7-29.8 0 0-11.4-29.1-27.8-36.6 0 0-22.9-15.7 1.6-15.4 0 0 24.9 2 38.6 25.8 21.9 38.6 58.6 27.5 72.9 20.9 2.3-16 8.8-27.1 16-33.7-55.9-6.2-112.3-14.3-112.3-110.5 0-27.5 7.6-41.3 23.6-58.9-2.6-6.5-11.1-33.3 2.6-67.9 20.9-6.5 69 27 69 27 20-5.6 41.5-8.5 62.8-8.5s42.8 2.9 62.8 8.5c0 0 48.1-33.6 69-27 13.7 34.7 5.2 61.4 2.6 67.9 16 17.7 25.8 31.5 25.8 58.9 0 96.5-58.9 104.2-114.8 110.5 9.2 7.9 17 22.9 17 46.4 0 33.7-.3 75.4-.3 83.6 0 6.5 4.6 14.4 17.3 12.1C428.2 457.8 496 362.9 496 252 496 113.3 383.5 8 244.8 8zM97.2 352.9c-1.3 1-1 3.3.7 5.2 1.6 1.6 3.9 2.3 5.2 1 1.3-1 1-3.3-.7-5.2-1.6-1.6-3.9-2.3-5.2-1zm-10.8-8.1c-.7 1.3.3 2.9 2.3 3.9 1.6 1 3.6.7 4.3-.7.7-1.3-.3-2.9-2.3-3.9-2-.6-3.6-.3-4.3.7zm32.4 35.6c-1.6 1.3-1 4.3 1.3 6.2 2.3 2.3 5.2 2.6 6.5 1 1.3-1.3.7-4.3-1.3-6.2-2.2-2.3-5.2-2.6-6.5-1zm-11.4-14.7c-1.6 1-1.6 3.6 0 5.9 1.6 2.3 4.3 3.3 5.6 2.3 1.6-1.3 1.6-3.9 0-6.2-1.4-2.3-4-3.3-5.6-2z"/></svg>
+  </div>
+  <div class="md-source__repository">
+    Mathematical-Modeling
+  </div>
+</a>
+    </div>
+  
+  <ul class="md-nav__list" data-md-scrollfix>
+    
+      
+      
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href=".." class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    绪论
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+    
+      
+      
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../%E7%AC%AC2%E8%AE%B2-%E7%BA%BF%E6%80%A7%E8%A7%84%E5%88%92/" class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    线性规划
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+    
+      
+      
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../%E7%AC%AC3%E8%AE%B2-%E9%9D%9E%E7%BA%BF%E6%80%A7%E8%A7%84%E5%88%92/" class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    非线性规划
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+    
+      
+      
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../%E7%AC%AC4%E8%AE%B2-%E6%8F%92%E5%80%BC%E4%B8%8E%E6%8B%9F%E5%90%88/" class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    插值与拟合
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+    
+      
+      
+  
+  
+    
+  
+  
+  
+    <li class="md-nav__item md-nav__item--active">
+      
+      <input class="md-nav__toggle md-toggle" type="checkbox" id="__toc">
+      
+      
+        
+      
+      
+        <label class="md-nav__link md-nav__link--active" for="__toc">
+          
+  
+  <span class="md-ellipsis">
+    微分方程建模
+  </span>
+  
+
+          <span class="md-nav__icon md-icon"></span>
+        </label>
+      
+      <a href="./" class="md-nav__link md-nav__link--active">
+        
+  
+  <span class="md-ellipsis">
+    微分方程建模
+  </span>
+  
+
+      </a>
+      
+        
+
+<nav class="md-nav md-nav--secondary" aria-label="目录">
+  
+  
+  
+    
+  
+  
+    <label class="md-nav__title" for="__toc">
+      <span class="md-nav__icon md-icon"></span>
+      目录
+    </label>
+    <ul class="md-nav__list" data-md-component="toc" data-md-scrollfix>
+      
+        <li class="md-nav__item">
+  <a href="#64" class="md-nav__link">
+    <span class="md-ellipsis">
+      习题6.4
+    </span>
+  </a>
+  
+    <nav class="md-nav" aria-label="习题6.4">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#1" class="md-nav__link">
+    <span class="md-ellipsis">
+      1. 题目要求
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#2" class="md-nav__link">
+    <span class="md-ellipsis">
+      2.解题过程
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#3" class="md-nav__link">
+    <span class="md-ellipsis">
+      3.结果
+    </span>
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#651" class="md-nav__link">
+    <span class="md-ellipsis">
+      习题6.5(1)
+    </span>
+  </a>
+  
+    <nav class="md-nav" aria-label="习题6.5(1)">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#1_1" class="md-nav__link">
+    <span class="md-ellipsis">
+      1. 题目要求
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#2_1" class="md-nav__link">
+    <span class="md-ellipsis">
+      2.解题过程
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#3_1" class="md-nav__link">
+    <span class="md-ellipsis">
+      3.程序
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#4" class="md-nav__link">
+    <span class="md-ellipsis">
+      4.结果
+    </span>
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#652" class="md-nav__link">
+    <span class="md-ellipsis">
+      习题6.5(2)
+    </span>
+  </a>
+  
+    <nav class="md-nav" aria-label="习题6.5(2)">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#1_2" class="md-nav__link">
+    <span class="md-ellipsis">
+      1. 题目要求
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#2_2" class="md-nav__link">
+    <span class="md-ellipsis">
+      2.解题过程
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#3_2" class="md-nav__link">
+    <span class="md-ellipsis">
+      3.程序
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#4_1" class="md-nav__link">
+    <span class="md-ellipsis">
+      4.结果
+    </span>
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#66" class="md-nav__link">
+    <span class="md-ellipsis">
+      习题6.6
+    </span>
+  </a>
+  
+    <nav class="md-nav" aria-label="习题6.6">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#1_3" class="md-nav__link">
+    <span class="md-ellipsis">
+      1. 题目要求
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#21" class="md-nav__link">
+    <span class="md-ellipsis">
+      2.第(1)问
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#32" class="md-nav__link">
+    <span class="md-ellipsis">
+      3.第(2)问
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#4_2" class="md-nav__link">
+    <span class="md-ellipsis">
+      4.结果
+    </span>
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
+    </ul>
+  
+</nav>
+      
+    </li>
+  
+
+    
+      
+      
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../%E7%AC%AC6%E8%AE%B2-%E5%81%87%E8%AE%BE%E6%A3%80%E9%AA%8C/" class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    假设检验
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+    
+      
+      
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../%E7%AC%AC7%E8%AE%B2-Bootstrap%E6%96%B9%E6%B3%95/" class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    Bootstrap方法
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+    
+      
+      
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../%E7%AC%AC8%E8%AE%B2-%E5%9B%9E%E5%BD%92%E5%88%86%E6%9E%90/" class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    回归分析
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+    
+      
+      
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../%E7%AC%AC9%E8%AE%B2-%E6%97%B6%E9%97%B4%E5%BA%8F%E5%88%97%E5%88%86%E6%9E%90/" class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    时间序列分析
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+    
+      
+      
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../%E7%AC%AC10%E8%AE%B2-%E6%97%B6%E9%97%B4%E5%BA%8F%E5%88%97%E9%A2%84%E6%B5%8B/" class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    时间序列预测
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+    
+      
+      
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../%E7%AC%AC11%E8%AE%B2-%E5%9B%A0%E5%AD%90%E5%88%86%E6%9E%90%EF%BC%88%E8%81%9A%E7%B1%BB%E4%B8%8E%E4%B8%BB%E6%88%90%E5%88%86%EF%BC%89/" class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    因子分析（聚类与主成分）
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+    
+      
+      
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../%E7%AC%AC12%E8%AE%B2-%E5%9B%A0%E5%AD%90%E5%88%86%E6%9E%90%E5%88%A4%E5%88%AB%E5%88%86%E6%9E%90/" class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    因子分析判别分析
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+    
+      
+      
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../%E7%AC%AC13%E8%AE%B2-%E7%9B%B8%E5%85%B3%E5%88%86%E6%9E%90/" class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    相关分析
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+    
+      
+      
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../%E7%AC%AC14%E8%AE%B2-%E7%8E%B0%E4%BB%A3%E4%BC%98%E5%8C%96%E7%AE%97%E6%B3%95/" class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    现代优化算法
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+    
+  </ul>
+</nav>
+                  </div>
+                </div>
+              </div>
+            
+            
+              
+              <div class="md-sidebar md-sidebar--secondary" data-md-component="sidebar" data-md-type="toc" >
+                <div class="md-sidebar__scrollwrap">
+                  <div class="md-sidebar__inner">
+                    
+
+<nav class="md-nav md-nav--secondary" aria-label="目录">
+  
+  
+  
+    
+  
+  
+    <label class="md-nav__title" for="__toc">
+      <span class="md-nav__icon md-icon"></span>
+      目录
+    </label>
+    <ul class="md-nav__list" data-md-component="toc" data-md-scrollfix>
+      
+        <li class="md-nav__item">
+  <a href="#64" class="md-nav__link">
+    <span class="md-ellipsis">
+      习题6.4
+    </span>
+  </a>
+  
+    <nav class="md-nav" aria-label="习题6.4">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#1" class="md-nav__link">
+    <span class="md-ellipsis">
+      1. 题目要求
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#2" class="md-nav__link">
+    <span class="md-ellipsis">
+      2.解题过程
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#3" class="md-nav__link">
+    <span class="md-ellipsis">
+      3.结果
+    </span>
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#651" class="md-nav__link">
+    <span class="md-ellipsis">
+      习题6.5(1)
+    </span>
+  </a>
+  
+    <nav class="md-nav" aria-label="习题6.5(1)">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#1_1" class="md-nav__link">
+    <span class="md-ellipsis">
+      1. 题目要求
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#2_1" class="md-nav__link">
+    <span class="md-ellipsis">
+      2.解题过程
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#3_1" class="md-nav__link">
+    <span class="md-ellipsis">
+      3.程序
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#4" class="md-nav__link">
+    <span class="md-ellipsis">
+      4.结果
+    </span>
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#652" class="md-nav__link">
+    <span class="md-ellipsis">
+      习题6.5(2)
+    </span>
+  </a>
+  
+    <nav class="md-nav" aria-label="习题6.5(2)">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#1_2" class="md-nav__link">
+    <span class="md-ellipsis">
+      1. 题目要求
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#2_2" class="md-nav__link">
+    <span class="md-ellipsis">
+      2.解题过程
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#3_2" class="md-nav__link">
+    <span class="md-ellipsis">
+      3.程序
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#4_1" class="md-nav__link">
+    <span class="md-ellipsis">
+      4.结果
+    </span>
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#66" class="md-nav__link">
+    <span class="md-ellipsis">
+      习题6.6
+    </span>
+  </a>
+  
+    <nav class="md-nav" aria-label="习题6.6">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#1_3" class="md-nav__link">
+    <span class="md-ellipsis">
+      1. 题目要求
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#21" class="md-nav__link">
+    <span class="md-ellipsis">
+      2.第(1)问
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#32" class="md-nav__link">
+    <span class="md-ellipsis">
+      3.第(2)问
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#4_2" class="md-nav__link">
+    <span class="md-ellipsis">
+      4.结果
+    </span>
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
+    </ul>
+  
+</nav>
+                  </div>
+                </div>
+              </div>
+            
+          
+          
+            <div class="md-content" data-md-component="content">
+              <article class="md-content__inner md-typeset">
+                
+                  
+
+  
+  
+
+
+<h1 id="-"><strong>第五讲-微分方程建模</strong></h1>
+<h2 id="64">习题6.4</h2>
+<h3 id="1">1. 题目要求</h3>
+<p><img alt="image-20230329154221554" src="https://raw.githubusercontent.com/Zhu-Shatong/cloudimg/master/img/image-20230329154221554.png" /></p>
+<h3 id="2">2.解题过程</h3>
+<p><strong>解：</strong></p>
+<p>(1)</p>
+<p>对函数值  <span class="arithmatex">\(s(t)\)</span> 的影响因素，根据题目分析，可以得到如下两点：</p>
+<ul>
+<li>下降速度与 $ s(t)$ 的值的大小成正比，设比例系数为 <span class="arithmatex">\(\lambda\)</span> ，所以式子中有一个部分为：$ -\lambda s(t) $ 。</li>
+<li>增长速度与 <span class="arithmatex">\(a(t)\)</span> 的值的大小成正比，设比例系数为 <span class="arithmatex">\(\mu\)</span> ，所以式子中有一个部分为：$ +\mu a(t) $ 。</li>
+</ul>
+<p>但是，题目中说到，广告只能影响这种商品在市场上尚未饱和的部分(设饱和量为M)，所以有两个选择：分段函数 或者 渐进函数。</p>
+<p>我选择使用渐进函数，渐近线为M，增长部分改为：<span class="arithmatex">\(\mu a(t)\left(1-\frac{s(t)}{M}\right)\)</span> 。</p>
+<p>这样，当 s=M 或者 a=0 时，销量都不会上涨，符合题意。</p>
+<p>将所有分析合并，建立如下模型：
+$$
+\frac{\mathrm{d} s}{\mathrm{d} t}=\mu a(t)\left(1-\frac{s(t)}{M}\right)-\lambda s(t)
+$$
+(2)</p>
+<p>广告宣传只进行有限时间 <span class="arithmatex">\(\tau\)</span> ，且广告费为常数a，所以建立下列函数
+$$
+a(t)= \begin{cases}a/c, &amp; 0&lt;t \leqslant \tau, \
+0, &amp; t \geqslant \tau .
+\end{cases} 
+$$
+带入(1)中公式，并移项，有：
+$$
+{\frac{\mathrm{d}s}{\mathrm{d}t}}+\left(\lambda\,+{\frac{\mu a}{M\tau}}\right)s\ ={\frac{\mu a}{\tau}},0\ &lt;t&lt;\tau,
+$$</p>
+<p>(3)</p>
+<p><strong>先讨论 <span class="arithmatex">\(0&lt;t \leqslant \tau\)</span> :</strong></p>
+<p>为了运算方便，进行换元：
+$$
+b = {\lambda\,+\,{\frac{\mu a}{M\tau}} , \,\,\, c={\frac{\mu a}{\tau}}}\
+$$
+则上述式子化简为：
+$$
+{\frac{\mathrm{d}s}{\mathrm{d}t}\,+\,b s\,=\,c\,,}
+$$
+(4)</p>
+<p>这是一个一阶非齐次线性微分方程.</p>
+<p>假设初始值为 <span class="arithmatex">\(s_0\)</span> ,可以得出结果为:
+$$
+s(t)= \frac{c}{b}\left(1-\mathrm{e}^{-b t}\right)+s_{0} \mathrm{e}^{-b t}, &amp; 0&lt;t \leqslant \tau \
+$$
+(5)</p>
+<p><strong>再讨论 <span class="arithmatex">\(t \geqslant \tau\)</span> :</strong></p>
+<p>式子为：
+$$
+{\frac{\mathrm{d}s}{\mathrm{d}t}}=-\,\lambda s,
+$$
+可以得出结果为：
+$$
+s(t)= s(\tau) \mathrm{e}^{\lambda(\tau-t)},  t \geqslant \tau .
+$$
+(6)</p>
+<p><strong>合并所有结果</strong>，得到：
+$$
+s(t)=
+\left{\begin{array}{ll}</p>
+<p>\frac{c}{b}\left(1-\mathrm{e}^{-b t}\right)+s_{0} \mathrm{e}^{-b t}, &amp; 0&lt;t \leqslant \tau, \</p>
+<p>s(\tau) \mathrm{e}^{\lambda(\tau-t)}, &amp; t \geqslant \tau .</p>
+<p>\end{array}\right.
+$$</p>
+<h3 id="3">3.结果</h3>
+<p><span class="arithmatex">\(s(t)\)</span> 的变化符合下列函数：
+$$
+s(t)=
+\left{\begin{array}{ll}</p>
+<p>\frac{c}{b}\left(1-\mathrm{e}^{-b t}\right)+s_{0} \mathrm{e}^{-b t}, &amp; 0&lt;t \leqslant \tau, \</p>
+<p>s(\tau) \mathrm{e}^{\lambda(\tau-t)}, &amp; t \geqslant \tau .</p>
+<p>\end{array}\right.
+$$
+其中，
+$$
+b = {\lambda\,+\,{\frac{\mu a}{M\tau}} , \,\,\, c={\frac{\mu a}{\tau}}}\
+$$</p>
+<h2 id="651">习题6.5(1)</h2>
+<h3 id="1_1">1. 题目要求</h3>
+<p><img alt="image-20230329185946579" src="C:/Users/admin/AppData/Roaming/Typora/typora-user-images/image-20230329185946579.png" /></p>
+<p><img alt="image-20230329190003552" src="https://raw.githubusercontent.com/Zhu-Shatong/cloudimg/master/img/image-20230329190003552.png" /></p>
+<h3 id="2_1">2.解题过程</h3>
+<p><strong>解：</strong></p>
+<p>Matlab的工具箱提供了几个解常微分方程的功能函数，如ode45 、ode23 、ode113 。其中，ode45 采用四五阶龙格库塔方法（以下简称RK方法），是解非刚性常微分方程的首选方法； ode23 采用二三阶龙格库塔方法。</p>
+<p>高阶常微分方程，必须做变量替换， 化成一阶微分方程组，才能使用Matlab求数值解。</p>
+<p>设 <span class="arithmatex">\(y_1=y,y_2=y^{\prime}\)</span> ,则原式化为：
+$$
+\left{\begin{array}{ll}
+y_{1}^{\prime}=y_{2}, &amp; y_{1}\left(\frac{\pi}{2}\right)=2, \
+y_{2}^{\prime}=\left(\frac{n^{2}}{x^{2}}-1\right) y_{1}-\frac{y_{2}}{x}, &amp; y_{2}\left(\frac{\pi}{2}\right)=-\frac{2}{\pi} .
+\end{array}\right.
+$$</p>
+<p>接下来就可以用ode45来解决相关问题。</p>
+<h3 id="3_1">3.程序</h3>
+<p>求解的MATLAB程序如下：</p>
+<pre><code class="language-matlab">clc, clear
+
+syms y(x) % 符号变量
+dy = diff(y); % 一阶导
+d2y = diff(dy); % 二阶导
+
+% 为了分析比较，首先求解符号解
+y = dsolve(x^2*d2y+x*dy+(x^2 - 1 / 4)*y, ...
+    y(pi/2) == 2, dy(pi/2) == -2/pi); % 直接所有内容
+y = simplify(y); % 化简结果
+symdisp(y); % 直观输出函数（自建函数）
+fplot(y); % 画图
+hold on
+
+%龙格库塔方法求解数值解
+dy_2 = @(x, y) [y(2); (1 / 4 / x^x - 1) * y(1) - y(2) / x]; % 方程组的右端 注意：用分号隔开！！！
+
+% 求解的区间是 [pi / 2, 15]
+% 注意：2和-2/pi是区间左端点的时候的函数值，即x=pi/2时
+[x, y] = ode45(dy_2, [pi / 2, 15], [2, -2 / pi]);
+plot(x, y(:,1), '*'); % 画图 注意画的是y1
+
+legend('符号解','数值解');
+</code></pre>
+<h3 id="4">4.结果</h3>
+<p>微分方程求解结果如下：</p>
+<p><img src="https://raw.githubusercontent.com/Zhu-Shatong/cloudimg/master/img/image-20230329190441168.png" alt="image-20230329190441168" style="zoom:50%;" /></p>
+<p>通过函数曲线可以看出，解析解和数值解吻合。</p>
+<p><img alt="image-20230329190529596" src="https://raw.githubusercontent.com/Zhu-Shatong/cloudimg/master/img/image-20230329190529596.png" /></p>
+<h2 id="652">习题6.5(2)</h2>
+<h3 id="1_2">1. 题目要求</h3>
+<p><img alt="image-20230329185946579" src="https://raw.githubusercontent.com/Zhu-Shatong/cloudimg/master/img/image-20230329185946579.png" /></p>
+<p><img alt="image-20230329190838960" src="https://raw.githubusercontent.com/Zhu-Shatong/cloudimg/master/img/image-20230329190838960.png" /></p>
+<h3 id="2_2">2.解题过程</h3>
+<p><strong>解：</strong></p>
+<p>设 <span class="arithmatex">\(y_1=y,y_2=y^{\prime}\)</span> ,则原式化为：
+$$
+\left{\begin{array}{ll}
+y_{1}^{\prime}=  \,y_{2}\,,&amp;{{y_{1}(0)~=~1\,,}} \
+y_{2}^{\prime}=  -\,y_{1}\mathrm{cos}x\,,&amp;y_{2}(0)~=\,0.
+\end{array}\right.
+$$
+接下来就可以用ode45来解决相关问题。</p>
+<h3 id="3_2">3.程序</h3>
+<p>求解的MATLAB程序如下：</p>
+<pre><code class="language-matlab">clc, clear
+
+% 使用幂级数解作为对照
+power_series = @(x) 1 - 1 / gamma(3) * x.^2 + 2 / gamma(5) * x.^4 - 9 / gamma(7) * x.^6 + 55 / gamma(9) * x.^8;
+x = 0:0.1:4;
+y = power_series(x);
+plot(x, y);
+hold on
+
+%龙格库塔方法求解数值解
+dy = @(x, y) [y(2); -y(1) * cos(x)]; % 方程组的右端 注意：用分号隔开！！！
+
+[x, y] = ode45(dy, [0, 4], [1, 0]);
+plot(x, y(:, 1), '*'); % 画图 注意画的是y1
+
+legend('幂级数解', '数值解');
+</code></pre>
+<h3 id="4_1">4.结果</h3>
+<p>通过函数曲线可以看出，当x较小的时候，级数解的近似值和数值解吻合较好。</p>
+<p><img alt="image-20230329191458852" src="https://raw.githubusercontent.com/Zhu-Shatong/cloudimg/master/img/image-20230329191458852.png" /></p>
+<h2 id="66">习题6.6</h2>
+<h3 id="1_3">1. 题目要求</h3>
+<p><img alt="image-20230329191845404" src="https://raw.githubusercontent.com/Zhu-Shatong/cloudimg/master/img/image-20230329191845404.png" /></p>
+<h3 id="21">2.第(1)问</h3>
+<p><strong>解：</strong></p>
+<p>(1)</p>
+<p><img src="https://raw.githubusercontent.com/Zhu-Shatong/cloudimg/master/img/image-20230329193240726.png" alt="image-20230329193240726" style="zoom: 33%;" /></p>
+<p>如图建立坐标系。</p>
+<p>我们可以看出，小船的和速度是水速和静水速度的向量和，其中，水速平行与河岸（y轴），静水速度始终朝向B点。</p>
+<p>根据正交分解，我们可以求出x与y方向的速度：
+$$
+{\frac{\mathrm{d}x}{\mathrm{d}t}}=-\,v_{2}\cos\theta\,,{\frac{\mathrm{d}y}{\mathrm{d}t}}=v_{1}-\,v_{2}\sin\theta.
+$$</p>
+<p>根据几何关系，我们可以求出：
+$$
+\cos\theta\,=\,{\frac{x}{\sqrt{x^{2}\,+\,y^{2}}}},\sin\theta\,=\,{\frac{y}{\sqrt{x^{2}\,+\,y^{2}}}},
+$$
+联立（14）（15）式，得到：
+$$
+{\frac{\mathrm{d}x}{\mathrm{d}t}}=-v_{2}\,{\frac{x}{\sqrt{x^{2}+y^{2}}}}\,,{\frac{\mathrm{d}y}{\mathrm{d}t}}=v_{1}-v_{2}\,{\frac{y}{\sqrt{x^{2}+y^{2}}}},
+$$
+将（16）的两个式子相除，得到：
+$$
+\frac{\mathrm{d}y}{\mathrm{d}x}=-\,k\,{\frac{{\sqrt{x^{2}+y^{2}}}}{x}}+{\frac{y}{x}},0&lt;x&lt;d
+$$
+这是一个一阶齐次微分方程，于是得到初值问题：
+$$
+\left{\begin{array}{ll}
+{\frac{\mathrm{d}y}{\mathrm{d}x}}=-\,k\,{\frac{{\sqrt{x^{2}+y^{2}}}}{x}}+{\frac{y}{x}},0&lt;x&lt;d\
+y(d)=0
+\end{array}\right.
+$$
+为了求解这个微分方程，我试图使用Matlab的dsolve函数解决，但是matlab无法解决这个微分方程。</p>
+<p><img src="https://raw.githubusercontent.com/Zhu-Shatong/cloudimg/master/img/image-20230329204034471.png" alt="image-20230329204034471" style="zoom: 50%;" /></p>
+<p>使用Wolfram Mathematica软件的Dsolve函数，成功解出了微分方程的解为：
+$$
+y\,=\,\frac{d}{2}\,\Bigl[\left(\frac{x}{d}\right)^{1-k}\,-\,\left(\frac{x}{d}\right)^{1+k}\,\Bigr],0&lt;x&lt;d.
+$$</p>
+<h3 id="32">3.第(2)问</h3>
+<p>根据第一问，可知参数方程为：
+$$
+\left{\begin{array}{ll}
+{\frac{\mathrm{d}x}{\mathrm{d}t}}=-{\frac{2x}{\sqrt{x^{2}+y^{2}}}},x(0)=d\
+{\frac{\mathrm{d}y}{\mathrm{d}t}}=1-{\frac{2y}{\sqrt{x^{2}+y^{2}}}},y(0)=0
+\end{array}\right.
+$$
+求解的MATLAB程序如下：</p>
+<pre><code class="language-matlab">clc, clear
+
+d = 100;
+v1 = 1;
+v2 = 2;
+k = 0.5;
+
+% 第一问的解析解
+y = @(x)d / 2 * ((x / d).^(1 - k) - (x / d).^(1 + k));
+fplot(y, [0, 100]);
+hold on
+
+%龙格库塔方法求解数值解
+dy = @(t, xy) [-2 * xy(1) / sqrt(xy(1)^2+xy(2)^2); 1 - 2 * xy(2) / sqrt(xy(1)^2+xy(2)^2)]; % 方程组的右端 注意：用分号隔开！！！
+
+[t, xy] = ode45(dy, [0, 60], [100, 0]);
+plot(xy(:, 1), xy(:, 2), '*'); % 画图 注意画的是y1
+
+legend('符号解', '数值解');
+</code></pre>
+<h3 id="4_2">4.结果</h3>
+<p>渡河所需时间需要不断地尝试，修改处如下图所示：</p>
+<p><img alt="image-20230329210036426" src="https://raw.githubusercontent.com/Zhu-Shatong/cloudimg/master/img/image-20230329210036426.png" /></p>
+<p>测试过程如下图（测试数据为40，很明显未到岸）：</p>
+<p><img alt="image-20230329210153081" src="https://raw.githubusercontent.com/Zhu-Shatong/cloudimg/master/img/image-20230329210153081.png" /></p>
+<p>最终，试验得到渡河所用时间为66.6秒，数值解与解析解的对照图（航行曲线）如下图：</p>
+<p><img alt="image-20230329210414770" src="https://raw.githubusercontent.com/Zhu-Shatong/cloudimg/master/img/image-20230329210414770.png" /></p>
+
+
+
+
+
+
+
+
+
+
+
+
+                
+              </article>
+            </div>
+          
+          
+  <script>var tabs=__md_get("__tabs");if(Array.isArray(tabs))e:for(var set of document.querySelectorAll(".tabbed-set")){var tab,labels=set.querySelector(".tabbed-labels");for(tab of tabs)for(var label of labels.getElementsByTagName("label"))if(label.innerText.trim()===tab){var input=document.getElementById(label.htmlFor);input.checked=!0;continue e}}</script>
+
+<script>var target=document.getElementById(location.hash.slice(1));target&&target.name&&(target.checked=target.name.startsWith("__tabbed_"))</script>
+        </div>
+        
+          <button type="button" class="md-top md-icon" data-md-component="top" hidden>
+  
+  <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M13 20h-2V8l-5.5 5.5-1.42-1.42L12 4.16l7.92 7.92-1.42 1.42L13 8v12Z"/></svg>
+  回到页面顶部
+</button>
+        
+      </main>
+      
+        <footer class="md-footer">
+  
+  <div class="md-footer-meta md-typeset">
+    <div class="md-footer-meta__inner md-grid">
+      <div class="md-copyright">
+  
+    <div class="md-copyright__highlight">
+      Copyright &copy; 2023-present <a href="https://github.com/Zhu-Shatong" target="_blank" rel="noopener noreferrer">Zhu-Shatong</a>
+    </div>
+  
+  
+    Made with
+    <a href="https://squidfunk.github.io/mkdocs-material/" target="_blank" rel="noopener">
+      Material for MkDocs
+    </a>
+  
+</div>
+      
+        <div class="md-social">
+  
+    
+    
+    
+    
+      
+      
+    
+    <a href="https://github.com/Zhu-Shatong" target="_blank" rel="noopener" title="github.com" class="md-social__link">
+      <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 496 512"><!--! Font Awesome Free 6.5.1 by @fontawesome - https://fontawesome.com License - https://fontawesome.com/license/free (Icons: CC BY 4.0, Fonts: SIL OFL 1.1, Code: MIT License) Copyright 2023 Fonticons, Inc.--><path d="M165.9 397.4c0 2-2.3 3.6-5.2 3.6-3.3.3-5.6-1.3-5.6-3.6 0-2 2.3-3.6 5.2-3.6 3-.3 5.6 1.3 5.6 3.6zm-31.1-4.5c-.7 2 1.3 4.3 4.3 4.9 2.6 1 5.6 0 6.2-2s-1.3-4.3-4.3-5.2c-2.6-.7-5.5.3-6.2 2.3zm44.2-1.7c-2.9.7-4.9 2.6-4.6 4.9.3 2 2.9 3.3 5.9 2.6 2.9-.7 4.9-2.6 4.6-4.6-.3-1.9-3-3.2-5.9-2.9zM244.8 8C106.1 8 0 113.3 0 252c0 110.9 69.8 205.8 169.5 239.2 12.8 2.3 17.3-5.6 17.3-12.1 0-6.2-.3-40.4-.3-61.4 0 0-70 15-84.7-29.8 0 0-11.4-29.1-27.8-36.6 0 0-22.9-15.7 1.6-15.4 0 0 24.9 2 38.6 25.8 21.9 38.6 58.6 27.5 72.9 20.9 2.3-16 8.8-27.1 16-33.7-55.9-6.2-112.3-14.3-112.3-110.5 0-27.5 7.6-41.3 23.6-58.9-2.6-6.5-11.1-33.3 2.6-67.9 20.9-6.5 69 27 69 27 20-5.6 41.5-8.5 62.8-8.5s42.8 2.9 62.8 8.5c0 0 48.1-33.6 69-27 13.7 34.7 5.2 61.4 2.6 67.9 16 17.7 25.8 31.5 25.8 58.9 0 96.5-58.9 104.2-114.8 110.5 9.2 7.9 17 22.9 17 46.4 0 33.7-.3 75.4-.3 83.6 0 6.5 4.6 14.4 17.3 12.1C428.2 457.8 496 362.9 496 252 496 113.3 383.5 8 244.8 8zM97.2 352.9c-1.3 1-1 3.3.7 5.2 1.6 1.6 3.9 2.3 5.2 1 1.3-1 1-3.3-.7-5.2-1.6-1.6-3.9-2.3-5.2-1zm-10.8-8.1c-.7 1.3.3 2.9 2.3 3.9 1.6 1 3.6.7 4.3-.7.7-1.3-.3-2.9-2.3-3.9-2-.6-3.6-.3-4.3.7zm32.4 35.6c-1.6 1.3-1 4.3 1.3 6.2 2.3 2.3 5.2 2.6 6.5 1 1.3-1.3.7-4.3-1.3-6.2-2.2-2.3-5.2-2.6-6.5-1zm-11.4-14.7c-1.6 1-1.6 3.6 0 5.9 1.6 2.3 4.3 3.3 5.6 2.3 1.6-1.3 1.6-3.9 0-6.2-1.4-2.3-4-3.3-5.6-2z"/></svg>
+    </a>
+  
+</div>
+      
+    </div>
+  </div>
+</footer>
+      
+    </div>
+    <div class="md-dialog" data-md-component="dialog">
+      <div class="md-dialog__inner md-typeset"></div>
+    </div>
+    
+    
+    <script id="__config" type="application/json">{"base": "..", "features": ["navigation.top", "navigation.tracking", "navigation.path", "search.suggest", "search.highlight", "search.share", "content.tabs.link", "content.code.annotation", "content.code.copy"], "search": "../assets/javascripts/workers/search.b8dbb3d2.min.js", "translations": {"clipboard.copied": "\u5df2\u590d\u5236", "clipboard.copy": "\u590d\u5236", "search.result.more.one": "\u5728\u8be5\u9875\u4e0a\u8fd8\u6709 1 \u4e2a\u7b26\u5408\u6761\u4ef6\u7684\u7ed3\u679c", "search.result.more.other": "\u5728\u8be5\u9875\u4e0a\u8fd8\u6709 # \u4e2a\u7b26\u5408\u6761\u4ef6\u7684\u7ed3\u679c", "search.result.none": "\u6ca1\u6709\u627e\u5230\u7b26\u5408\u6761\u4ef6\u7684\u7ed3\u679c", "search.result.one": "\u627e\u5230 1 \u4e2a\u7b26\u5408\u6761\u4ef6\u7684\u7ed3\u679c", "search.result.other": "# \u4e2a\u7b26\u5408\u6761\u4ef6\u7684\u7ed3\u679c", "search.result.placeholder": "\u952e\u5165\u4ee5\u5f00\u59cb\u641c\u7d22", "search.result.term.missing": "\u7f3a\u5c11", "select.version": "\u9009\u62e9\u5f53\u524d\u7248\u672c"}}</script>
+    
+    
+      <script src="../assets/javascripts/bundle.bd41221c.min.js"></script>
+      
+        <script src="../javascripts/katex.js"></script>
+      
+        <script src="https://cdnjs.cloudflare.com/ajax/libs/KaTeX/0.16.7/katex.min.js"></script>
+      
+        <script src="https://cdnjs.cloudflare.com/ajax/libs/KaTeX/0.16.7/contrib/auto-render.min.js"></script>
+      
+    
+  </body>
+</html>

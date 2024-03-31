@@ -1,0 +1,1792 @@
+
+<!doctype html>
+<html lang="zh" class="no-js">
+  <head>
+    
+      <meta charset="utf-8">
+      <meta name="viewport" content="width=device-width,initial-scale=1">
+      
+        <meta name="description" content="数学建模算法与应用（第2版） (2015, 国防工业出版社) ">
+      
+      
+        <meta name="author" content="Zhu Shatong">
+      
+      
+        <link rel="canonical" href="https://github.com/Zhu-Shatong/Mathematical-Modeling/%E7%AC%AC14%E8%AE%B2-%E7%8E%B0%E4%BB%A3%E4%BC%98%E5%8C%96%E7%AE%97%E6%B3%95/">
+      
+      
+        <link rel="prev" href="../%E7%AC%AC13%E8%AE%B2-%E7%9B%B8%E5%85%B3%E5%88%86%E6%9E%90/">
+      
+      
+      
+      <link rel="icon" href="../assets/images/favicon.png">
+      <meta name="generator" content="mkdocs-1.5.3, mkdocs-material-9.5.15">
+    
+    
+      
+        <title>现代优化算法 - 数学建模基础知识配套习题与详解</title>
+      
+    
+    
+      <link rel="stylesheet" href="../assets/stylesheets/main.7e359304.min.css">
+      
+        
+        <link rel="stylesheet" href="../assets/stylesheets/palette.06af60db.min.css">
+      
+      
+
+
+    
+    
+      
+    
+    
+      
+        
+        
+        <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+        <link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Roboto:300,300i,400,400i,700,700i%7CRoboto+Mono:400,400i,700,700i&display=fallback">
+        <style>:root{--md-text-font:"Roboto";--md-code-font:"Roboto Mono"}</style>
+      
+    
+    
+      <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/KaTeX/0.16.7/katex.min.css">
+    
+    <script>__md_scope=new URL("..",location),__md_hash=e=>[...e].reduce((e,_)=>(e<<5)-e+_.charCodeAt(0),0),__md_get=(e,_=localStorage,t=__md_scope)=>JSON.parse(_.getItem(t.pathname+"."+e)),__md_set=(e,_,t=localStorage,a=__md_scope)=>{try{t.setItem(a.pathname+"."+e,JSON.stringify(_))}catch(e){}}</script>
+    
+      
+
+    
+    
+    
+  </head>
+  
+  
+    
+    
+      
+    
+    
+    
+    
+    <body dir="ltr" data-md-color-scheme="default" data-md-color-primary="indigo" data-md-color-accent="deep-purple">
+  
+    
+    <input class="md-toggle" data-md-toggle="drawer" type="checkbox" id="__drawer" autocomplete="off">
+    <input class="md-toggle" data-md-toggle="search" type="checkbox" id="__search" autocomplete="off">
+    <label class="md-overlay" for="__drawer"></label>
+    <div data-md-component="skip">
+      
+        
+        <a href="#-" class="md-skip">
+          跳转至
+        </a>
+      
+    </div>
+    <div data-md-component="announce">
+      
+    </div>
+    
+    
+      
+
+  
+
+<header class="md-header md-header--shadow" data-md-component="header">
+  <nav class="md-header__inner md-grid" aria-label="页眉">
+    <a href=".." title="数学建模基础知识配套习题与详解" class="md-header__button md-logo" aria-label="数学建模基础知识配套习题与详解" data-md-component="logo">
+      
+  
+  <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M12 8a3 3 0 0 0 3-3 3 3 0 0 0-3-3 3 3 0 0 0-3 3 3 3 0 0 0 3 3m0 3.54C9.64 9.35 6.5 8 3 8v11c3.5 0 6.64 1.35 9 3.54 2.36-2.19 5.5-3.54 9-3.54V8c-3.5 0-6.64 1.35-9 3.54Z"/></svg>
+
+    </a>
+    <label class="md-header__button md-icon" for="__drawer">
+      
+      <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M3 6h18v2H3V6m0 5h18v2H3v-2m0 5h18v2H3v-2Z"/></svg>
+    </label>
+    <div class="md-header__title" data-md-component="header-title">
+      <div class="md-header__ellipsis">
+        <div class="md-header__topic">
+          <span class="md-ellipsis">
+            数学建模基础知识配套习题与详解
+          </span>
+        </div>
+        <div class="md-header__topic" data-md-component="header-topic">
+          <span class="md-ellipsis">
+            
+              现代优化算法
+            
+          </span>
+        </div>
+      </div>
+    </div>
+    
+      
+        <form class="md-header__option" data-md-component="palette">
+  
+    
+    
+    
+    <input class="md-option" data-md-color-media="(prefers-color-scheme: light)" data-md-color-scheme="default" data-md-color-primary="indigo" data-md-color-accent="deep-purple"  aria-label="Switch to dark mode"  type="radio" name="__palette" id="__palette_0">
+    
+      <label class="md-header__button md-icon" title="Switch to dark mode" for="__palette_1" hidden>
+        <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M12 8a4 4 0 0 0-4 4 4 4 0 0 0 4 4 4 4 0 0 0 4-4 4 4 0 0 0-4-4m0 10a6 6 0 0 1-6-6 6 6 0 0 1 6-6 6 6 0 0 1 6 6 6 6 0 0 1-6 6m8-9.31V4h-4.69L12 .69 8.69 4H4v4.69L.69 12 4 15.31V20h4.69L12 23.31 15.31 20H20v-4.69L23.31 12 20 8.69Z"/></svg>
+      </label>
+    
+  
+    
+    
+    
+    <input class="md-option" data-md-color-media="(prefers-color-scheme: dark)" data-md-color-scheme="slate" data-md-color-primary="indigo" data-md-color-accent="deep-purple"  aria-label="Switch to light mode"  type="radio" name="__palette" id="__palette_1">
+    
+      <label class="md-header__button md-icon" title="Switch to light mode" for="__palette_0" hidden>
+        <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M12 18c-.89 0-1.74-.2-2.5-.55C11.56 16.5 13 14.42 13 12c0-2.42-1.44-4.5-3.5-5.45C10.26 6.2 11.11 6 12 6a6 6 0 0 1 6 6 6 6 0 0 1-6 6m8-9.31V4h-4.69L12 .69 8.69 4H4v4.69L.69 12 4 15.31V20h4.69L12 23.31 15.31 20H20v-4.69L23.31 12 20 8.69Z"/></svg>
+      </label>
+    
+  
+</form>
+      
+    
+    
+      <script>var media,input,key,value,palette=__md_get("__palette");if(palette&&palette.color){"(prefers-color-scheme)"===palette.color.media&&(media=matchMedia("(prefers-color-scheme: light)"),input=document.querySelector(media.matches?"[data-md-color-media='(prefers-color-scheme: light)']":"[data-md-color-media='(prefers-color-scheme: dark)']"),palette.color.media=input.getAttribute("data-md-color-media"),palette.color.scheme=input.getAttribute("data-md-color-scheme"),palette.color.primary=input.getAttribute("data-md-color-primary"),palette.color.accent=input.getAttribute("data-md-color-accent"));for([key,value]of Object.entries(palette.color))document.body.setAttribute("data-md-color-"+key,value)}</script>
+    
+    
+    
+      <label class="md-header__button md-icon" for="__search">
+        
+        <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M9.5 3A6.5 6.5 0 0 1 16 9.5c0 1.61-.59 3.09-1.56 4.23l.27.27h.79l5 5-1.5 1.5-5-5v-.79l-.27-.27A6.516 6.516 0 0 1 9.5 16 6.5 6.5 0 0 1 3 9.5 6.5 6.5 0 0 1 9.5 3m0 2C7 5 5 7 5 9.5S7 14 9.5 14 14 12 14 9.5 12 5 9.5 5Z"/></svg>
+      </label>
+      <div class="md-search" data-md-component="search" role="dialog">
+  <label class="md-search__overlay" for="__search"></label>
+  <div class="md-search__inner" role="search">
+    <form class="md-search__form" name="search">
+      <input type="text" class="md-search__input" name="query" aria-label="搜索" placeholder="搜索" autocapitalize="off" autocorrect="off" autocomplete="off" spellcheck="false" data-md-component="search-query" required>
+      <label class="md-search__icon md-icon" for="__search">
+        
+        <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M9.5 3A6.5 6.5 0 0 1 16 9.5c0 1.61-.59 3.09-1.56 4.23l.27.27h.79l5 5-1.5 1.5-5-5v-.79l-.27-.27A6.516 6.516 0 0 1 9.5 16 6.5 6.5 0 0 1 3 9.5 6.5 6.5 0 0 1 9.5 3m0 2C7 5 5 7 5 9.5S7 14 9.5 14 14 12 14 9.5 12 5 9.5 5Z"/></svg>
+        
+        <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M20 11v2H8l5.5 5.5-1.42 1.42L4.16 12l7.92-7.92L13.5 5.5 8 11h12Z"/></svg>
+      </label>
+      <nav class="md-search__options" aria-label="查找">
+        
+          <a href="javascript:void(0)" class="md-search__icon md-icon" title="分享" aria-label="分享" data-clipboard data-clipboard-text="" data-md-component="search-share" tabindex="-1">
+            
+            <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M18 16.08c-.76 0-1.44.3-1.96.77L8.91 12.7c.05-.23.09-.46.09-.7 0-.24-.04-.47-.09-.7l7.05-4.11c.54.5 1.25.81 2.04.81a3 3 0 0 0 3-3 3 3 0 0 0-3-3 3 3 0 0 0-3 3c0 .24.04.47.09.7L8.04 9.81C7.5 9.31 6.79 9 6 9a3 3 0 0 0-3 3 3 3 0 0 0 3 3c.79 0 1.5-.31 2.04-.81l7.12 4.15c-.05.21-.08.43-.08.66 0 1.61 1.31 2.91 2.92 2.91 1.61 0 2.92-1.3 2.92-2.91A2.92 2.92 0 0 0 18 16.08Z"/></svg>
+          </a>
+        
+        <button type="reset" class="md-search__icon md-icon" title="清空当前内容" aria-label="清空当前内容" tabindex="-1">
+          
+          <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M19 6.41 17.59 5 12 10.59 6.41 5 5 6.41 10.59 12 5 17.59 6.41 19 12 13.41 17.59 19 19 17.59 13.41 12 19 6.41Z"/></svg>
+        </button>
+      </nav>
+      
+        <div class="md-search__suggest" data-md-component="search-suggest"></div>
+      
+    </form>
+    <div class="md-search__output">
+      <div class="md-search__scrollwrap" data-md-scrollfix>
+        <div class="md-search-result" data-md-component="search-result">
+          <div class="md-search-result__meta">
+            正在初始化搜索引擎
+          </div>
+          <ol class="md-search-result__list" role="presentation"></ol>
+        </div>
+      </div>
+    </div>
+  </div>
+</div>
+    
+    
+      <div class="md-header__source">
+        <a href="https://github.com/Zhu-Shatong/Mathematical-Modeling" title="前往仓库" class="md-source" data-md-component="source">
+  <div class="md-source__icon md-icon">
+    
+    <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 496 512"><!--! Font Awesome Free 6.5.1 by @fontawesome - https://fontawesome.com License - https://fontawesome.com/license/free (Icons: CC BY 4.0, Fonts: SIL OFL 1.1, Code: MIT License) Copyright 2023 Fonticons, Inc.--><path d="M165.9 397.4c0 2-2.3 3.6-5.2 3.6-3.3.3-5.6-1.3-5.6-3.6 0-2 2.3-3.6 5.2-3.6 3-.3 5.6 1.3 5.6 3.6zm-31.1-4.5c-.7 2 1.3 4.3 4.3 4.9 2.6 1 5.6 0 6.2-2s-1.3-4.3-4.3-5.2c-2.6-.7-5.5.3-6.2 2.3zm44.2-1.7c-2.9.7-4.9 2.6-4.6 4.9.3 2 2.9 3.3 5.9 2.6 2.9-.7 4.9-2.6 4.6-4.6-.3-1.9-3-3.2-5.9-2.9zM244.8 8C106.1 8 0 113.3 0 252c0 110.9 69.8 205.8 169.5 239.2 12.8 2.3 17.3-5.6 17.3-12.1 0-6.2-.3-40.4-.3-61.4 0 0-70 15-84.7-29.8 0 0-11.4-29.1-27.8-36.6 0 0-22.9-15.7 1.6-15.4 0 0 24.9 2 38.6 25.8 21.9 38.6 58.6 27.5 72.9 20.9 2.3-16 8.8-27.1 16-33.7-55.9-6.2-112.3-14.3-112.3-110.5 0-27.5 7.6-41.3 23.6-58.9-2.6-6.5-11.1-33.3 2.6-67.9 20.9-6.5 69 27 69 27 20-5.6 41.5-8.5 62.8-8.5s42.8 2.9 62.8 8.5c0 0 48.1-33.6 69-27 13.7 34.7 5.2 61.4 2.6 67.9 16 17.7 25.8 31.5 25.8 58.9 0 96.5-58.9 104.2-114.8 110.5 9.2 7.9 17 22.9 17 46.4 0 33.7-.3 75.4-.3 83.6 0 6.5 4.6 14.4 17.3 12.1C428.2 457.8 496 362.9 496 252 496 113.3 383.5 8 244.8 8zM97.2 352.9c-1.3 1-1 3.3.7 5.2 1.6 1.6 3.9 2.3 5.2 1 1.3-1 1-3.3-.7-5.2-1.6-1.6-3.9-2.3-5.2-1zm-10.8-8.1c-.7 1.3.3 2.9 2.3 3.9 1.6 1 3.6.7 4.3-.7.7-1.3-.3-2.9-2.3-3.9-2-.6-3.6-.3-4.3.7zm32.4 35.6c-1.6 1.3-1 4.3 1.3 6.2 2.3 2.3 5.2 2.6 6.5 1 1.3-1.3.7-4.3-1.3-6.2-2.2-2.3-5.2-2.6-6.5-1zm-11.4-14.7c-1.6 1-1.6 3.6 0 5.9 1.6 2.3 4.3 3.3 5.6 2.3 1.6-1.3 1.6-3.9 0-6.2-1.4-2.3-4-3.3-5.6-2z"/></svg>
+  </div>
+  <div class="md-source__repository">
+    Mathematical-Modeling
+  </div>
+</a>
+      </div>
+    
+  </nav>
+  
+</header>
+    
+    <div class="md-container" data-md-component="container">
+      
+      
+        
+          
+        
+      
+      <main class="md-main" data-md-component="main">
+        <div class="md-main__inner md-grid">
+          
+            
+              
+              <div class="md-sidebar md-sidebar--primary" data-md-component="sidebar" data-md-type="navigation" >
+                <div class="md-sidebar__scrollwrap">
+                  <div class="md-sidebar__inner">
+                    
+
+
+
+<nav class="md-nav md-nav--primary" aria-label="导航栏" data-md-level="0">
+  <label class="md-nav__title" for="__drawer">
+    <a href=".." title="数学建模基础知识配套习题与详解" class="md-nav__button md-logo" aria-label="数学建模基础知识配套习题与详解" data-md-component="logo">
+      
+  
+  <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M12 8a3 3 0 0 0 3-3 3 3 0 0 0-3-3 3 3 0 0 0-3 3 3 3 0 0 0 3 3m0 3.54C9.64 9.35 6.5 8 3 8v11c3.5 0 6.64 1.35 9 3.54 2.36-2.19 5.5-3.54 9-3.54V8c-3.5 0-6.64 1.35-9 3.54Z"/></svg>
+
+    </a>
+    数学建模基础知识配套习题与详解
+  </label>
+  
+    <div class="md-nav__source">
+      <a href="https://github.com/Zhu-Shatong/Mathematical-Modeling" title="前往仓库" class="md-source" data-md-component="source">
+  <div class="md-source__icon md-icon">
+    
+    <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 496 512"><!--! Font Awesome Free 6.5.1 by @fontawesome - https://fontawesome.com License - https://fontawesome.com/license/free (Icons: CC BY 4.0, Fonts: SIL OFL 1.1, Code: MIT License) Copyright 2023 Fonticons, Inc.--><path d="M165.9 397.4c0 2-2.3 3.6-5.2 3.6-3.3.3-5.6-1.3-5.6-3.6 0-2 2.3-3.6 5.2-3.6 3-.3 5.6 1.3 5.6 3.6zm-31.1-4.5c-.7 2 1.3 4.3 4.3 4.9 2.6 1 5.6 0 6.2-2s-1.3-4.3-4.3-5.2c-2.6-.7-5.5.3-6.2 2.3zm44.2-1.7c-2.9.7-4.9 2.6-4.6 4.9.3 2 2.9 3.3 5.9 2.6 2.9-.7 4.9-2.6 4.6-4.6-.3-1.9-3-3.2-5.9-2.9zM244.8 8C106.1 8 0 113.3 0 252c0 110.9 69.8 205.8 169.5 239.2 12.8 2.3 17.3-5.6 17.3-12.1 0-6.2-.3-40.4-.3-61.4 0 0-70 15-84.7-29.8 0 0-11.4-29.1-27.8-36.6 0 0-22.9-15.7 1.6-15.4 0 0 24.9 2 38.6 25.8 21.9 38.6 58.6 27.5 72.9 20.9 2.3-16 8.8-27.1 16-33.7-55.9-6.2-112.3-14.3-112.3-110.5 0-27.5 7.6-41.3 23.6-58.9-2.6-6.5-11.1-33.3 2.6-67.9 20.9-6.5 69 27 69 27 20-5.6 41.5-8.5 62.8-8.5s42.8 2.9 62.8 8.5c0 0 48.1-33.6 69-27 13.7 34.7 5.2 61.4 2.6 67.9 16 17.7 25.8 31.5 25.8 58.9 0 96.5-58.9 104.2-114.8 110.5 9.2 7.9 17 22.9 17 46.4 0 33.7-.3 75.4-.3 83.6 0 6.5 4.6 14.4 17.3 12.1C428.2 457.8 496 362.9 496 252 496 113.3 383.5 8 244.8 8zM97.2 352.9c-1.3 1-1 3.3.7 5.2 1.6 1.6 3.9 2.3 5.2 1 1.3-1 1-3.3-.7-5.2-1.6-1.6-3.9-2.3-5.2-1zm-10.8-8.1c-.7 1.3.3 2.9 2.3 3.9 1.6 1 3.6.7 4.3-.7.7-1.3-.3-2.9-2.3-3.9-2-.6-3.6-.3-4.3.7zm32.4 35.6c-1.6 1.3-1 4.3 1.3 6.2 2.3 2.3 5.2 2.6 6.5 1 1.3-1.3.7-4.3-1.3-6.2-2.2-2.3-5.2-2.6-6.5-1zm-11.4-14.7c-1.6 1-1.6 3.6 0 5.9 1.6 2.3 4.3 3.3 5.6 2.3 1.6-1.3 1.6-3.9 0-6.2-1.4-2.3-4-3.3-5.6-2z"/></svg>
+  </div>
+  <div class="md-source__repository">
+    Mathematical-Modeling
+  </div>
+</a>
+    </div>
+  
+  <ul class="md-nav__list" data-md-scrollfix>
+    
+      
+      
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href=".." class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    绪论
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+    
+      
+      
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../%E7%AC%AC2%E8%AE%B2-%E7%BA%BF%E6%80%A7%E8%A7%84%E5%88%92/" class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    线性规划
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+    
+      
+      
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../%E7%AC%AC3%E8%AE%B2-%E9%9D%9E%E7%BA%BF%E6%80%A7%E8%A7%84%E5%88%92/" class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    非线性规划
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+    
+      
+      
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../%E7%AC%AC4%E8%AE%B2-%E6%8F%92%E5%80%BC%E4%B8%8E%E6%8B%9F%E5%90%88/" class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    插值与拟合
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+    
+      
+      
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../%E7%AC%AC5%E8%AE%B2-%E5%BE%AE%E5%88%86%E6%96%B9%E7%A8%8B%E5%BB%BA%E6%A8%A1/" class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    微分方程建模
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+    
+      
+      
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../%E7%AC%AC6%E8%AE%B2-%E5%81%87%E8%AE%BE%E6%A3%80%E9%AA%8C/" class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    假设检验
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+    
+      
+      
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../%E7%AC%AC7%E8%AE%B2-Bootstrap%E6%96%B9%E6%B3%95/" class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    Bootstrap方法
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+    
+      
+      
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../%E7%AC%AC8%E8%AE%B2-%E5%9B%9E%E5%BD%92%E5%88%86%E6%9E%90/" class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    回归分析
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+    
+      
+      
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../%E7%AC%AC9%E8%AE%B2-%E6%97%B6%E9%97%B4%E5%BA%8F%E5%88%97%E5%88%86%E6%9E%90/" class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    时间序列分析
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+    
+      
+      
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../%E7%AC%AC10%E8%AE%B2-%E6%97%B6%E9%97%B4%E5%BA%8F%E5%88%97%E9%A2%84%E6%B5%8B/" class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    时间序列预测
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+    
+      
+      
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../%E7%AC%AC11%E8%AE%B2-%E5%9B%A0%E5%AD%90%E5%88%86%E6%9E%90%EF%BC%88%E8%81%9A%E7%B1%BB%E4%B8%8E%E4%B8%BB%E6%88%90%E5%88%86%EF%BC%89/" class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    因子分析（聚类与主成分）
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+    
+      
+      
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../%E7%AC%AC12%E8%AE%B2-%E5%9B%A0%E5%AD%90%E5%88%86%E6%9E%90%E5%88%A4%E5%88%AB%E5%88%86%E6%9E%90/" class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    因子分析判别分析
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+    
+      
+      
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../%E7%AC%AC13%E8%AE%B2-%E7%9B%B8%E5%85%B3%E5%88%86%E6%9E%90/" class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    相关分析
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+    
+      
+      
+  
+  
+    
+  
+  
+  
+    <li class="md-nav__item md-nav__item--active">
+      
+      <input class="md-nav__toggle md-toggle" type="checkbox" id="__toc">
+      
+      
+        
+      
+      
+        <label class="md-nav__link md-nav__link--active" for="__toc">
+          
+  
+  <span class="md-ellipsis">
+    现代优化算法
+  </span>
+  
+
+          <span class="md-nav__icon md-icon"></span>
+        </label>
+      
+      <a href="./" class="md-nav__link md-nav__link--active">
+        
+  
+  <span class="md-ellipsis">
+    现代优化算法
+  </span>
+  
+
+      </a>
+      
+        
+
+<nav class="md-nav md-nav--secondary" aria-label="目录">
+  
+  
+  
+    
+  
+  
+    <label class="md-nav__title" for="__toc">
+      <span class="md-nav__icon md-icon"></span>
+      目录
+    </label>
+    <ul class="md-nav__list" data-md-component="toc" data-md-scrollfix>
+      
+        <li class="md-nav__item">
+  <a href="#1411" class="md-nav__link">
+    <span class="md-ellipsis">
+      习题14.1（1）
+    </span>
+  </a>
+  
+    <nav class="md-nav" aria-label="习题14.1（1）">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#1" class="md-nav__link">
+    <span class="md-ellipsis">
+      1. 题目要求
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#2" class="md-nav__link">
+    <span class="md-ellipsis">
+      2.解题过程——模拟退火算法
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#3" class="md-nav__link">
+    <span class="md-ellipsis">
+      3.程序
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#4" class="md-nav__link">
+    <span class="md-ellipsis">
+      4.结果
+    </span>
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#1412" class="md-nav__link">
+    <span class="md-ellipsis">
+      习题14.1（2）
+    </span>
+  </a>
+  
+    <nav class="md-nav" aria-label="习题14.1（2）">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#1_1" class="md-nav__link">
+    <span class="md-ellipsis">
+      1. 题目要求
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#2_1" class="md-nav__link">
+    <span class="md-ellipsis">
+      2.解题过程——遗传算法
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#3_1" class="md-nav__link">
+    <span class="md-ellipsis">
+      3.程序
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#4_1" class="md-nav__link">
+    <span class="md-ellipsis">
+      4.结果
+    </span>
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#1421" class="md-nav__link">
+    <span class="md-ellipsis">
+      习题14.2（1）
+    </span>
+  </a>
+  
+    <nav class="md-nav" aria-label="习题14.2（1）">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#1_2" class="md-nav__link">
+    <span class="md-ellipsis">
+      1. 题目要求
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#2_2" class="md-nav__link">
+    <span class="md-ellipsis">
+      2.解题过程——模拟退火算法
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#3_2" class="md-nav__link">
+    <span class="md-ellipsis">
+      3.程序
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#4_2" class="md-nav__link">
+    <span class="md-ellipsis">
+      4.结果
+    </span>
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#1422" class="md-nav__link">
+    <span class="md-ellipsis">
+      习题14.2（2）
+    </span>
+  </a>
+  
+    <nav class="md-nav" aria-label="习题14.2（2）">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#1_3" class="md-nav__link">
+    <span class="md-ellipsis">
+      1. 题目要求
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#2_3" class="md-nav__link">
+    <span class="md-ellipsis">
+      2.解题过程
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#3_3" class="md-nav__link">
+    <span class="md-ellipsis">
+      3.程序——遗传算法
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#4_3" class="md-nav__link">
+    <span class="md-ellipsis">
+      4.结果
+    </span>
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
+    </ul>
+  
+</nav>
+      
+    </li>
+  
+
+    
+  </ul>
+</nav>
+                  </div>
+                </div>
+              </div>
+            
+            
+              
+              <div class="md-sidebar md-sidebar--secondary" data-md-component="sidebar" data-md-type="toc" >
+                <div class="md-sidebar__scrollwrap">
+                  <div class="md-sidebar__inner">
+                    
+
+<nav class="md-nav md-nav--secondary" aria-label="目录">
+  
+  
+  
+    
+  
+  
+    <label class="md-nav__title" for="__toc">
+      <span class="md-nav__icon md-icon"></span>
+      目录
+    </label>
+    <ul class="md-nav__list" data-md-component="toc" data-md-scrollfix>
+      
+        <li class="md-nav__item">
+  <a href="#1411" class="md-nav__link">
+    <span class="md-ellipsis">
+      习题14.1（1）
+    </span>
+  </a>
+  
+    <nav class="md-nav" aria-label="习题14.1（1）">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#1" class="md-nav__link">
+    <span class="md-ellipsis">
+      1. 题目要求
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#2" class="md-nav__link">
+    <span class="md-ellipsis">
+      2.解题过程——模拟退火算法
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#3" class="md-nav__link">
+    <span class="md-ellipsis">
+      3.程序
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#4" class="md-nav__link">
+    <span class="md-ellipsis">
+      4.结果
+    </span>
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#1412" class="md-nav__link">
+    <span class="md-ellipsis">
+      习题14.1（2）
+    </span>
+  </a>
+  
+    <nav class="md-nav" aria-label="习题14.1（2）">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#1_1" class="md-nav__link">
+    <span class="md-ellipsis">
+      1. 题目要求
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#2_1" class="md-nav__link">
+    <span class="md-ellipsis">
+      2.解题过程——遗传算法
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#3_1" class="md-nav__link">
+    <span class="md-ellipsis">
+      3.程序
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#4_1" class="md-nav__link">
+    <span class="md-ellipsis">
+      4.结果
+    </span>
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#1421" class="md-nav__link">
+    <span class="md-ellipsis">
+      习题14.2（1）
+    </span>
+  </a>
+  
+    <nav class="md-nav" aria-label="习题14.2（1）">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#1_2" class="md-nav__link">
+    <span class="md-ellipsis">
+      1. 题目要求
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#2_2" class="md-nav__link">
+    <span class="md-ellipsis">
+      2.解题过程——模拟退火算法
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#3_2" class="md-nav__link">
+    <span class="md-ellipsis">
+      3.程序
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#4_2" class="md-nav__link">
+    <span class="md-ellipsis">
+      4.结果
+    </span>
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#1422" class="md-nav__link">
+    <span class="md-ellipsis">
+      习题14.2（2）
+    </span>
+  </a>
+  
+    <nav class="md-nav" aria-label="习题14.2（2）">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#1_3" class="md-nav__link">
+    <span class="md-ellipsis">
+      1. 题目要求
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#2_3" class="md-nav__link">
+    <span class="md-ellipsis">
+      2.解题过程
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#3_3" class="md-nav__link">
+    <span class="md-ellipsis">
+      3.程序——遗传算法
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#4_3" class="md-nav__link">
+    <span class="md-ellipsis">
+      4.结果
+    </span>
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
+    </ul>
+  
+</nav>
+                  </div>
+                </div>
+              </div>
+            
+          
+          
+            <div class="md-content" data-md-component="content">
+              <article class="md-content__inner md-typeset">
+                
+                  
+
+  
+  
+
+
+<h1 id="-"><strong>第十四讲-现代优化算法</strong></h1>
+<h2 id="1411">习题14.1（1）</h2>
+<h3 id="1">1. 题目要求</h3>
+<p>假设有12件物品，质量和价值如下表所示。包的最大允许质量是46公斤。</p>
+<p>试使用模拟退火算法和遗传算法求解包中可装载物品的最大价值。</p>
+<table>
+<thead>
+<tr>
+<th>物品编号</th>
+<th>质量（公斤）</th>
+<th>价值（元）</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>1</td>
+<td>2</td>
+<td>5</td>
+</tr>
+<tr>
+<td>2</td>
+<td>5</td>
+<td>10</td>
+</tr>
+<tr>
+<td>3</td>
+<td>18</td>
+<td>13</td>
+</tr>
+<tr>
+<td>4</td>
+<td>3</td>
+<td>4</td>
+</tr>
+<tr>
+<td>5</td>
+<td>2</td>
+<td>3</td>
+</tr>
+<tr>
+<td>6</td>
+<td>5</td>
+<td>11</td>
+</tr>
+<tr>
+<td>7</td>
+<td>10</td>
+<td>13</td>
+</tr>
+<tr>
+<td>8</td>
+<td>4</td>
+<td>10</td>
+</tr>
+<tr>
+<td>9</td>
+<td>11</td>
+<td>8</td>
+</tr>
+<tr>
+<td>10</td>
+<td>7</td>
+<td>16</td>
+</tr>
+<tr>
+<td>11</td>
+<td>14</td>
+<td>7</td>
+</tr>
+<tr>
+<td>12</td>
+<td>6</td>
+<td>4</td>
+</tr>
+</tbody>
+</table>
+<h3 id="2">2.解题过程——模拟退火算法</h3>
+<p><strong>解：</strong></p>
+<p>记12件物品的的质量和价值为 <span class="arithmatex">\(m_i,v_i,i=1,2,..,12\)</span> 最大容量为 <span class="arithmatex">\(cnt=46\)</span>。</p>
+<p><strong>（1）解空间</strong></p>
+<p>解空间可以写为:
+$$
+\mathbf{S}={(\pi_1,\pi_2,...,\pi_{12})|\pi_i=0\ or\ 1,i=1,2,...,12}
+$$
+当 <span class="arithmatex">\(\pi_i=1\)</span> 时，表示选择第 <span class="arithmatex">\(i\)</span> 个物品，否则表示不选。</p>
+<p><strong>（2）目标函数</strong></p>
+<p>目标函数为最终的物品价值。我们求价值最大值，首先通过转换求价值相反数的最小值，即：
+$$
+\min f(\pi_1,\pi_2,...,\pi_{12})=-\sum_{i=1}^{12}v_i\pi_i
+$$
+一次迭代由下列三步产生。</p>
+<p><strong>（3）新解的产生</strong></p>
+<p>任选序号 <span class="arithmatex">\(u,v,1\leq u\leq v\leq12\)</span> ，将<span class="arithmatex">\(\pi_u,\pi_v\)</span>取反，此时新的选取方法为：
+$$
+\pi_1...\pi_{u-1}(1-\pi_u)\pi_{u+1}...\pi_{v-1}(1-\pi_v)\pi_{v+1}...\pi_{12}
+$$
+计算此时的重量：
+$$
+M=\sum_{i=1}^{12}m_i\pi_i
+$$
+若 <span class="arithmatex">\(M\leq cnt\)</span> 则新解有效，否则重新生成。</p>
+<p><strong>（4）代价函数差</strong></p>
+<p>路径差可以表示为：
+$$
+\Delta f=-(1-\pi_u)v_u-(1-\pi_v)v_v+\pi_uv_u+\pi_vv_v
+$$
+<strong>（5）接受准则</strong>
+$$
+\begin{align<em>}
+    P=\begin{cases}
+        1,&amp;\Delta f&lt;0\
+        e^{\frac{-\Delta f}{T}},&amp;\Delta f \geq 0
+    \end{cases}
+\end{align</em>}
+$$
+<strong>（6）降温</strong></p>
+<p>选定降温系数 <span class="arithmatex">\(\alpha=0.999\)</span> 降温，取新温度 <span class="arithmatex">\(T=\alpha T\)</span> ，初始温度  <span class="arithmatex">\(T=1\)</span>。</p>
+<p><strong>（7）结束条件</strong></p>
+<p>选定终止温度 <span class="arithmatex">\(e=10^{-30}\)</span> 判断退火是否结束，当 <span class="arithmatex">\(T\leq e\)</span> 时，结束模拟，输出当前状态。</p>
+<h3 id="3">3.程序</h3>
+<p>求解的MATLAB程序如下：</p>
+<pre><code class="language-matlab">clc, clear
+
+mass = [2, 5, 18, 3, 2, 5, 10, 4, 11, 7, 14, 6]; % 物品质量
+value = [5, 10, 13, 4, 3, 11, 13, 10, 8, 16, 7, 4]; % 物品价值
+solution = zeros(1, length(mass)); % 初始化解
+max_mass = 46; % 最大允许质量
+min_temperature = 0.1^30;
+iterations = 20000;
+alpha = 0.999;
+temperature = 1;
+
+for k = 1:iterations
+    old_value = -sum(solution.*value);
+    temp_solution = solution;
+    while 1
+        item = 1 + floor(length(mass)*rand(1, 2));
+        temp_solution(item) = ~temp_solution(item); % 改变选取物品的状态
+        if sum(temp_solution.*mass) &gt; max_mass % 如果超过背包最大允许质量，重新选取
+            temp_solution = solution;
+            continue
+        else
+            break
+        end
+    end
+    new_value = -sum(temp_solution.*value);
+    df = new_value - old_value;
+    if df &lt; 0 || exp(-df/temperature) &gt;= rand % 接受新解
+        solution = temp_solution;
+    end
+    temperature = temperature * alpha; % 降温
+    if temperature &lt; min_temperature
+        break
+    end
+end
+
+solution, total_mass = sum(solution.*mass), best_value = sum(solution.*value)
+</code></pre>
+<h3 id="4">4.结果</h3>
+<p><img alt="image-20230524155333136" src="https://raw.githubusercontent.com/Zhu-Shatong/cloudimg/master/img/image-20230524155333136.png" /></p>
+<p>得到结果为：
+$$
+\pi_i=1,1,0,0,1,1,1,1,1,1,0,0
+$$
+即选取第1，2，5，6，7，8，9，10件物品，总重量为46，价值为76。</p>
+<h2 id="1412">习题14.1（2）</h2>
+<h3 id="1_1">1. 题目要求</h3>
+<p>同上。</p>
+<h3 id="2_1">2.解题过程——遗传算法</h3>
+<p><strong>解：</strong></p>
+<p>设定种群大小 <span class="arithmatex">\(M=100\)</span> ，最大迭代次数 <span class="arithmatex">\(G=30\)</span> ，交叉率 <span class="arithmatex">\(p_c=0.95\)</span> ，变异率 <span class="arithmatex">\(p_m=0.15\)</span> 。</p>
+<p>基因采取编码：
+$$
+\pi_1,\pi_2,...,\pi_{12},\pi_i=0\ or\ 1,i=1,2,..,12
+$$
+使用改良圈算法产生 <span class="arithmatex">\(M\)</span> 个可行解，转化为初始基因编码，目标函数为最终的物品价值即
+$$
+\max f(\pi_1,\pi_2,...,\pi_{12})=\sum_{i=1}^{12}v_i\pi_i
+$$
+接下来每一次的迭代都以概率 <span class="arithmatex">\(p_c,p_m\)</span> 进行基因重组和基因变异，最后选择目标函数值最大的 <span class="arithmatex">\(M\)</span> 个个体进化到下一代。</p>
+<h3 id="3_1">3.程序</h3>
+<p>求解的MATLAB程序如下：</p>
+<pre><code class="language-matlab">clc, clear
+
+% 输入数据
+weights = [2, 5, 18, 3, 2, 5, 10, 4, 11, 7, 14, 6];
+values = [5, 10, 13, 4, 3, 11, 13, 10, 8, 16, 7, 4];
+
+num_items = length(weights);
+cross_rate = .95; % 交叉概率
+mutation_rate = .15; % 变异概率
+max_iter = 30; % 最大迭代次数
+pop_size = 100; % 种群大小
+max_capacity = 46; % 背包最大承重
+
+% 构建初始种群
+population = init_population(pop_size, num_items, weights, max_capacity);
+
+% 初始化统计指标
+avg_values = zeros(1, max_iter);
+max_values = zeros(1, max_iter);
+
+% 迭代进化
+for i = 1:max_iter
+    % 交叉
+    offspring_cross = crossover(population, cross_rate, weights, max_capacity);
+    % 变异
+    offspring_mutate = mutation(population, mutation_rate, weights, max_capacity);
+    % 选择
+    population = selection([population; offspring_cross; offspring_mutate], pop_size, values);
+    % 统计当前迭代的平均价值和最大价值
+    avg_values(i) = mean(sum(population*values', 2));
+    max_values(i) = max(sum(population*values', 2));
+end
+
+% 输出结果
+best_solution = population(1, :)
+best_value = sum(best_solution*values')
+best_mass = sum(best_solution*weights')
+
+% ************************* 以下为函数实现 *************************
+% 初始化种群函数
+function population = init_population(pop_size, num_items, weights, max_capacity)
+population = zeros(pop_size, num_items);
+for i = 1:pop_size
+    chromosome = round(rand(1, num_items));
+    while sum(chromosome.*weights) &gt; max_capacity
+        chromosome = round(rand(1, num_items));
+    end
+    population(i, :) = chromosome;
+end
+end
+
+% 交叉函数
+function offspring = crossover(population, cross_rate, weights, max_capacity)
+offspring = population;
+num_individuals = size(population, 1);
+for i = 1:2:num_individuals
+    if rand &lt; cross_rate
+        cross_point = ceil(rand * size(population, 2));
+        temp1 = offspring(i, :);
+        temp2 = offspring(i+1, :);
+        temp1(cross_point) = temp2(cross_point);
+        temp2(cross_point) = offspring(i, cross_point);
+        if (temp1 * weights' &lt;= max_capacity) &amp;&amp; (temp2 * weights' &lt;= max_capacity)
+            offspring(i, :) = temp1;
+            offspring(i+1, :) = temp2;
+        end
+    end
+end
+end
+
+% 变异函数
+function offspring = mutation(population, mutation_rate, weights, max_capacity)
+offspring = population;
+for i = 1:size(population, 1)
+    if rand &lt; mutation_rate
+        mutate_point = ceil(rand * size(population, 2));
+        temp = offspring(i, :);
+        temp(mutate_point) = ~temp(mutate_point);
+        if sum(temp.*weights) &lt;= max_capacity
+            offspring(i, :) = temp;
+        end
+    end
+end
+end
+
+% 选择函数
+function new_population = selection(population, pop_size, values)
+fitness_values = sum(population*values', 2);
+[~, sorted_indices] = sort(fitness_values, 'descend');
+new_population = population(sorted_indices(1:pop_size), :);
+end
+</code></pre>
+<h3 id="4_1">4.结果</h3>
+<p><img alt="image-20230524153007945" src="https://raw.githubusercontent.com/Zhu-Shatong/cloudimg/master/img/image-20230524153007945.png" /></p>
+<p>得到结果为：
+$$
+\pi_i=1,1,0,0,1,1,1,1,1,1,0,0
+$$
+即选取第1，2，5，6，7，8，9，10件物品，总重量为46，价值为76。</p>
+<h2 id="1421">习题14.2（1）</h2>
+<h3 id="1_2">1. 题目要求</h3>
+<p>假设有一个旅行商人要拜访全国 31 个省会城市，他需要选择所要走的路径，路径的限制是每个城市只能拜访一次，而且最后要回到原来出发的城市。</p>
+<p>全国 31 个省会城市的坐标如下表所示。</p>
+<p>试使用模拟退火算法和遗传算寻找最短路径。</p>
+<table>
+<thead>
+<tr>
+<th>城市编号</th>
+<th>坐标（X）</th>
+<th>坐标（Y）</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>1</td>
+<td>1304</td>
+<td>2312</td>
+</tr>
+<tr>
+<td>2</td>
+<td>3639</td>
+<td>1315</td>
+</tr>
+<tr>
+<td>3</td>
+<td>4177</td>
+<td>2244</td>
+</tr>
+<tr>
+<td>4</td>
+<td>3712</td>
+<td>1399</td>
+</tr>
+<tr>
+<td>5</td>
+<td>3488</td>
+<td>1535</td>
+</tr>
+<tr>
+<td>6</td>
+<td>3326</td>
+<td>1556</td>
+</tr>
+<tr>
+<td>7</td>
+<td>3238</td>
+<td>1229</td>
+</tr>
+<tr>
+<td>8</td>
+<td>4196</td>
+<td>1004</td>
+</tr>
+<tr>
+<td>9</td>
+<td>4312</td>
+<td>790</td>
+</tr>
+<tr>
+<td>10</td>
+<td>4386</td>
+<td>570</td>
+</tr>
+<tr>
+<td>11</td>
+<td>3007</td>
+<td>1970</td>
+</tr>
+<tr>
+<td>12</td>
+<td>2562</td>
+<td>1756</td>
+</tr>
+<tr>
+<td>13</td>
+<td>2788</td>
+<td>1491</td>
+</tr>
+<tr>
+<td>14</td>
+<td>2381</td>
+<td>1676</td>
+</tr>
+<tr>
+<td>15</td>
+<td>1332</td>
+<td>695</td>
+</tr>
+<tr>
+<td>16</td>
+<td>3715</td>
+<td>1678</td>
+</tr>
+<tr>
+<td>17</td>
+<td>3918</td>
+<td>2179</td>
+</tr>
+<tr>
+<td>18</td>
+<td>4061</td>
+<td>2370</td>
+</tr>
+<tr>
+<td>19</td>
+<td>3780</td>
+<td>2212</td>
+</tr>
+<tr>
+<td>20</td>
+<td>3676</td>
+<td>2578</td>
+</tr>
+<tr>
+<td>21</td>
+<td>4029</td>
+<td>2838</td>
+</tr>
+<tr>
+<td>22</td>
+<td>4263</td>
+<td>2931</td>
+</tr>
+<tr>
+<td>23</td>
+<td>3429</td>
+<td>1908</td>
+</tr>
+<tr>
+<td>24</td>
+<td>3507</td>
+<td>2367</td>
+</tr>
+<tr>
+<td>25</td>
+<td>3394</td>
+<td>2643</td>
+</tr>
+<tr>
+<td>26</td>
+<td>3439</td>
+<td>3201</td>
+</tr>
+<tr>
+<td>27</td>
+<td>2935</td>
+<td>3240</td>
+</tr>
+<tr>
+<td>28</td>
+<td>3140</td>
+<td>3550</td>
+</tr>
+<tr>
+<td>29</td>
+<td>2545</td>
+<td>2357</td>
+</tr>
+<tr>
+<td>30</td>
+<td>2778</td>
+<td>2826</td>
+</tr>
+<tr>
+<td>31</td>
+<td>2370</td>
+<td>2975</td>
+</tr>
+</tbody>
+</table>
+<h3 id="2_2">2.解题过程——模拟退火算法</h3>
+<p><strong>解：</strong></p>
+<p>设城市 <span class="arithmatex">\(i,j\)</span> 之间的距离 <span class="arithmatex">\(d_{ij}=\sqrt{(x_i-x_j)^2+(y_i-y_j)^2}\)</span> 。</p>
+<p><strong>（1）解空间</strong></p>
+<p>解空间可以表示为：
+$$
+\mathbf{S}={(\pi_1,\pi_2,...,\pi_{31})|(\pi_1,\pi_2,...,\pi_{31})\mbox{为}{1,2,...,31}\mbox{的全排列}}
+$$
+特别的，规定 <span class="arithmatex">\(\pi_0=\pi_{31},\pi_{32}=\pi_1\)</span>。</p>
+<p>初始解可以选择为 <span class="arithmatex">\((1,2,...,31)\)</span> 。</p>
+<p><strong>（2）目标函数</strong></p>
+<p>目标函数为路径长度：
+$$
+\min f(\pi_1,\pi_2,...,\pi_{31})=\sum_{i=1}^{31}d_{\pi_i\pi_{i+1}}
+$$
+一次迭代由下列三步产生.</p>
+<p><strong>（3）新解的产生</strong></p>
+<p>任选序 <span class="arithmatex">\(u,v,1\leq u\leq v\leq 31\)</span> ，交换 <span class="arithmatex">\(u,v\)</span> 之间的顺序交换，此时新路径为：
+$$
+\pi_1...\pi_{u-1}\pi_u\pi_{u+1}...\pi_{v-1}\pi_v\pi_{v+1}...\pi_{31}
+$$
+<strong>（4）代价函数差</strong>
+$$
+\Delta f=d_{\pi_{u-1}\pi_v}+d_{\pi_{u}\pi_{v+1}}-d_{\pi_{u-1}\pi_{u}}-d_{\pi_{v}\pi_{v+1}}
+$$
+<strong>（5）接受准则</strong>
+$$
+\begin{align*}</p>
+<p>P=\begin{cases}</p>
+<pre><code>1,&amp;\Delta f&lt;0\\
+
+e^{\frac{-\Delta f}{T}},&amp;\Delta f \geq 0
+</code></pre>
+<p>\end{cases}</p>
+<p>\end{align<em>}
+$$
+</em><em>（6）降温</em>*</p>
+<p>选定降温系数 <span class="arithmatex">\(\alpha=0.9999\)</span> 降温，取新温度 <span class="arithmatex">\(T=\alpha T\)</span>  ，初始温度 <span class="arithmatex">\(T=100\)</span>.</p>
+<p><strong>（7）结束条件</strong></p>
+<p>选定终止温度 <span class="arithmatex">\(e=10^{-30}\)</span> ，当<span class="arithmatex">\(T\leq e\)</span>时，结束模拟。</p>
+<h3 id="3_2">3.程序</h3>
+<p>求解的MATLAB程序如下：</p>
+<pre><code class="language-matlab">clc, clear
+
+% 城市坐标
+city_coordinates = [1304, 2312; 3639, 1315; 4177, 2244; 3712, 1399; 3488, 1535; 3326, 1556; ...
+    3238, 1229; 4196, 1004; 4312, 790; 4386, 570; 3007, 1970; 2562, 1756; ...
+    2788, 1491; 2381, 1676; 1332, 695; 3715, 1678; 3918, 2179; 4061, 2370; ...
+    3780, 2212; 3676, 2578; 4029, 2838; 4263, 2931; 3429, 1908; 3507, 2367; ...
+    3394, 2643; 3439, 3201; 2935, 3240; 3140, 3550; 2545, 2357; 2778, 2826; ...
+    2370, 2975];
+
+num_cities = size(city_coordinates, 1);
+
+% 初始化路径
+path = 1:num_cities;
+
+% 计算距离矩阵
+distances = pdist2(city_coordinates, city_coordinates);
+
+% 初始化总距离
+total_distance = sum(distances(sub2ind(size(distances), path, [path(2:end), path(1)])));
+
+% 设置退火参数
+initial_temperature = 100;
+alpha = 0.9999;
+final_temperature = 0.1^30;
+
+temperature = initial_temperature;
+
+while temperature &gt; final_temperature
+    % 随机选择两个城市
+    cities_to_swap = sort(randperm(num_cities, 2));
+
+    % 生成新路径
+    new_path = path;
+    new_path(cities_to_swap(1):cities_to_swap(2)) = new_path(cities_to_swap(2):-1:cities_to_swap(1));
+
+    % 计算新距离
+    new_distance = sum(distances(sub2ind(size(distances), new_path, [new_path(2:end), new_path(1)])));
+
+    % 判断是否接受新解
+    if new_distance &lt; total_distance || rand &lt; exp((total_distance - new_distance) / temperature)
+        path = new_path;
+        total_distance = new_distance;
+    end
+
+    % 降温
+    temperature = temperature * alpha;
+end
+
+% 输出结果
+disp('Optimal path:');
+disp(path);
+disp('Total distance:');
+disp(total_distance);
+
+% 绘制图像
+plot(city_coordinates([path, path(1)], 1), city_coordinates([path, path(1)], 2), '-o');
+</code></pre>
+<h3 id="4_2">4.结果</h3>
+<p><img alt="image-20230524163331639" src="https://raw.githubusercontent.com/Zhu-Shatong/cloudimg/master/img/image-20230524163331639.png" /></p>
+<p><img alt="image-20230524163405197" src="https://raw.githubusercontent.com/Zhu-Shatong/cloudimg/master/img/image-20230524163405197.png" /></p>
+<p>最终得到的结果如图，路径长度 <span class="arithmatex">\(D=15437\)</span>。</p>
+<h2 id="1422">习题14.2（2）</h2>
+<h3 id="1_3">1. 题目要求</h3>
+<p>同上。</p>
+<h3 id="2_3">2.解题过程</h3>
+<p><strong>解：</strong></p>
+<p>设定种群大小 <span class="arithmatex">\(M=100\)</span> ，最大迭代次数 <span class="arithmatex">\(G=100\)</span>。</p>
+<p>交叉率  <span class="arithmatex">\(p_c=1\)</span>。</p>
+<p>变异率 <span class="arithmatex">\(p_m=0.15\)</span> 。</p>
+<p>基因编码用随机数列 <span class="arithmatex">\(\omega_1\omega_2...\omega_{31},0\leq\omega_i\leq1\)</span> 其中 <span class="arithmatex">\(\omega_i\)</span> 在整个序列中的升序排序位置为城市 <span class="arithmatex">\(i\)</span> 所在的位置。</p>
+<p>使用改良圈算法产生<span class="arithmatex">\(M\)</span>个可行解，转化为初始基因编码，目标函数为最终的物品价值即：
+$$
+\max f(\pi_1,\pi_2,...,\pi_{12})=\sum_{i=1}^{12}v_i\pi_i
+$$
+接下来每一次的迭代都以概率 <span class="arithmatex">\(p_c,p_m\)</span> 进行基因重组和基因变异，最后选择目标函数值最大的 <span class="arithmatex">\(M\)</span> 个个体进化到下一代。</p>
+<h3 id="3_3">3.程序——遗传算法</h3>
+<p>求解的MATLAB程序如下：</p>
+<pre><code class="language-matlab">clc, clear
+
+distanceMatrix = zeros(31);
+optimalPath = zeros(1, 31);
+coordinates = [1304, 2312; 3639, 1315; 4177, 2244; 3712, 1399; 3488, 1535; 3326, 1556; ...
+    3238, 1229; 4196, 1004; 4312, 790; 4386, 570; 3007, 1970; 2562, 1756; ...
+    2788, 1491; 2381, 1676; 1332, 695; 3715, 1678; 3918, 2179; 4061, 2370; ...
+    3780, 2212; 3676, 2578; 4029, 2838; 4263, 2931; 3429, 1908; 3507, 2367; ...
+    3394, 2643; 3439, 3201; 2935, 3240; 3140, 3550; 2545, 2357; 2778, 2826; ...
+    2370, 2975];
+
+for i = 1:31
+    optimalPath(i) = i;
+    for j = 1:31
+        distanceMatrix(i, j) = sqrt((coordinates(i, 1) - coordinates(j, 1))^2+(coordinates(i, 2) - coordinates(j, 2))^2);
+    end
+end
+
+distance = 0;
+for i = 1:30
+    distance = distance + distanceMatrix(optimalPath(i), optimalPath(i+1));
+end
+
+distance = distance + distanceMatrix(optimalPath(1), optimalPath(31));
+w = 100;
+g = 100; 
+rand('state', sum(clock)); % 初始化随机数发生器
+
+for k = 1:w  % 通过改良圈算法选取初始种群
+    c1 = randperm(31);  % 产生1,..,31的一个全排列
+    for t = 1:100  % 该层循环是修改圈
+        flag = 0;  % 修改圈退出标志
+        for m = 1:31
+            for n = m + 1:31
+                m1 = m - 1;
+                n1 = n + 1;
+                if m == 1 &amp;&amp; n == 31
+                    continue
+                end
+                if m1 == 0
+                    m1 = 31;
+                end
+                if n1 == 32
+                    n1 = 1;
+                end
+                if distanceMatrix(c1(m1), c1(n)) + distanceMatrix(c1(m), c1(n1)) &lt; ...
+                        distanceMatrix(c1(m), c1(m1)) + distanceMatrix(c1(n), c1(n1))
+                    c1 = [c1(1:m-1), c1(n:-1:m), c1(n+1:31)];
+                    flag = 1; % 修改圈
+                end
+            end
+        end
+        if flag == 0
+            chromosomeMatrix(k, c1) = 1:31;
+            break % 记录下较好的解并退出当前层循环
+        end
+    end
+end
+
+chromosomeMatrix(:, 1) = 0;
+chromosomeMatrix = chromosomeMatrix / 31; % 把整数序列转换成［0,1］区间上的实数，即转换成染色体编码
+for k = 1:g % 该层循环进行遗传算法的操作
+    childPopulation = chromosomeMatrix; % 交配产生子代 A 的初始染色体
+    c = randperm(w); % 产生下面交叉操作的染色体对
+    for i = 1:2:w
+        F = 1 + floor(31*rand(1)); % 产生交叉操作的地址
+        temp = childPopulation(c(i), [F:31]); % 中间变量的保存值
+        childPopulation(c(i), [F:31]) = childPopulation(c(i+1), [F:31]); % 交叉操作
+        childPopulation(c(i+1), F:31) = temp;
+    end
+    by = []; % 为了防止下面产生空地址，这里先初始化
+    while ~length(by)
+        by = find(rand(1, w) &lt; 0.15); % 产生变异操作的地址
+    end
+    mutationList = childPopulation(by, :); % 产生变异操作的初始染色体
+    for j = 1:length(by)
+        bw = sort(1+floor(31*rand(1, 3))); % 产生变异操作的3个地址
+        mutationList(j, :) = mutationList(j, [1:bw(1) - 1, bw(2) + 1:bw(3), bw(1):bw(2), bw(3) + 1:31]); % 交换位置
+    end
+    G = [chromosomeMatrix; childPopulation; mutationList];  % 父代和子代种群合在一起
+    [SG, indl] = sort(G, 2);
+    populationSize = size(G, 1);
+    pathLengths = zeros(1, populationSize);  % 路径长度的初始值
+    for j = 1:populationSize
+        for i = 1:31
+            if i == 31
+                pathLengths(j) = pathLengths(j) + distanceMatrix(indl(j, i), indl(j, 1));
+            else
+                pathLengths(j) = pathLengths(j) + distanceMatrix(indl(j, i), indl(j, i+1)); % 计算每条路径长度
+            end
+        end
+    end
+    [slong, ind2] = sort(pathLengths); % 对路径长度从小到大排序
+    chromosomeMatrix = G(ind2(1:w), :); % 精选前 w 个较短的路径对应的染色体
+end
+optimalPath = indl(ind2(1), :), optimalPathLength = slong(1)
+plot([coordinates(optimalPath, 1); coordinates(optimalPath(1), 1)], [coordinates(optimalPath, 2); coordinates(optimalPath(1), 2)], '- o')
+</code></pre>
+<h3 id="4_3">4.结果</h3>
+<p><img alt="image-20230524201724742" src="https://raw.githubusercontent.com/Zhu-Shatong/cloudimg/master/img/image-20230524201724742.png" /></p>
+<p><img alt="image-20230524163405197" src="C:/Users/admin/AppData/Roaming/Typora/typora-user-images/image-20230524163405197.png" /></p>
+<p>最终得到的结果如图，路径长度 <span class="arithmatex">\(D=15437\)</span>。</p>
+
+
+
+
+
+
+
+
+
+
+
+
+                
+              </article>
+            </div>
+          
+          
+  <script>var tabs=__md_get("__tabs");if(Array.isArray(tabs))e:for(var set of document.querySelectorAll(".tabbed-set")){var tab,labels=set.querySelector(".tabbed-labels");for(tab of tabs)for(var label of labels.getElementsByTagName("label"))if(label.innerText.trim()===tab){var input=document.getElementById(label.htmlFor);input.checked=!0;continue e}}</script>
+
+<script>var target=document.getElementById(location.hash.slice(1));target&&target.name&&(target.checked=target.name.startsWith("__tabbed_"))</script>
+        </div>
+        
+          <button type="button" class="md-top md-icon" data-md-component="top" hidden>
+  
+  <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M13 20h-2V8l-5.5 5.5-1.42-1.42L12 4.16l7.92 7.92-1.42 1.42L13 8v12Z"/></svg>
+  回到页面顶部
+</button>
+        
+      </main>
+      
+        <footer class="md-footer">
+  
+  <div class="md-footer-meta md-typeset">
+    <div class="md-footer-meta__inner md-grid">
+      <div class="md-copyright">
+  
+    <div class="md-copyright__highlight">
+      Copyright &copy; 2023-present <a href="https://github.com/Zhu-Shatong" target="_blank" rel="noopener noreferrer">Zhu-Shatong</a>
+    </div>
+  
+  
+    Made with
+    <a href="https://squidfunk.github.io/mkdocs-material/" target="_blank" rel="noopener">
+      Material for MkDocs
+    </a>
+  
+</div>
+      
+        <div class="md-social">
+  
+    
+    
+    
+    
+      
+      
+    
+    <a href="https://github.com/Zhu-Shatong" target="_blank" rel="noopener" title="github.com" class="md-social__link">
+      <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 496 512"><!--! Font Awesome Free 6.5.1 by @fontawesome - https://fontawesome.com License - https://fontawesome.com/license/free (Icons: CC BY 4.0, Fonts: SIL OFL 1.1, Code: MIT License) Copyright 2023 Fonticons, Inc.--><path d="M165.9 397.4c0 2-2.3 3.6-5.2 3.6-3.3.3-5.6-1.3-5.6-3.6 0-2 2.3-3.6 5.2-3.6 3-.3 5.6 1.3 5.6 3.6zm-31.1-4.5c-.7 2 1.3 4.3 4.3 4.9 2.6 1 5.6 0 6.2-2s-1.3-4.3-4.3-5.2c-2.6-.7-5.5.3-6.2 2.3zm44.2-1.7c-2.9.7-4.9 2.6-4.6 4.9.3 2 2.9 3.3 5.9 2.6 2.9-.7 4.9-2.6 4.6-4.6-.3-1.9-3-3.2-5.9-2.9zM244.8 8C106.1 8 0 113.3 0 252c0 110.9 69.8 205.8 169.5 239.2 12.8 2.3 17.3-5.6 17.3-12.1 0-6.2-.3-40.4-.3-61.4 0 0-70 15-84.7-29.8 0 0-11.4-29.1-27.8-36.6 0 0-22.9-15.7 1.6-15.4 0 0 24.9 2 38.6 25.8 21.9 38.6 58.6 27.5 72.9 20.9 2.3-16 8.8-27.1 16-33.7-55.9-6.2-112.3-14.3-112.3-110.5 0-27.5 7.6-41.3 23.6-58.9-2.6-6.5-11.1-33.3 2.6-67.9 20.9-6.5 69 27 69 27 20-5.6 41.5-8.5 62.8-8.5s42.8 2.9 62.8 8.5c0 0 48.1-33.6 69-27 13.7 34.7 5.2 61.4 2.6 67.9 16 17.7 25.8 31.5 25.8 58.9 0 96.5-58.9 104.2-114.8 110.5 9.2 7.9 17 22.9 17 46.4 0 33.7-.3 75.4-.3 83.6 0 6.5 4.6 14.4 17.3 12.1C428.2 457.8 496 362.9 496 252 496 113.3 383.5 8 244.8 8zM97.2 352.9c-1.3 1-1 3.3.7 5.2 1.6 1.6 3.9 2.3 5.2 1 1.3-1 1-3.3-.7-5.2-1.6-1.6-3.9-2.3-5.2-1zm-10.8-8.1c-.7 1.3.3 2.9 2.3 3.9 1.6 1 3.6.7 4.3-.7.7-1.3-.3-2.9-2.3-3.9-2-.6-3.6-.3-4.3.7zm32.4 35.6c-1.6 1.3-1 4.3 1.3 6.2 2.3 2.3 5.2 2.6 6.5 1 1.3-1.3.7-4.3-1.3-6.2-2.2-2.3-5.2-2.6-6.5-1zm-11.4-14.7c-1.6 1-1.6 3.6 0 5.9 1.6 2.3 4.3 3.3 5.6 2.3 1.6-1.3 1.6-3.9 0-6.2-1.4-2.3-4-3.3-5.6-2z"/></svg>
+    </a>
+  
+</div>
+      
+    </div>
+  </div>
+</footer>
+      
+    </div>
+    <div class="md-dialog" data-md-component="dialog">
+      <div class="md-dialog__inner md-typeset"></div>
+    </div>
+    
+    
+    <script id="__config" type="application/json">{"base": "..", "features": ["navigation.top", "navigation.tracking", "navigation.path", "search.suggest", "search.highlight", "search.share", "content.tabs.link", "content.code.annotation", "content.code.copy"], "search": "../assets/javascripts/workers/search.b8dbb3d2.min.js", "translations": {"clipboard.copied": "\u5df2\u590d\u5236", "clipboard.copy": "\u590d\u5236", "search.result.more.one": "\u5728\u8be5\u9875\u4e0a\u8fd8\u6709 1 \u4e2a\u7b26\u5408\u6761\u4ef6\u7684\u7ed3\u679c", "search.result.more.other": "\u5728\u8be5\u9875\u4e0a\u8fd8\u6709 # \u4e2a\u7b26\u5408\u6761\u4ef6\u7684\u7ed3\u679c", "search.result.none": "\u6ca1\u6709\u627e\u5230\u7b26\u5408\u6761\u4ef6\u7684\u7ed3\u679c", "search.result.one": "\u627e\u5230 1 \u4e2a\u7b26\u5408\u6761\u4ef6\u7684\u7ed3\u679c", "search.result.other": "# \u4e2a\u7b26\u5408\u6761\u4ef6\u7684\u7ed3\u679c", "search.result.placeholder": "\u952e\u5165\u4ee5\u5f00\u59cb\u641c\u7d22", "search.result.term.missing": "\u7f3a\u5c11", "select.version": "\u9009\u62e9\u5f53\u524d\u7248\u672c"}}</script>
+    
+    
+      <script src="../assets/javascripts/bundle.bd41221c.min.js"></script>
+      
+        <script src="../javascripts/katex.js"></script>
+      
+        <script src="https://cdnjs.cloudflare.com/ajax/libs/KaTeX/0.16.7/katex.min.js"></script>
+      
+        <script src="https://cdnjs.cloudflare.com/ajax/libs/KaTeX/0.16.7/contrib/auto-render.min.js"></script>
+      
+    
+  </body>
+</html>
